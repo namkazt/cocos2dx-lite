@@ -38,9 +38,6 @@ class Cocos2dIniParser:
         self.cocos2d_path = os.path.dirname(os.path.abspath(sys.argv[0]))
         self._cp.read(os.path.join(self.cocos2d_path, "cocos2d.ini"))
 
-        # XXX: override with local config ??? why ???
-        self._cp.read("~/.cocos2d-js/cocos2d.ini")
-
     def parse_plugins(self):
         classes = {}
 
