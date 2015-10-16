@@ -225,7 +225,6 @@ protected:
 
     uint32_t _lastMaterialID;
 
-    MeshCommand*              _lastBatchedMeshCommand;
     std::vector<TrianglesCommand*> _batchedCommands;
     std::vector<QuadCommand*> _batchQuadCommands;
 

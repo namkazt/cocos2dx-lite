@@ -23,11 +23,13 @@
 #include "cocostudio/WidgetReader/PageViewReader/PageViewReader.h"
 #include "cocostudio/WidgetReader/ListViewReader/ListViewReader.h"
 #include "cocostudio/WidgetReader/ArmatureNodeReader/ArmatureNodeReader.h"
+
+#if CC_USE_3D
 #include "cocostudio/WidgetReader/Node3DReader/Node3DReader.h"
 #include "cocostudio/WidgetReader/Sprite3DReader/Sprite3DReader.h"
 #include "cocostudio/WidgetReader/UserCameraReader/UserCameraReader.h"
 #include "cocostudio/WidgetReader/Particle3DReader/Particle3DReader.h"
-
+#endif
 
 namespace cocostudio
 {
@@ -57,11 +59,12 @@ namespace cocostudio
         ListViewReader::destroyInstance();
         
         ArmatureNodeReader::destroyInstance();
+#if CC_USE_3D
         Node3DReader::destroyInstance();
         Sprite3DReader::destroyInstance();
         UserCameraReader::destroyInstance();
         Particle3DReader::destroyInstance();
-        
+#endif
         cocos2d::CSLoader::destroyInstance();
         
         

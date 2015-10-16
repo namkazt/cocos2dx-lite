@@ -27,10 +27,7 @@
 
 #include "renderer/ccGLStateCache.h"
 #include "renderer/CCGLProgram.h"
-#include "renderer/CCMaterial.h"
-#include "renderer/CCTechnique.h"
 #include "renderer/CCRenderer.h"
-#include "renderer/CCPass.h"
 
 #include "xxhash.h"
 

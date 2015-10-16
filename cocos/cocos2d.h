@@ -152,8 +152,6 @@ THE SOFTWARE.
 #include "renderer/CCGLProgramCache.h"
 #include "renderer/CCGLProgramState.h"
 #include "renderer/CCGroupCommand.h"
-#include "renderer/CCMaterial.h"
-#include "renderer/CCPass.h"
 #include "renderer/CCPrimitive.h"
 #include "renderer/CCPrimitiveCommand.h"
 #include "renderer/CCQuadCommand.h"
@@ -161,20 +159,15 @@ THE SOFTWARE.
 #include "renderer/CCRenderCommandPool.h"
 #include "renderer/CCRenderState.h"
 #include "renderer/CCRenderer.h"
-#include "renderer/CCTechnique.h"
 #include "renderer/CCTexture2D.h"
 #include "renderer/CCTextureCube.h"
 #include "renderer/CCTextureCache.h"
 #include "renderer/CCTrianglesCommand.h"
-#include "renderer/CCVertexAttribBinding.h"
 #include "renderer/CCVertexIndexBuffer.h"
 #include "renderer/CCVertexIndexData.h"
 #include "renderer/CCPrimitive.h"
 #include "renderer/CCPrimitiveCommand.h"
 #include "renderer/CCTrianglesCommand.h"
-#include "renderer/CCMaterial.h"
-#include "renderer/CCTechnique.h"
-#include "renderer/CCPass.h"
 #include "renderer/CCRenderState.h"
 #include "renderer/CCFrameBuffer.h"
 #include "renderer/ccGLStateCache.h"
@@ -281,6 +274,7 @@ THE SOFTWARE.
 #include "2d/CCComponent.h"
 #include "2d/CCComponentContainer.h"
 
+#if CC_USE_3D
 //3d
 #include "3d/CCAABB.h"
 #include "3d/CCAnimate3D.h"
@@ -300,7 +294,7 @@ THE SOFTWARE.
 #include "3d/CCSprite3D.h"
 #include "3d/CCSprite3DMaterial.h"
 #include "3d/CCTerrain.h"
-
+#endif
 
 // Deprecated include
 #include "deprecated/CCArray.h"

@@ -96,7 +96,9 @@ Camera::Camera()
 , _depth(-1)
 , _fbo(nullptr)
 {
+#if CC_USE_3D
     _frustum.setClipZ(true);
+#endif
     _clearBrush = CameraBackgroundBrush::createDepthBrush(1.f);
     _clearBrush->retain();
 }
@@ -322,6 +324,7 @@ void Camera::unprojectGL(const Size& viewport, const Vec3* src, Vec3* dst) const
     dst->set(screen.x, screen.y, screen.z);
 }
 
+#if CC_USE_3D
 bool Camera::isVisibleInFrustum(const AABB* aabb) const
 {
     if (_frustumDirty)
@@ -331,6 +334,7 @@ bool Camera::isVisibleInFrustum(const AABB* aabb) const
     }
     return !_frustum.isOutOfFrustum(*aabb);
 }
+#endif
 
 float Camera::getDepthInView(const Mat4& transform) const
 {

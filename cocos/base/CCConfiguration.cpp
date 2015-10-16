@@ -55,7 +55,9 @@ Configuration::Configuration()
 , _maxDirLightInShader(1)
 , _maxPointLightInShader(1)
 , _maxSpotLightInShader(1)
+#if CC_USE_3D
 , _animate3DQuality(Animate3DQuality::QUALITY_LOW)
+#endif
 {
     _loadedEvent = new EventCustom(CONFIG_FILE_LOADED);
 }
@@ -274,10 +276,12 @@ int Configuration::getMaxSupportSpotLightInShader() const
     return _maxSpotLightInShader;
 }
 
+#if CC_USE_3D
 Animate3DQuality Configuration::getAnimate3DQuality() const
 {
     return _animate3DQuality;
 }
+#endif
 
 //
 // generic getters for properties
@@ -367,13 +371,15 @@ void Configuration::loadConfigFile(const std::string& filename)
         _maxSpotLightInShader = _valueDict[name].asInt();
     else
         _valueDict[name] = Value(_maxSpotLightInShader);
-    
+
+#if CC_USE_3D
     name = "cocos2d.x.3d.animate_quality";
     if (_valueDict.find(name) != _valueDict.end())
         _animate3DQuality = (Animate3DQuality)_valueDict[name].asInt();
     else
         _valueDict[name] = Value((int)_animate3DQuality);
-    
+#endif
+
     Director::getInstance()->getEventDispatcher()->dispatchEvent(_loadedEvent);
 }
 

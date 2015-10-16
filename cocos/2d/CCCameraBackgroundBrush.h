@@ -27,7 +27,9 @@
 
 #include "base/ccTypes.h"
 #include "base/CCRef.h"
+#if CC_USE_3D
 #include "3d/CCFrustum.h"
+#endif
 #include "renderer/CCQuadCommand.h"
 #include "renderer/CCCustomCommand.h"
 #include "renderer/CCFrameBuffer.h"

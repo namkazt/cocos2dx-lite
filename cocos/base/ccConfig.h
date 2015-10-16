@@ -376,4 +376,9 @@ THE SOFTWARE.
 # define CC_ALLOCATOR_GLOBAL_NEW_DELETE cocos2d::allocator::AllocatorStrategyGlobalSmallBlock
 #endif
 
+#undef CC_USE_3D_PHYSICS
+#define CC_USE_3D_PHYSICS   0
+#undef CC_USE_NAVMESH
+#define CC_USE_NAVMESH      0
+#define CC_USE_3D           0
 #endif // __CCCONFIG_H__
