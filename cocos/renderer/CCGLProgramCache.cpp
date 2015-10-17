@@ -55,16 +55,6 @@ enum {
     kShaderType_UIGrayScale,
     kShaderType_LabelNormal,
     kShaderType_LabelOutline,
-    kShaderType_3DPosition,
-    kShaderType_3DPositionTex,
-    kShaderType_3DSkinPositionTex,
-    kShaderType_3DPositionNormal,
-    kShaderType_3DPositionNormalTex,
-    kShaderType_3DSkinPositionNormalTex,
-    kShaderType_3DParticleTex,
-    kShaderType_3DParticleColor,
-    kShaderType_3DSkyBox,
-    kShaderType_3DTerrain,
     kShaderType_CameraClear,
     kShaderType_MAX,
 };
@@ -223,46 +213,6 @@ void GLProgramCache::loadDefaultGLPrograms()
     loadDefaultGLProgram(p, kShaderType_LabelOutline);
     _programs.insert( std::make_pair(GLProgram::SHADER_NAME_LABEL_OUTLINE, p) );
 
-    p = new (std::nothrow) GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DPosition);
-    _programs.insert( std::make_pair(GLProgram::SHADER_3D_POSITION, p) );
-
-    p = new (std::nothrow) GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DPositionTex);
-    _programs.insert( std::make_pair(GLProgram::SHADER_3D_POSITION_TEXTURE, p) );
-
-    p = new (std::nothrow) GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DSkinPositionTex);
-    _programs.insert(std::make_pair(GLProgram::SHADER_3D_SKINPOSITION_TEXTURE, p));
-
-    p = new GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DPositionNormal);
-    _programs.insert( std::make_pair(GLProgram::SHADER_3D_POSITION_NORMAL, p) );
-
-    p = new GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DPositionNormalTex);
-    _programs.insert( std::make_pair(GLProgram::SHADER_3D_POSITION_NORMAL_TEXTURE, p) );
-
-    p = new GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DSkinPositionNormalTex);
-    _programs.insert(std::make_pair(GLProgram::SHADER_3D_SKINPOSITION_NORMAL_TEXTURE, p));
-
-    p = new GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DParticleColor);
-    _programs.insert(std::make_pair(GLProgram::SHADER_3D_PARTICLE_COLOR, p));
-
-    p = new GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DParticleTex);
-    _programs.insert(std::make_pair(GLProgram::SHADER_3D_PARTICLE_TEXTURE, p));
-
-    p = new GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DSkyBox);
-    _programs.insert(std::make_pair(GLProgram::SHADER_3D_SKYBOX, p));
-
-    p = new GLProgram();
-    loadDefaultGLProgram(p, kShaderType_3DTerrain);
-    _programs.insert(std::make_pair(GLProgram::SHADER_3D_TERRAIN, p));
-    
     p = new GLProgram();
     loadDefaultGLProgram(p, kShaderType_CameraClear);
     _programs.insert(std::make_pair(GLProgram::SHADER_CAMERA_CLEAR, p));
@@ -359,46 +309,6 @@ void GLProgramCache::reloadDefaultGLPrograms()
     p = getGLProgram(GLProgram::SHADER_NAME_LABEL_OUTLINE);
     p->reset();
     loadDefaultGLProgram(p, kShaderType_LabelOutline);
-
-    p = getGLProgram(GLProgram::SHADER_3D_POSITION);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DPosition);
-
-    p = getGLProgram(GLProgram::SHADER_3D_POSITION_TEXTURE);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DPositionTex);
-
-    p = getGLProgram(GLProgram::SHADER_3D_SKINPOSITION_TEXTURE);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DSkinPositionTex);
-
-    p = getGLProgram(GLProgram::SHADER_3D_POSITION_NORMAL);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DPositionNormal);
-
-    p = getGLProgram(GLProgram::SHADER_3D_POSITION_NORMAL_TEXTURE);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DPositionNormalTex);
-
-    p = getGLProgram(GLProgram::SHADER_3D_SKINPOSITION_NORMAL_TEXTURE);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DSkinPositionNormalTex);
-
-    p = getGLProgram(GLProgram::SHADER_3D_PARTICLE_TEXTURE);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DParticleTex);
-
-    p = getGLProgram(GLProgram::SHADER_3D_PARTICLE_COLOR);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DParticleColor);
-
-    p = getGLProgram(GLProgram::SHADER_3D_SKYBOX);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DSkyBox);
-
-    p = getGLProgram(GLProgram::SHADER_3D_TERRAIN);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DTerrain);
     
     p = getGLProgram(GLProgram::SHADER_CAMERA_CLEAR);
     p->reset();
@@ -407,17 +317,6 @@ void GLProgramCache::reloadDefaultGLPrograms()
 
 void GLProgramCache::reloadDefaultGLProgramsRelativeToLights()
 {
-    GLProgram *p = getGLProgram(GLProgram::SHADER_3D_POSITION_NORMAL);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DPositionNormal);
-    
-    p = getGLProgram(GLProgram::SHADER_3D_POSITION_NORMAL_TEXTURE);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DPositionNormalTex);
-    
-    p = getGLProgram(GLProgram::SHADER_3D_SKINPOSITION_NORMAL_TEXTURE);
-    p->reset();
-    loadDefaultGLProgram(p, kShaderType_3DSkinPositionNormalTex);
 }
 
 void GLProgramCache::loadDefaultGLProgram(GLProgram *p, int type)
@@ -475,47 +374,6 @@ void GLProgramCache::loadDefaultGLProgram(GLProgram *p, int type)
             break;
         case kShaderType_LabelOutline:
             p->initWithByteArrays(ccLabel_vert, ccLabelOutline_frag);
-            break;
-        case kShaderType_3DPosition:
-            p->initWithByteArrays(cc3D_PositionTex_vert, cc3D_Color_frag);
-            break;
-        case kShaderType_3DPositionTex:
-            p->initWithByteArrays(cc3D_PositionTex_vert, cc3D_ColorTex_frag);
-            break;
-        case kShaderType_3DSkinPositionTex:
-            p->initWithByteArrays(cc3D_SkinPositionTex_vert, cc3D_ColorTex_frag);
-            break;
-        case kShaderType_3DPositionNormal:
-            {
-                std::string def = getShaderMacrosForLight();
-                p->initWithByteArrays((def + std::string(cc3D_PositionNormalTex_vert)).c_str(), (def + std::string(cc3D_ColorNormal_frag)).c_str());
-            }
-            break;
-        case kShaderType_3DPositionNormalTex:
-            {
-                std::string def = getShaderMacrosForLight();
-                p->initWithByteArrays((def + std::string(cc3D_PositionNormalTex_vert)).c_str(), (def + std::string(cc3D_ColorNormalTex_frag)).c_str());
-            }
-            break;
-        case kShaderType_3DSkinPositionNormalTex:
-            {
-                std::string def = getShaderMacrosForLight();
-                p->initWithByteArrays((def + std::string(cc3D_SkinPositionNormalTex_vert)).c_str(), (def + std::string(cc3D_ColorNormalTex_frag)).c_str());
-            }
-            break;
-        case kShaderType_3DParticleTex:
-           {
-                p->initWithByteArrays(cc3D_Particle_vert, cc3D_Particle_tex_frag);
-           }
-            break;
-        case kShaderType_3DParticleColor:
-            p->initWithByteArrays(cc3D_Particle_vert, cc3D_Particle_color_frag);
-            break;
-        case kShaderType_3DSkyBox:
-            p->initWithByteArrays(cc3D_Skybox_vert, cc3D_Skybox_frag);
-            break;
-        case kShaderType_3DTerrain:
-            p->initWithByteArrays(cc3D_Terrain_vert, cc3D_Terrain_frag);
             break;
         case kShaderType_CameraClear:
             p->initWithByteArrays(ccCameraClearVert, ccCameraClearFrag);
