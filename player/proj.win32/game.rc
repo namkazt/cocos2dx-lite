@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Chinese (Simplified, PRC) resources
+// 中文(简体，中国) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -58,14 +58,14 @@ BEGIN
         MENUITEM "&Portrait",                   ID_VIEW_PORTRAIT
         MENUITEM "&Landscape",                  ID_VIEW_LANDSCAPE
         MENUITEM SEPARATOR
-        MENUITEM "&Actual(100%)",               ID_VIEW_ZOOMOUT100
-        MENUITEM "Zoom Out(75%)",               ID_VIEW_ZOOMOUT75
-        MENUITEM "Zoom Out(50%)",               ID_VIEW_ZOOMOUT50
-        MENUITEM "Zoom Out(25%)",               ID_VIEW_ZOOMOUT25
+        MENUITEM "&Actual (100%)",              ID_VIEW_ZOOMOUT100
+        MENUITEM "Zoom Out (75%)",              ID_VIEW_ZOOMOUT75
+        MENUITEM "Zoom Out (50%)",              ID_VIEW_ZOOMOUT50
+        MENUITEM "Zoom Out (25%)",              ID_VIEW_ZOOMOUT25
     END
     POPUP "&Control"
     BEGIN
-        MENUITEM "Restart(F5)",                 ID_CONTROL_RELOAD
+        MENUITEM "Restart (F5)",                ID_CONTROL_RELOAD
         MENUITEM "Keep Window Top",             ID_CONTROL_TOP
     END
     POPUP "&Help"
@@ -82,11 +82,11 @@ END
 
 IDD_DIALOG_ABOUT DIALOGEX 0, 0, 243, 94
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About Simulator"
+CAPTION "About Player"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,173,69,63,18
-    LTEXT           "Cocos2d-x-Simulator",IDC_STATIC,29,17,169,25
+    CTEXT           "@2015 quick-x-player  by yinjimmy",IDC_STATIC,29,17,169,25
 END
 
 
@@ -108,12 +108,34 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-#endif    // Chinese (Simplified, PRC) resources
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG_ABOUT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS
+BEGIN
+    VK_F5,          ID_CONTROL_RELOAD,      VIRTKEY, NOINVERT
+END
+
+#endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 英语(美国) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -162,14 +184,14 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "040904B0"
+        BLOCK "040904b0"
         BEGIN
-            VALUE "FileDescription", "game Module"
+            VALUE "FileDescription", "quick-x-player"
             VALUE "FileVersion", "1, 0, 0, 1"
-            VALUE "InternalName", "game"
-            VALUE "LegalCopyright", "Copyright "
-            VALUE "OriginalFilename", "game.exe"
-            VALUE "ProductName", "game Module"
+            VALUE "InternalName", "player"
+            VALUE "LegalCopyright", "Copyright @2015 by yinjimmy"
+            VALUE "OriginalFilename", "player.exe"
+            VALUE "ProductName", "player"
             VALUE "ProductVersion", "1, 0, 0, 1"
         END
     END
@@ -179,7 +201,7 @@ BEGIN
     END
 END
 
-#endif    // English (United States) resources
+#endif    // 英语(美国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

@@ -30,9 +30,6 @@
     <ClCompile Include="..\Classes\ProjectConfig\SimulatorConfig.cpp">
       <Filter>src\ProjectConfig</Filter>
     </ClCompile>
-    <ClCompile Include="SimulatorWindow.cpp">
-      <Filter>win32</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -49,9 +46,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ProjectConfig\SimulatorConfig.h">
       <Filter>src\ProjectConfig</Filter>
-    </ClInclude>
-    <ClInclude Include="SimulatorWindow.h">
-      <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
   </ItemGroup>

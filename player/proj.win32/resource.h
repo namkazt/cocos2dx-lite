@@ -1,12 +1,13 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.rc
+// Microsoft Visual C++ 生成的包含文件。
+// 供 game.rc 使用
 //
 #define IDS_PROJNAME                    100
 #define IDR_TESTLUA                     100
 #define IDR_MENU_COCOS                  201
 #define IDD_DIALOG1                     202
 #define IDD_DIALOG_ABOUT                202
+#define IDR_ACCELERATOR1                202
 #define IDC_EDIT2                       1001
 #define ID_VIEW_SIZE                    30001
 #define ID_FILE_NEW_WINDOW              32771
@@ -25,13 +26,14 @@
 #define ID_VIEW_ZOOMOUT50               32787
 #define ID_VIEW_ZOOMOUT25               32788
 #define ID_CONTROL_TOP                  32793
+#define ID_ACCELERATOR32794             32794
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        201
-#define _APS_NEXT_COMMAND_VALUE         32794
+#define _APS_NEXT_RESOURCE_VALUE        203
+#define _APS_NEXT_COMMAND_VALUE         32796
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
