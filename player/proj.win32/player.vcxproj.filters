@@ -53,6 +53,7 @@
     <ClInclude Include="SimulatorWindow.h">
       <Filter>win32</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

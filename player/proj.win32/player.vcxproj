@@ -159,6 +159,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ProjectConfig\ProjectConfig.h" />
     <ClInclude Include="..\Classes\ProjectConfig\SimulatorConfig.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SimulatorWindow.h" />
   </ItemGroup>
   <ItemGroup>

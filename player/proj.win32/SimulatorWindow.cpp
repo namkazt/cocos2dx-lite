@@ -1,5 +1,6 @@
 /****************************************************************************
 Copyright (c) 2013 cocos2d-x.org
+@2015 by yinjimmy
 
 http://www.cocos2d-x.org
 
@@ -31,6 +32,7 @@ THE SOFTWARE.
 
 #include <string>
 #include <vector>
+
 using namespace std;
 using namespace cocos2d;
 
@@ -39,13 +41,13 @@ WNDPROC g_oldProc=NULL;
 bool g_landscape=false;
 bool g_windTop = false;
 CCSize g_screenSize;
-GLView* g_eglView=NULL;
-INT_PTR CALLBACK AboutDialogCallback(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
+INT_PTR CALLBACK AboutDialogCallback(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
 void createViewMenu()
 {
-    HMENU hSysMenu = GetSystemMenu(g_eglView->getWin32Window(), FALSE);
+	auto glview = Director::getInstance()->getOpenGLView();
+    HMENU hSysMenu = GetSystemMenu(glview->getWin32Window(), FALSE);
     HMENU viewMenu = GetSubMenu(hSysMenu, 8);
 	int count = SimulatorConfig::getInstance()->getScreenSizeCount();
     for (int i = count - 1; i >= 0; --i)
@@ -69,10 +71,12 @@ void createViewMenu()
 
 void updateMenu()
 {
-    HMENU hSysMenu = GetSystemMenu(g_eglView->getWin32Window(), FALSE);
+	auto glview = Director::getInstance()->getOpenGLView();
+    HMENU hSysMenu = GetSystemMenu(glview->getWin32Window(), FALSE);
     HMENU viewMenu = GetSubMenu(hSysMenu, 8);
     HMENU viewControl = GetSubMenu(hSysMenu, 9);
 
+	// landscape
     if (g_landscape)
     {
         CheckMenuItem(viewMenu, ID_VIEW_PORTRAIT, MF_BYCOMMAND | MF_UNCHECKED);
@@ -84,23 +88,16 @@ void updateMenu()
         CheckMenuItem(viewMenu, ID_VIEW_LANDSCAPE, MF_BYCOMMAND | MF_UNCHECKED);
     }
 
+	// top
     if (g_windTop)
     {
-        ::SetWindowPos(g_eglView->getWin32Window(),HWND_TOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
+        ::SetWindowPos(glview->getWin32Window(),HWND_TOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
         CheckMenuItem(viewControl, ID_CONTROL_TOP, MF_BYCOMMAND | MF_CHECKED);
-
-    }else
+	}
+	else
     {
-        ::SetWindowPos(g_eglView->getWin32Window(),HWND_NOTOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
+        ::SetWindowPos(glview->getWin32Window(),HWND_NOTOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
         CheckMenuItem(viewControl, ID_CONTROL_TOP, MF_BYCOMMAND | MF_UNCHECKED);
-    }
-    int width = g_screenSize.width;
-    int height = g_screenSize.height;
-    if (height > width)
-    {
-        int w = width;
-        width = height;
-        height = w;
     }
 
     int count = SimulatorConfig::getInstance()->getScreenSizeCount();
@@ -109,14 +106,14 @@ void updateMenu()
         bool bSel = false;
 
         SimulatorScreenSize size = SimulatorConfig::getInstance()->getScreenSize(i);
-        if (size.width == width && size.height == height)
+        if ((size.width == g_screenSize.width && size.height == g_screenSize.height) || (size.width == g_screenSize.height && size.height == g_screenSize.width))
         {
             bSel = true;
         }
         CheckMenuItem(viewMenu, i, MF_BYPOSITION | (bSel? MF_CHECKED : MF_UNCHECKED));
     }
 
-    int scale=g_eglView->getFrameZoomFactor()*100;
+    int scale = glview->getFrameZoomFactor()*100;
     CheckMenuItem(viewMenu, ID_VIEW_ZOOMOUT100, MF_BYCOMMAND | MF_UNCHECKED);
     CheckMenuItem(viewMenu, ID_VIEW_ZOOMOUT75, MF_BYCOMMAND | MF_UNCHECKED);
     CheckMenuItem(viewMenu, ID_VIEW_ZOOMOUT50, MF_BYCOMMAND | MF_UNCHECKED);
@@ -143,20 +140,20 @@ void updateMenu()
 /*@brief updateView*/
 void updateView()
 {
-
-    auto policy = g_eglView->getResolutionPolicy();
-    auto designSize = g_eglView->getDesignResolutionSize();
+	auto glview = Director::getInstance()->getOpenGLView();
+    auto policy = glview->getResolutionPolicy();
+    auto designSize = glview->getDesignResolutionSize();
 
     if (g_landscape)
     {
-        g_eglView->setFrameSize(g_screenSize.width, g_screenSize.height);
+        glview->setFrameSize(g_screenSize.width, g_screenSize.height);
     }
     else
     {
-        g_eglView->setFrameSize(g_screenSize.height, g_screenSize.width);
+        glview->setFrameSize(g_screenSize.height, g_screenSize.width);
     }
 
-    g_eglView->setDesignResolutionSize(designSize.width, designSize.height, policy);
+    glview->setDesignResolutionSize(designSize.width, designSize.height, policy);
 
     updateMenu();
 }
@@ -177,6 +174,7 @@ void onViewChangeOrientation(int viewMenuID)
 
 void onViewZoomOut(int viewMenuID)
 {
+	auto glview = Director::getInstance()->getOpenGLView();
     float scale = 1.0;
     switch (viewMenuID)
     {
@@ -195,7 +193,7 @@ void onViewZoomOut(int viewMenuID)
     default:
         break;
     }
-	dynamic_cast<GLViewImpl*>(g_eglView)->setFrameZoomFactor(scale);
+	glview->setFrameZoomFactor(scale);
     updateView();
 }
 
@@ -214,12 +212,14 @@ void onViewChangeFrameSize(int viewMenuID)
 
 void onHelpAbout()
 {
-    DialogBox(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_DIALOG_ABOUT), g_eglView->getWin32Window(), AboutDialogCallback);
+	auto glview = Director::getInstance()->getOpenGLView();
+    DialogBox(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_DIALOG_ABOUT), glview->getWin32Window(), AboutDialogCallback);
 }
 
 void shutDownApp()
 {
-    HWND hWnd=g_eglView->getWin32Window();
+	auto glview = Director::getInstance()->getOpenGLView();
+    HWND hWnd = glview->getWin32Window();
     ::SendMessage(hWnd,WM_CLOSE,NULL,NULL);
 }
 
@@ -319,16 +319,21 @@ INT_PTR CALLBACK AboutDialogCallback(HWND hDlg, UINT message, WPARAM wParam, LPA
 
 void createSimulator(const std::string& viewName, int width, int height, float frameZoomFactor)
 {
-    if (g_eglView)
+	auto glview = Director::getInstance()->getOpenGLView();
+    if (glview)
     {
         return;
     }
 
-    g_eglView = GLViewImpl::createWithRect(viewName ,Rect(0, 0, width, height), frameZoomFactor);
+	g_landscape = width > height;
+	g_screenSize.width = width;
+	g_screenSize.height = height;
+	
+	glview = GLViewImpl::createWithRect(viewName ,Rect(0, 0, width, height), frameZoomFactor);
     auto director = Director::getInstance();
-    director->setOpenGLView(g_eglView);
+    director->setOpenGLView(glview);
 
-    HWND hWnd = g_eglView->getWin32Window();
+    HWND hWnd = glview->getWin32Window();
     HMENU hMenu = LoadMenu(GetModuleHandle(NULL), MAKEINTRESOURCE(IDR_MENU_COCOS));
     HMENU hSysMenu = GetSystemMenu(hWnd, FALSE);
     HMENU hviewMenu = GetSubMenu(hMenu,1);
@@ -336,8 +341,8 @@ void createSimulator(const std::string& viewName, int width, int height, float f
     AppendMenu(hSysMenu,MF_SEPARATOR,0,NULL);
     if (hSysMenu != INVALID_HANDLE_VALUE && hMenu != INVALID_HANDLE_VALUE)
     {
-        AppendMenu(hSysMenu, MF_POPUP, (UINT)hviewMenu, TEXT("view"));
-        AppendMenu(hSysMenu, MF_POPUP, (UINT)hcontrolMenu, TEXT("control"));
+        AppendMenu(hSysMenu, MF_POPUP, (UINT)hviewMenu, TEXT("View"));
+        AppendMenu(hSysMenu, MF_POPUP, (UINT)hcontrolMenu, TEXT("Control"));
     }
     //SetMenu(hWnd, hMenu);
     createViewMenu();
