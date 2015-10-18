@@ -103,7 +103,7 @@
                             <menuItem isSeparatorItem="YES" id="673"/>
                             <menuItem title="Close" keyEquivalent="w" id="611">
                                 <connections>
-                                    <action selector="onFileClose:" target="-1" id="661"/>
+                                    <action selector="onFileClose:" target="536" id="bJb-W2-HUG"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -329,13 +329,13 @@
                             <menuItem title="Write Debug Log to File" id="636">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="onPlayerWriteDebugLogToFile:" target="-1" id="662"/>
+                                    <action selector="onPlayerWriteDebugLogToFile:" target="536" id="akg-PM-rZ3"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Debug Log" id="637">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="onPlayerOpenDebugLog:" target="-1" id="663"/>
+                                    <action selector="onPlayerOpenDebugLog:" target="536" id="9mJ-fu-Scp"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Upload to Device..." tag="1" enabled="NO" keyEquivalent="u" id="617">
@@ -370,20 +370,20 @@
                             <menuItem isSeparatorItem="YES" id="608"/>
                             <menuItem title="Relaunch" keyEquivalent="r" id="589">
                                 <connections>
-                                    <action selector="onPlayerRelaunch:" target="-1" id="664"/>
+                                    <action selector="onRelaunch:" target="536" id="snL-21-fNN"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="612"/>
                             <menuItem title="Show Project Sandbox" id="613">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="onPlayerShowProjectSandbox:" target="-1" id="665"/>
+                                    <action selector="onPlayerShowProjectSandbox:" target="536" id="yTq-qn-leR"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Show Project Files" id="614">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="onPlayerShowProjectFiles:" target="-1" id="666"/>
+                                    <action selector="onPlayerShowProjectFiles:" target="536" id="HqR-od-zWV"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -396,34 +396,34 @@
                             <menuItem title="Portait" state="on" id="592">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="onScreenPortait:" target="-1" id="667"/>
+                                    <action selector="onScreenPortait:" target="536" id="6Tu-EK-dzv"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Landscape" id="593">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="onScreenLandscape:" target="-1" id="647"/>
+                                    <action selector="onScreenLandscape:" target="536" id="TWf-RV-QC9"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="594"/>
                             <menuItem title="Actual (100%)" state="on" tag="100" keyEquivalent="0" id="595">
                                 <connections>
-                                    <action selector="onScreenZoomOut:" target="-1" id="yUj-fN-Rh7"/>
+                                    <action selector="onScreenZoomOut:" target="536" id="MyH-xq-OyP"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Zoom Out (75%)" tag="75" keyEquivalent="6" id="pqR-xy-5ip">
                                 <connections>
-                                    <action selector="onScreenZoomOut:" target="-1" id="yps-LZ-egB"/>
+                                    <action selector="onScreenZoomOut:" target="536" id="dkG-uo-0l6"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Zoom Out (50%)" tag="50" keyEquivalent="5" id="596">
                                 <connections>
-                                    <action selector="onScreenZoomOut:" target="-1" id="654"/>
+                                    <action selector="onScreenZoomOut:" target="536" id="rag-HS-tFt"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Zoom Out (25%)" tag="25" keyEquivalent="4" id="QB8-6D-hAr">
                                 <connections>
-                                    <action selector="onScreenZoomOut:" target="-1" id="DSu-if-D2T"/>
+                                    <action selector="onScreenZoomOut:" target="536" id="fhn-Mo-swQ"/>
                                 </connections>
                             </menuItem>
                         </items>
