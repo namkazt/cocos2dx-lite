@@ -112,6 +112,7 @@ public:
     /**Size(0,0).*/
     static const Size ZERO;
 };
+#define SizeMaker(w,h) cocos2d::Size(w,h)
 
 /**Rectangle area.*/
 class CC_DLL Rect

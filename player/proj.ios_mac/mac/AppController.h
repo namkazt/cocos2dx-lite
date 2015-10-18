@@ -13,6 +13,7 @@ void createSimulator(const std::string& viewName, int width, int height, float f
     BOOL _isAlwaysOnTop;
     AppDelegate *_app;
     ProjectConfig _project;
+    BOOL _hasPopupDialog;
     int _debugLogFile;
     
     //log file

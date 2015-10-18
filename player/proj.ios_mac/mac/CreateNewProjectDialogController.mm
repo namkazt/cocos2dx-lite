@@ -18,6 +18,16 @@
     return self;
 }
 
+- (void) showAlertWithoutSheet:(NSString*)message withTitle:(NSString*)title
+{
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+    [alert addButtonWithTitle:@"OK"];
+    [alert setMessageText:message];
+    [alert setInformativeText:title];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert runModal];
+}
+
 - (void)dealloc
 {
     [super dealloc];
@@ -60,21 +70,31 @@
     // check all filed
     NSString *projectLocation = [textFieldProjetLocation stringValue];
     NSString *packageName = [textFieldPackageName stringValue];
-//
     
     // run script
-    NSString *createProjectShellFilePath = [NSString stringWithFormat:@"%s%@", SimulatorConfig::getInstance()->getQuickCocos2dxRootPath().c_str(),@"bin/create_project.sh"];
-    NSString *commandLine = [NSString stringWithFormat:@"%@ -f -p %@ -o %@", createProjectShellFilePath, packageName, projectLocation];
+    NSString *createProjectShellFilePath = [NSString stringWithFormat:@"%s/tools/cocos2d-console/bin/cocos",
+                                                      SimulatorConfig::getInstance()->getQuickCocos2dxRootPath().c_str()];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:createProjectShellFilePath])
+    {
+        NSString *msg = [NSString stringWithFormat:@"%@ isn't exist, pls check your quick env.", createProjectShellFilePath];
+        [self showAlertWithoutSheet:msg withTitle:@"quick player"];
+        return ;
+    }
+    NSString *commandLine = [NSString stringWithFormat:@"%@ new -l lua -p %@ -d %@ lua\n",
+                                                                         createProjectShellFilePath,
+                                                                         packageName,
+                                                                         projectLocation];
     [[[textView textStorage] mutableString] appendString:commandLine];
     
     NSTask *task;
     task = [[NSTask alloc] init];
     [task setLaunchPath: createProjectShellFilePath];
     
-    NSArray *arguments;
-    arguments = [NSArray arrayWithObjects: @"-f",
-                                            [NSString stringWithFormat:@"-p %@", packageName],
-                                            [NSString stringWithFormat:@"-o %@", projectLocation], nil];
+    NSArray *arguments = [NSArray arrayWithObjects:@"new"
+                                                   , @"-l lua"
+                                                   , [NSString stringWithFormat:@"-d %@", projectLocation]
+                                                   , [NSString stringWithFormat:@"-p %@", packageName]
+                                                   , nil];
     [task setArguments: arguments];
     
     NSPipe *pipe;
