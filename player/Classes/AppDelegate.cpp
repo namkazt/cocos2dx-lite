@@ -47,13 +47,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		title.append(")");
 		extern void createSimulator(const std::string& viewName, int width, int height, float frameZoomFactor = 1.0f);
 		createSimulator(title, designResolutionSize.width, designResolutionSize.height);
+        glview = director->getOpenGLView();
 #else
         glview = GLViewImpl::create("player");
 		director->setOpenGLView(glview);
 #endif
     }
-
-	glview = director->getOpenGLView();
 
     // turn on display FPS
     director->setDisplayStats(true);

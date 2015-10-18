@@ -216,7 +216,8 @@ void createSimulator(const std::string& viewName, int width, int height, float f
     cocos2d::Size frameSize = _project.getFrameSize();
     
     const cocos2d::Rect frameRect = cocos2d::Rect(0, 0, frameSize.width, frameSize.height);
-    GLViewImpl *eglView = GLViewImpl::createWithRect("player", frameRect, frameScale);
+    NSString *title = [NSString stringWithFormat:@"quick-x-player (%s)", cocos2dVersion()];
+    GLViewImpl *eglView = GLViewImpl::createWithRect([title UTF8String], frameRect, frameScale);
     
     auto director = Director::getInstance();
     director->setOpenGLView(eglView);
@@ -325,16 +326,16 @@ void createSimulator(const std::string& viewName, int width, int height, float f
     
     [self loadLuaConfig];
     [self adjustEditMenuIndex];
-    if (!_project.isAppMenu())
-    {
-        NSMenu *mainMenu = [[NSApplication sharedApplication] mainMenu];
-        NSArray *menuArray = [mainMenu itemArray];
-        for (int i = 1; i < [menuArray count]; i++)
-        {
-            id onemenu = [menuArray objectAtIndex:i];
-            [mainMenu removeItem:onemenu];
-        }
-    }
+//    if (!_project.isAppMenu())
+//    {
+//        NSMenu *mainMenu = [[NSApplication sharedApplication] mainMenu];
+//        NSArray *menuArray = [mainMenu itemArray];
+//        for (int i = 1; i < [menuArray count]; i++)
+//        {
+//            id onemenu = [menuArray objectAtIndex:i];
+//            [mainMenu removeItem:onemenu];
+//        }
+//    }
     
     // app
     _app = new AppDelegate();
