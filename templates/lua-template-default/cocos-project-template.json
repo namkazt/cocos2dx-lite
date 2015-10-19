@@ -127,28 +127,6 @@
             "from": ".",
             "to": "frameworks/cocos2d-x"
         },
-        "append_dir": [
-            {
-                "from": "tools/simulator/libsimulator",
-                "to": "frameworks/cocos2d-x/tools/simulator/libsimulator",
-                "exclude": [
-                    "proj.win32/Debug",
-                    "proj.win32/Release"
-                ]
-            },
-            {
-                "from": "tools/simulator/frameworks/runtime-src/Classes/ide-support",
-                "to": "frameworks/runtime-src/Classes/ide-support",
-                "exclude": [
-                    "RuntimeJsImpl.h",
-                    "RuntimeJsImpl.cpp"
-                ]
-            },
-            {
-                "from": "tools/simulator/frameworks/runtime-src/Classes/lua_module_register.h",
-                "to": "frameworks/runtime-src/Classes/"
-            }
-        ],
         "project_rename": {
             "src_project_name": "HelloLua",
             "files": [
