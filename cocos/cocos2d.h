@@ -129,7 +129,6 @@ THE SOFTWARE.
 #include "2d/CCParticleSystem.h"
 #include "2d/CCParticleSystemQuad.h"
 #include "2d/CCProgressTimer.h"
-#include "2d/CCProtectedNode.h"
 #include "2d/CCRenderTexture.h"
 #include "2d/CCScene.h"
 #include "2d/CCTransition.h"

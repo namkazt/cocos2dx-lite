@@ -70,7 +70,6 @@ cocos2d.cpp \
 2d/CCParticleSystem.cpp \
 2d/CCParticleSystemQuad.cpp \
 2d/CCProgressTimer.cpp \
-2d/CCProtectedNode.cpp \
 2d/CCRenderTexture.cpp \
 2d/CCScene.cpp \
 2d/CCSprite.cpp \
@@ -141,7 +140,6 @@ base/CCTouch.cpp \
 base/CCUserDefault-android.cpp \
 base/CCUserDefault.cpp \
 base/CCValue.cpp \
-base/ObjectFactory.cpp \
 base/TGAlib.cpp \
 base/ZipUtils.cpp \
 base/allocator/CCAllocatorDiagnostics.cpp \

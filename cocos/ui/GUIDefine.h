@@ -26,7 +26,7 @@
 #define __TestCpp__GUIDefine__
 
 #include <string>
-#include "base/ObjectFactory.h"
+#include "ui/ObjectFactory.h"
 
 ///@cond DO_NOT_SHOW
 //

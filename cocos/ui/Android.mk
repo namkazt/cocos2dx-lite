@@ -10,6 +10,8 @@ LOCAL_ARM_MODE := arm
 endif
 
 LOCAL_SRC_FILES := \
+CCProtectedNode.cpp \
+ObjectFactory.cpp \
 UIWidget.cpp \
 UILayout.cpp \
 UILayoutParameter.cpp \
