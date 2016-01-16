@@ -6,7 +6,6 @@ LOCAL_MODULE := cocos_network_static
 LOCAL_MODULE_FILENAME := libnetwork
 
 LOCAL_SRC_FILES := HttpClient-android.cpp \
-SocketIO.cpp \
 WebSocket.cpp \
 CCDownloader.cpp \
 CCDownloader-android.cpp
