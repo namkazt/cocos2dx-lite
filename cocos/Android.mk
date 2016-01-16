@@ -59,7 +59,6 @@ cocos2d.cpp \
 2d/CCMotionStreak.cpp \
 2d/CCNode.cpp \
 2d/CCNodeGrid.cpp \
-2d/CCParallaxNode.cpp \
 2d/CCParticleBatchNode.cpp \
 2d/CCParticleExamples.cpp \
 2d/CCParticleSystem.cpp \

@@ -1240,10 +1240,6 @@
 		9FCF46AD1C48F41C00CC16AD /* ObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF46AA1C48F41C00CC16AD /* ObjectFactory.cpp */; };
 		9FCF46AE1C48F41C00CC16AD /* ObjectFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FCF46AB1C48F41C00CC16AD /* ObjectFactory.h */; };
 		9FCF46AF1C48F41C00CC16AD /* ObjectFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FCF46AB1C48F41C00CC16AD /* ObjectFactory.h */; };
-		9FCF46B21C4A464D00CC16AD /* CCParallaxNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF46B01C4A464D00CC16AD /* CCParallaxNode.cpp */; };
-		9FCF46B31C4A464D00CC16AD /* CCParallaxNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF46B01C4A464D00CC16AD /* CCParallaxNode.cpp */; };
-		9FCF46B41C4A464D00CC16AD /* CCParallaxNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FCF46B11C4A464D00CC16AD /* CCParallaxNode.h */; };
-		9FCF46B51C4A464D00CC16AD /* CCParallaxNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FCF46B11C4A464D00CC16AD /* CCParallaxNode.h */; };
 		A045F6D61BA81577005076C7 /* CCTextureCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A045F6D41BA81577005076C7 /* CCTextureCube.cpp */; };
 		A045F6D71BA81577005076C7 /* CCTextureCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A045F6D41BA81577005076C7 /* CCTextureCube.cpp */; };
 		A045F6D81BA81577005076C7 /* CCTextureCube.h in Headers */ = {isa = PBXBuildFile; fileRef = A045F6D51BA81577005076C7 /* CCTextureCube.h */; };
@@ -2163,8 +2159,6 @@
 		9FCF46A51C48F40800CC16AD /* CCProtectedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProtectedNode.h; sourceTree = "<group>"; };
 		9FCF46AA1C48F41C00CC16AD /* ObjectFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectFactory.cpp; sourceTree = "<group>"; };
 		9FCF46AB1C48F41C00CC16AD /* ObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectFactory.h; sourceTree = "<group>"; };
-		9FCF46B01C4A464D00CC16AD /* CCParallaxNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCParallaxNode.cpp; sourceTree = "<group>"; };
-		9FCF46B11C4A464D00CC16AD /* CCParallaxNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCParallaxNode.h; sourceTree = "<group>"; };
 		A045F6D41BA81577005076C7 /* CCTextureCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCTextureCube.cpp; sourceTree = "<group>"; };
 		A045F6D51BA81577005076C7 /* CCTextureCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTextureCube.h; sourceTree = "<group>"; };
 		A045F6DA1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCameraBackgroundBrush.cpp; sourceTree = "<group>"; };
@@ -2677,8 +2671,6 @@
 				1A570207180BCBDF0088DEC7 /* CCMotionStreak.h */,
 				1A570200180BCBD40088DEC7 /* CCClippingNode.cpp */,
 				1A570201180BCBD40088DEC7 /* CCClippingNode.h */,
-				9FCF46B01C4A464D00CC16AD /* CCParallaxNode.cpp */,
-				9FCF46B11C4A464D00CC16AD /* CCParallaxNode.h */,
 			);
 			name = "misc-nodes";
 			sourceTree = "<group>";
@@ -4150,7 +4142,6 @@
 				50ABBE5F1925AB6F00A911A9 /* CCEventListener.h in Headers */,
 				1A5701C9180BCB5A0088DEC7 /* CCLabelTextFormatter.h in Headers */,
 				5034CA37191D591100CE6051 /* ccShader_PositionColorLengthTexture.vert in Headers */,
-				9FCF46B41C4A464D00CC16AD /* CCParallaxNode.h in Headers */,
 				15AE1B6419AADA9900C27E9E /* UICheckBox.h in Headers */,
 				1A5701CD180BCB5A0088DEC7 /* CCLabelTTF.h in Headers */,
 				15AE1A3319AAD3D500C27E9E /* b2CircleShape.h in Headers */,
@@ -4704,7 +4695,6 @@
 				503DD8FA1926B0DB00CD74DD /* CCIMEDispatcher.h in Headers */,
 				B29A7DE619EE1B7700872B35 /* SkeletonAnimation.h in Headers */,
 				50ABBEC81925AB6F00A911A9 /* etc1.h in Headers */,
-				9FCF46B51C4A464D00CC16AD /* CCParallaxNode.h in Headers */,
 				50ABBDB01925AB4100A911A9 /* CCRenderer.h in Headers */,
 				3E6176771960F89B00DE83F5 /* CCEventListenerController.h in Headers */,
 				50ABBD861925AB4100A911A9 /* CCBatchCommand.h in Headers */,
@@ -4869,7 +4859,6 @@
 			files = (
 				15AE1A9019AAD40300C27E9E /* b2WeldJoint.cpp in Sources */,
 				50ABBE2B1925AB6F00A911A9 /* ccCArray.cpp in Sources */,
-				9FCF46B21C4A464D00CC16AD /* CCParallaxNode.cpp in Sources */,
 				B29A7E3B19EE1B7700872B35 /* Animation.c in Sources */,
 				292DB14F19B4574100A80320 /* UIEditBoxImpl-stub.cpp in Sources */,
 				B29A7E0B19EE1B7700872B35 /* Atlas.c in Sources */,
@@ -5398,7 +5387,6 @@
 				1A57022E180BCC1A0088DEC7 /* CCParticleSystemQuad.cpp in Sources */,
 				50ABBD901925AB4100A911A9 /* CCGLProgramCache.cpp in Sources */,
 				B29A7DD819EE1B7700872B35 /* SkeletonData.c in Sources */,
-				9FCF46B31C4A464D00CC16AD /* CCParallaxNode.cpp in Sources */,
 				1A57027F180BCC900088DEC7 /* CCSprite.cpp in Sources */,
 				15AE1B8819AADA9A00C27E9E /* UICheckBox.cpp in Sources */,
 				15AE1A4B19AAD3D500C27E9E /* b2EdgeShape.cpp in Sources */,
