@@ -173,11 +173,6 @@ deprecated/CCDictionary.cpp \
 deprecated/CCNotificationCenter.cpp \
 deprecated/CCSet.cpp \
 deprecated/CCString.cpp \
-physics/CCPhysicsBody.cpp \
-physics/CCPhysicsContact.cpp \
-physics/CCPhysicsJoint.cpp \
-physics/CCPhysicsShape.cpp \
-physics/CCPhysicsWorld.cpp \
 ../external/ConvertUTF/ConvertUTFWrapper.cpp \
 ../external/ConvertUTF/ConvertUTF.c \
 ../external/tinyxml2/tinyxml2.cpp \
