@@ -35,19 +35,25 @@ bool HelloWorld::init()
     //    you may modify it.
 
     // add a "close" icon to exit the progress. it's an autorelease object
-    auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
-                                           CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
-    
-	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
+    auto closeItem = Sprite::create("CloseNormal.png");
+    closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
+    addChild(closeItem);
 
-    // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
-    menu->setPosition(Vec2::ZERO);
-    this->addChild(menu, 1);
-
+    // touch event
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = [](Touch *touch, Event *event) -> bool {
+        if (event->getCurrentTarget()->getBoundingBox().containsPoint(touch->getLocation())) {
+            Director::getInstance()->end();
+            
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+            exit(0);
+#endif
+        }
+        return true;
+    };
+    getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, closeItem);
+    
     /////////////////////////////
     // 3. add your codes below...
 
@@ -63,14 +69,4 @@ bool HelloWorld::init()
 	this->addChild(label);
     
     return true;
-}
-
-
-void HelloWorld::menuCloseCallback(Ref* pSender)
-{
-    Director::getInstance()->end();
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
-#endif
 }
