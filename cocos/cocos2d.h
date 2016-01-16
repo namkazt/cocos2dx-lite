@@ -255,16 +255,6 @@ THE SOFTWARE.
 // textures
 #include "renderer/CCTextureAtlas.h"
 
-// tilemap_parallax_nodes
-#include "2d/CCParallaxNode.h"
-#include "2d/CCTMXLayer.h"
-#include "2d/CCTMXObjectGroup.h"
-#include "2d/CCTMXTiledMap.h"
-#include "2d/CCTMXXMLParser.h"
-#include "2d/CCTileMapAtlas.h"
-#include "2d/CCFastTMXLayer.h"
-#include "2d/CCFastTMXTiledMap.h"
-
 // component
 #include "2d/CCComponent.h"
 #include "2d/CCComponentContainer.h"
