@@ -49,7 +49,6 @@ THE SOFTWARE.
 #include "base/CCMap.h"
 #include "base/CCNS.h"
 #include "base/CCProfiling.h"
-#include "base/CCProperties.h"
 #include "base/CCRef.h"
 #include "base/CCRefPtr.h"
 #include "base/CCScheduler.h"
