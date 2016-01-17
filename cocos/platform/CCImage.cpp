@@ -1944,6 +1944,7 @@ bool Image::initWithS3TCData(const unsigned char * data, ssize_t dataLen)
         else
         {   //if it is not gles or device do not support S3TC, decode texture by software
             
+#if CC_USE_S3TC > 0
             CCLOG("cocos2d: Hardware S3TC decoder not present. Using software decoder");
 
             int bytePerPixel = 4;
@@ -1967,6 +1968,9 @@ bool Image::initWithS3TCData(const unsigned char * data, ssize_t dataLen)
             _mipmaps[i].len = (stride * height);
             memcpy((void *)_mipmaps[i].address, (void *)&decodeImageData[0], _mipmaps[i].len);
             decodeOffset += stride * height;
+#else
+            CCLOG("cocos2d: S3TC decoder has been disable");
+#endif
         }
         
         encodeOffset += size;
