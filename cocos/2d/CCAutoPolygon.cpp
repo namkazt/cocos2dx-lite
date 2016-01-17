@@ -317,7 +317,7 @@ std::vector<cocos2d::Vec2> AutoPolygon::rdp(std::vector<cocos2d::Vec2> v, const 
     if(v.size() < 3)
         return v;
     
-    int index = -1;
+    size_t index = -1;
     float dist = 0;
     //not looping first and last point
     for(size_t i = 1; i < v.size()-1; i++)
