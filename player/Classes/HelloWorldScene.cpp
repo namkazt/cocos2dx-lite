@@ -60,7 +60,8 @@ bool HelloWorld::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    auto label = Label::createWithTTF("I'm back", "fonts/arial.ttf", 24);
+//    auto label = Label::createWithTTF("I'm back", "fonts/arial.ttf", 24);
+    auto label = Label::createWithSystemFont("I'm back", "arial", 24);
     
     // position the label on the center of the screen
     label->setPosition(visibleSize.width/2, visibleSize.height/2);
