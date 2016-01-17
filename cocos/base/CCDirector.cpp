@@ -144,8 +144,6 @@ bool Director::init(void)
     
     _contentScaleFactor = 1.0f;
 
-    _console = new (std::nothrow) Console;
-
     // scheduler
     _scheduler = new (std::nothrow) Scheduler();
     // action manager
@@ -191,9 +189,6 @@ Director::~Director(void)
     delete _eventProjectionChanged;
 
     delete _renderer;
-
-    delete _console;
-
 
     CC_SAFE_RELEASE(_eventDispatcher);
     
