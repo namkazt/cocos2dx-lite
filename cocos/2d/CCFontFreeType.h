@@ -30,6 +30,7 @@
 
 #include "CCFont.h"
 
+#if CC_USE_FREETYPE > 0
 #include <string>
 #include <ft2build.h>
 
@@ -112,4 +113,5 @@ private:
 
 NS_CC_END
 
-#endif
+#endif // CC_USE_FREETYPE
+#endif // _FontFreetype_h_

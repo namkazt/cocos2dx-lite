@@ -23,6 +23,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
+#if CC_USE_FREETYPE > 0
+
 #include "2d/CCFontFreeType.h"
 #include FT_BBOX_H
 #include "edtaa3func.h"
@@ -635,3 +637,5 @@ const char* FontFreeType::getGlyphCollection() const
 }
 
 NS_CC_END
+
+#endif // CC_USE_FREETYPE

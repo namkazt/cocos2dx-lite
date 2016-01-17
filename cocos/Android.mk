@@ -38,8 +38,6 @@ cocos2d.cpp \
 2d/CCCameraBackgroundBrush.cpp \
 2d/CCClippingNode.cpp \
 2d/CCClippingRectangleNode.cpp \
-2d/CCComponent.cpp \
-2d/CCComponentContainer.cpp \
 2d/CCDrawNode.cpp \
 2d/CCDrawingPrimitives.cpp \
 2d/CCFont.cpp \
@@ -64,6 +62,7 @@ cocos2d.cpp \
 2d/CCProgressTimer.cpp \
 2d/CCRenderTexture.cpp \
 2d/CCScene.cpp \
+2d/CCPolygonInfo.cpp \
 2d/CCSprite.cpp \
 2d/CCSpriteBatchNode.cpp \
 2d/CCSpriteFrame.cpp \

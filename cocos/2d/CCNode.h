@@ -35,8 +35,6 @@
 #include "base/CCScriptSupport.h"
 #include "math/CCAffineTransform.h"
 #include "math/CCMath.h"
-#include "2d/CCComponentContainer.h"
-#include "2d/CCComponent.h"
 
 NS_CC_BEGIN
 
@@ -1643,45 +1641,6 @@ public:
     void setAdditionalTransform(const AffineTransform& additionalTransform);
 
     /// @} end of Coordinate Converters
-
-      /// @{
-    /// @name component functions
-    /**
-     * Gets a component by its name.
-     *
-     * @param name A given name of component.
-     * @return The Component by name.
-     */
-    Component* getComponent(const std::string& name);
-
-    /**
-     * Adds a component.
-     *
-     * @param component A given component.
-     * @return True if added success.
-     */
-    virtual bool addComponent(Component *component);
-
-    /**
-     * Removes a component by its name.
-     *
-     * @param name A given name of component.
-     * @return True if removed success.
-     */
-    virtual bool removeComponent(const std::string& name);
-
-    /** 
-     * Removes a component by its pointer.
-     *
-     * @param component A given component.
-     * @return True if removed success.
-     */
-    virtual bool removeComponent(Component *component);
-    /**
-     * Removes all components
-     */
-    virtual void removeAllComponents();
-    /// @} end of component functions
     
     // overrides
     virtual GLubyte getOpacity() const;
@@ -1837,8 +1796,6 @@ protected:
     int _updateScriptHandler;         ///< script handler for update() callback per frame, which is invoked from lua & javascript.
     ccScriptType _scriptType;         ///< type of script binding, lua or javascript
 #endif
-    
-    ComponentContainer *_componentContainer;        ///< Dictionary of components
     
     // opacity controls
     GLubyte		_displayedOpacity;

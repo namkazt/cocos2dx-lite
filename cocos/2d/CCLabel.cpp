@@ -173,6 +173,7 @@ Label* Label::create(const std::string& text, const std::string& font, float fon
     {
         return createWithSystemFont(text,font,fontSize,dimensions,hAlignment,vAlignment);
     }
+    return nullptr;
 }
 
 Label* Label::createWithSystemFont(const std::string& text, const std::string& font, float fontSize, const Size& dimensions /* = Size::ZERO */, TextHAlignment hAlignment /* = TextHAlignment::LEFT */, TextVAlignment vAlignment /* = TextVAlignment::TOP */)
@@ -197,6 +198,7 @@ Label* Label::createWithSystemFont(const std::string& text, const std::string& f
 
 Label* Label::createWithTTF(const std::string& text, const std::string& fontFile, float fontSize, const Size& dimensions /* = Size::ZERO */, TextHAlignment hAlignment /* = TextHAlignment::LEFT */, TextVAlignment vAlignment /* = TextVAlignment::TOP */)
 {
+#if CC_USE_LABEL_TTF > 0
     auto ret = new (std::nothrow) Label(hAlignment,vAlignment);
 
     if (ret && FileUtils::getInstance()->isFileExist(fontFile))
@@ -214,11 +216,13 @@ Label* Label::createWithTTF(const std::string& text, const std::string& fontFile
     }
 
     delete ret;
+#endif // CC_USE_LABEL_TTF
     return nullptr;
 }
 
 Label* Label::createWithTTF(const TTFConfig& ttfConfig, const std::string& text, TextHAlignment hAlignment /* = TextHAlignment::CENTER */, int maxLineWidth /* = 0 */)
 {
+#if CC_USE_LABEL_TTF > 0
     auto ret = new (std::nothrow) Label(hAlignment);
 
     if (ret && FileUtils::getInstance()->isFileExist(ttfConfig.fontFilePath) && ret->setTTFConfig(ttfConfig))
@@ -231,6 +235,7 @@ Label* Label::createWithTTF(const TTFConfig& ttfConfig, const std::string& text,
     }
 
     delete ret;
+#endif // CC_USE_LABEL_TTF
     return nullptr;
 }
 
@@ -359,7 +364,7 @@ Label::Label(TextHAlignment hAlignment /* = TextHAlignment::LEFT */,
     addChild(_debugDrawNode);
 #endif
 
-    _purgeTextureListener = EventListenerCustom::create(FontAtlas::CMD_PURGE_FONTATLAS, [this](EventCustom* event){
+    _purgeTextureListener = EventListenerCustom::create(FontAtlas::CMD_PURGE_FONTATLAS, [this](EventCustom* event) {
         if (_fontAtlas && _currentLabelType == LabelType::TTF && event->getUserData() == _fontAtlas)
         {
             for (auto&& it : _letters)
@@ -547,6 +552,7 @@ void Label::setFontAtlas(FontAtlas* atlas,bool distanceFieldEnabled /* = false *
 
 bool Label::setTTFConfig(const TTFConfig& ttfConfig)
 {
+#if CC_USE_LABEL_TTF > 0
     FontAtlas *newAtlas = FontAtlasCache::getFontAtlasTTF(&ttfConfig);
 
     if (!newAtlas)
@@ -575,6 +581,9 @@ bool Label::setTTFConfig(const TTFConfig& ttfConfig)
     }
 
     return true;
+#else
+    return false;
+#endif
 }
 
 bool Label::setBMFontFilePath(const std::string& bmfontFilePath, const Vec2& imageOffset /* = Vec2::ZERO */)
@@ -815,6 +824,7 @@ void Label::updateQuads()
 
 void Label::enableGlow(const Color4B& glowColor)
 {
+#if CC_USE_LABEL_TTF > 0
     if (_currentLabelType == LabelType::TTF)
     {
         if (_fontConfig.distanceFieldEnabled == false)
@@ -832,6 +842,7 @@ void Label::enableGlow(const Color4B& glowColor)
         _effectColorF.a = glowColor.a / 255.0f;
         updateShaderProgram();
     }
+#endif // CC_USE_LABEL_TTF
 }
 
 void Label::enableOutline(const Color4B& outlineColor,int outlineSize /* = -1 */)

@@ -948,7 +948,9 @@ void Director::reset()
     // purge bitmap cache
     FontFNT::purgeCachedData();
     
+#if CC_USE_FREETYPE > 0
     FontFreeType::shutdownFreeType();
+#endif // CC_USE_FREETYPE
     
     // purge all managed caches
     

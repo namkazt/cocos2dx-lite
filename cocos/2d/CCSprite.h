@@ -31,11 +31,11 @@ THE SOFTWARE.
 #include <string>
 #include "2d/CCNode.h"
 #include "2d/CCDrawNode.h"
+#include "2d/CCPolygonInfo.h"
 #include "base/CCProtocols.h"
 #include "renderer/CCTextureAtlas.h"
 #include "renderer/CCTrianglesCommand.h"
 #include "renderer/CCCustomCommand.h"
-#include "2d/CCAutoPolygon.h"
 
 NS_CC_BEGIN
 

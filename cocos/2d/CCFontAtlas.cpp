@@ -55,6 +55,7 @@ FontAtlas::FontAtlas(Font &theFont)
 {
     _font->retain();
 
+#if CC_USE_FREETYPE > 0
     _fontFreeType = dynamic_cast<FontFreeType*>(_font);
     if (_fontFreeType)
     {
@@ -96,6 +97,7 @@ FontAtlas::FontAtlas(Font &theFont)
         eventDispatcher->addEventListenerWithFixedPriority(_rendererRecreatedListener, 1);
 #endif
     }
+#endif // CC_USE_FREETYPE
 }
 
 FontAtlas::~FontAtlas()
@@ -178,7 +180,7 @@ void FontAtlas::conversionU16TOGB2312(const std::u16string& u16Text, std::unorde
     auto gb2312StrSize = strLen * 2;
     auto gb2312Text = new (std::nothrow) char[gb2312StrSize];
     memset(gb2312Text, 0, gb2312StrSize);
-
+#if CC_USE_FREETYPE > 0
     switch (_fontFreeType->getEncoding())
     {
     case FT_ENCODING_GB2312:
@@ -213,7 +215,7 @@ void FontAtlas::conversionU16TOGB2312(const std::u16string& u16Text, std::unorde
         CCLOG("Unsupported encoding:%d", _fontFreeType->getEncoding());
         break;
     }
-
+#endif // CC_USE_FREETYPE
     unsigned short gb2312Code = 0;
     unsigned char* dst = (unsigned char*)&gb2312Code;
     unsigned short u16Code;
@@ -241,7 +243,6 @@ void FontAtlas::conversionU16TOGB2312(const std::u16string& u16Text, std::unorde
 void FontAtlas::findNewCharacters(const std::u16string& u16Text, std::unordered_map<unsigned short, unsigned short>& charCodeMap)
 {
     std::u16string newChars;
-    FT_Encoding charEncoding = _fontFreeType->getEncoding();
 
     //find new characters
     if (_letterDefinitions.empty())
@@ -264,6 +265,8 @@ void FontAtlas::findNewCharacters(const std::u16string& u16Text, std::unordered_
 
     if (!newChars.empty())
     {
+#if CC_USE_FREETYPE > 0
+        FT_Encoding charEncoding = _fontFreeType->getEncoding();
         switch (charEncoding)
         {
         case FT_ENCODING_UNICODE:
@@ -283,6 +286,9 @@ void FontAtlas::findNewCharacters(const std::u16string& u16Text, std::unordered_
             CCLOG("FontAtlas::findNewCharacters: Unsupported encoding:%d", charEncoding);
             break;
         }
+#else
+        CCLOG("FontAtlas::findNewCharacters: Unsupported freetype");
+#endif // CC_USE_FREETYPE
     }
 }
 
@@ -308,12 +314,17 @@ bool FontAtlas::prepareLetterDefinitions(const std::u16string& utf16Text)
     FontLetterDefinition tempDef;
 
     auto scaleFactor = CC_CONTENT_SCALE_FACTOR();
-    auto  pixelFormat = _fontFreeType->getOutlineSize() > 0 ? Texture2D::PixelFormat::AI88 : Texture2D::PixelFormat::A8;
+#if CC_USE_FREETYPE > 0
+    auto pixelFormat = _fontFreeType->getOutlineSize() > 0 ? Texture2D::PixelFormat::AI88 : Texture2D::PixelFormat::A8;
+#else
+    auto pixelFormat = Texture2D::PixelFormat::A8;
+#endif // CC_USE_FREETYPE
 
     float startY = _currentPageOrigY;
 
     for (auto&& it : codeMapOfNewChar)
     {
+#if CC_USE_FREETYPE > 0
         auto bitmap = _fontFreeType->getGlyphBitmap(it.second, bitmapWidth, bitmapHeight, tempRect, tempDef.xAdvance);
         if (bitmap && bitmapWidth > 0 && bitmapHeight > 0)
         {
@@ -378,7 +389,9 @@ bool FontAtlas::prepareLetterDefinitions(const std::u16string& utf16Text)
             tempDef.U = tempDef.U / scaleFactor;
             tempDef.V = tempDef.V / scaleFactor;
         }
-        else{
+        else
+#endif // CC_USE_FREETYPE
+        {
             if (tempDef.xAdvance)
                 tempDef.validDefinition = true;
             else

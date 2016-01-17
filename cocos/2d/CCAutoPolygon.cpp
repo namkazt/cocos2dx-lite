@@ -26,107 +26,14 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "CCAutoPolygon.h"
-#include "poly2tri/poly2tri.h"
 #include "base/CCDirector.h"
 #include "renderer/CCTextureCache.h"
+#include "poly2tri/poly2tri.h"
 #include "clipper/clipper.hpp"
-#include <algorithm>
-#include <math.h>
 
 USING_NS_CC;
 
-static unsigned short quadIndices[]={0,1,2, 3,2,1};
 const static float PRECISION = 10.0f;
-
-PolygonInfo::PolygonInfo(const PolygonInfo& other):
-triangles(),
-isVertsOwner(true),
-rect()
-{
-    filename = other.filename;
-    isVertsOwner = true;
-    rect = other.rect;
-    triangles.verts = new V3F_C4B_T2F[other.triangles.vertCount];
-    triangles.indices = new unsigned short[other.triangles.indexCount];
-    triangles.vertCount = other.triangles.vertCount;
-    triangles.indexCount = other.triangles.indexCount;
-    memcpy(triangles.verts, other.triangles.verts, other.triangles.vertCount*sizeof(V3F_C4B_T2F));
-    memcpy(triangles.indices, other.triangles.indices, other.triangles.indexCount*sizeof(unsigned short));
-};
-
-PolygonInfo& PolygonInfo::operator= (const PolygonInfo& other)
-{
-    if(this != &other)
-    {
-        releaseVertsAndIndices();
-        filename = other.filename;
-        isVertsOwner = true;
-        rect = other.rect;
-        triangles.verts = new V3F_C4B_T2F[other.triangles.vertCount];
-        triangles.indices = new unsigned short[other.triangles.indexCount];
-        triangles.vertCount = other.triangles.vertCount;
-        triangles.indexCount = other.triangles.indexCount;
-        memcpy(triangles.verts, other.triangles.verts, other.triangles.vertCount*sizeof(V3F_C4B_T2F));
-        memcpy(triangles.indices, other.triangles.indices, other.triangles.indexCount*sizeof(unsigned short));
-    }
-    return *this;
-}
-
-PolygonInfo::~PolygonInfo()
-{
-    releaseVertsAndIndices();
-}
-
-void PolygonInfo::setQuad(V3F_C4B_T2F_Quad *quad)
-{
-    releaseVertsAndIndices();
-    isVertsOwner = false;
-    triangles.indices = quadIndices;
-    triangles.vertCount = 4;
-    triangles.indexCount = 6;
-    triangles.verts = (V3F_C4B_T2F*)quad;
-}
-
-void PolygonInfo::releaseVertsAndIndices()
-{
-    if(isVertsOwner)
-    {
-        if(nullptr != triangles.verts)
-        {
-            CC_SAFE_DELETE_ARRAY(triangles.verts);
-        }
-        
-        if(nullptr != triangles.indices)
-        {
-            CC_SAFE_DELETE_ARRAY(triangles.indices);
-        }
-    }
-}
-
-const unsigned int PolygonInfo::getVertCount() const
-{
-    return (unsigned int)triangles.vertCount;
-}
-
-const unsigned int PolygonInfo::getTriaglesCount() const
-{
-    return (unsigned int)triangles.indexCount/3;
-}
-
-const float PolygonInfo::getArea() const
-{
-    float area = 0;
-    V3F_C4B_T2F *verts = triangles.verts;
-    unsigned short *indices = triangles.indices;
-    for(int i = 0; i < triangles.indexCount; i+=3)
-    {
-        auto A = verts[indices[i]].vertices;
-        auto B = verts[indices[i+1]].vertices;
-        auto C = verts[indices[i+2]].vertices;
-        area += (A.x*(B.y-C.y) + B.x*(C.y-A.y) + C.x*(A.y - B.y))/2;
-    }
-    return area;
-}
 
 AutoPolygon::AutoPolygon(const std::string &filename)
 :_image(nullptr)

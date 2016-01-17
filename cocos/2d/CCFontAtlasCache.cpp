@@ -64,6 +64,7 @@ FontAtlas* FontAtlasCache::getFontAtlasTTF(const _ttfConfig* config)
 
     if ( it == _atlasMap.end() )
     {
+#if CC_USE_FREETYPE > 0
         auto font = FontFreeType::create(config->fontFilePath, config->fontSize, config->glyphs,
                                          config->customGlyphs, useDistanceField, config->outlineSize);
         if (font)
@@ -75,6 +76,7 @@ FontAtlas* FontAtlasCache::getFontAtlasTTF(const _ttfConfig* config)
                 return _atlasMap[atlasName];
             }
         }
+#endif // CC_USE_FREETYPE
     }
     else
     {

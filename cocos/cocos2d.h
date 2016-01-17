@@ -235,7 +235,9 @@ THE SOFTWARE.
 #include "2d/CCAnimation.h"
 #include "2d/CCAnimationCache.h"
 #include "2d/CCSprite.h"
+#if CC_USE_AUTO_POLYGON > 0
 #include "2d/CCAutoPolygon.h"
+#endif // CC_USE_AUTO_POLYGON
 #include "2d/CCSpriteBatchNode.h"
 #include "2d/CCSpriteFrame.h"
 #include "2d/CCSpriteFrameCache.h"
@@ -245,10 +247,6 @@ THE SOFTWARE.
 
 // textures
 #include "renderer/CCTextureAtlas.h"
-
-// component
-#include "2d/CCComponent.h"
-#include "2d/CCComponentContainer.h"
 
 #if CC_USE_3D
 //3d

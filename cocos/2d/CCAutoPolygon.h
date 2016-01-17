@@ -33,91 +33,14 @@ THE SOFTWARE.
 #include "platform/CCImage.h"
 #include "renderer/CCTrianglesCommand.h"
 
+#include "CCPolygonInfo.h"
+
 NS_CC_BEGIN
 
 /**
  * @addtogroup _2d
  * @{
  */
-
-/**
- * PolygonInfo is an object holding the required data to display Sprites.
- * It can be a simple as a triangle, or as complex as a whole 3D mesh
- */
-class CC_DLL PolygonInfo
-{
-public:
-    /// @name Creators
-    /// @{
-    /**
-     * Creates an empty Polygon info
-     * @memberof PolygonInfo
-     * @return PolygonInfo object
-     */
-    PolygonInfo():
-    isVertsOwner(true),
-    rect(cocos2d::Rect::ZERO),
-    filename("")
-    {
-        triangles.verts = nullptr;
-        triangles.indices = nullptr;
-        triangles.vertCount = 0;
-        triangles.indexCount = 0;
-    };
-    
-    /**
-     * Create an polygoninfo from the data of another Polygoninfo
-     * @param other     another PolygonInfo to be copied
-     * @return duplicate of the other PolygonInfo
-     */
-    PolygonInfo(const PolygonInfo& other);
-    //  end of creators group
-    /// @}
-    
-    /**
-     * Copy the member of the other PolygonInfo
-     * @param other     another PolygonInfo to be copied
-     */
-    PolygonInfo& operator= (const PolygonInfo &other);
-    ~PolygonInfo();
-    
-    /**
-     * set the data to be a pointer to a quad
-     * the member verts will not be released when this PolygonInfo destructs
-     * as the verts memory are managed by other objects
-     * @param quad  a pointer to the V3F_C4B_T2F_Quad object
-     */
-    void setQuad(V3F_C4B_T2F_Quad *quad);
-
-    /**
-     * get vertex count
-     * @return number of vertices
-     */
-    const unsigned int getVertCount() const;
-    
-    /**
-     * get triangles count
-     * @return number of triangles
-     */
-    const unsigned int getTriaglesCount() const;
-    
-    /**
-     * get sum of all triangle area size
-     * @return sum of all triangle area size
-     */
-    const float getArea() const;
-    
-    Rect rect;
-    std::string filename;
-    TrianglesCommand::Triangles triangles;
-    
-protected:
-    bool isVertsOwner;
-    
-private:
-    void releaseVertsAndIndices();
-};
-
 
 /**
  * AutoPolygon is a helper Object

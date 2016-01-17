@@ -72,7 +72,10 @@ extern "C"
 #include "base/s3tc.h"
 #include "base/atitc.h"
 #include "base/pvr.h"
+
+#if CC_USE_TGA
 #include "base/TGAlib.h"
+#endif // CC_USE_TGA
 
 #if CC_USE_WEBP
 #include "decode.h"
@@ -84,7 +87,11 @@ extern "C"
 #include "CCFileUtils.h"
 #include "base/CCConfiguration.h"
 #include "base/ccUtils.h"
-#include "base/ZipUtils.h"
+
+#if CC_USE_IMAGE_ZIP > 0
+    #include "base/ZipUtils.h"
+#endif // CC_USE_IMAGE_ZIP
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "android/CCFileUtils-android.h"
 #endif
@@ -522,6 +529,7 @@ bool Image::initWithImageData(const unsigned char * data, ssize_t dataLen)
         unsigned char* unpackedData = nullptr;
         ssize_t unpackedLen = 0;
         
+#if CC_USE_IMAGE_ZIP > 0
         //detect and unzip the compress file
         if (ZipUtils::isCCZBuffer(data, dataLen))
         {
@@ -532,6 +540,7 @@ bool Image::initWithImageData(const unsigned char * data, ssize_t dataLen)
             unpackedLen = ZipUtils::inflateMemory(const_cast<unsigned char*>(data), dataLen, &unpackedData);
         }
         else
+#endif // CC_USE_IMAGE_ZIP
         {
             unpackedData = const_cast<unsigned char*>(data);
             unpackedLen = dataLen;
@@ -567,6 +576,7 @@ bool Image::initWithImageData(const unsigned char * data, ssize_t dataLen)
             break;
         default:
             {
+#if CC_USE_TGA > 0
                 // load and detect image format
                 tImageTGA* tgaData = tgaLoadBuffer(unpackedData, unpackedLen);
                 
@@ -580,6 +590,7 @@ bool Image::initWithImageData(const unsigned char * data, ssize_t dataLen)
                 }
                 
                 free(tgaData);
+#endif // CC_USE_TGA
                 break;
             }
         }
@@ -1763,6 +1774,7 @@ bool Image::initWithTGAData(tImageTGA* tgaData)
 {
     bool ret = false;
     
+#if CC_USE_TGA > 0
     do
     {
         CC_BREAK_IF(tgaData == nullptr);
@@ -1832,6 +1844,7 @@ bool Image::initWithTGAData(tImageTGA* tgaData)
             _data = nullptr;
         }
     }
+#endif // CC_USE_TGA
     
     return ret;
 }
