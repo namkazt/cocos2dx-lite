@@ -132,7 +132,6 @@ THE SOFTWARE.
 
 // 2d utils
 #include "2d/CCCamera.h"
-#include "2d/CCCameraBackgroundBrush.h"
 #include "2d/CCGrabber.h"
 #include "2d/CCGrid.h"
 
@@ -153,7 +152,6 @@ THE SOFTWARE.
 #include "renderer/CCRenderState.h"
 #include "renderer/CCRenderer.h"
 #include "renderer/CCTexture2D.h"
-#include "renderer/CCTextureCube.h"
 #include "renderer/CCTextureCache.h"
 #include "renderer/CCTrianglesCommand.h"
 #include "renderer/CCVertexIndexBuffer.h"

@@ -25,7 +25,6 @@
 
  ****************************************************************************/
 #include "2d/CCCamera.h"
-#include "2d/CCCameraBackgroundBrush.h"
 #include "base/CCDirector.h"
 #include "platform/CCGLView.h"
 #include "2d/CCScene.h"
@@ -96,17 +95,19 @@ Camera::Camera()
 , _depth(-1)
 , _fbo(nullptr)
 {
-#if CC_USE_3D
+#if CC_USE_3D > 0
     _frustum.setClipZ(true);
-#endif
     _clearBrush = CameraBackgroundBrush::createDepthBrush(1.f);
     _clearBrush->retain();
+#endif
 }
 
 Camera::~Camera()
 {
     CC_SAFE_RELEASE_NULL(_fbo);
+#if CC_USE_3D > 0
     CC_SAFE_RELEASE(_clearBrush);
+#endif
 }
 
 const Mat4& Camera::getProjectionMatrix() const
@@ -408,10 +409,12 @@ void Camera::setScene(Scene* scene)
 
 void Camera::clearBackground()
 {
+#if CC_USE_3D > 0
     if (_clearBrush)
     {
         _clearBrush->drawBackground(this);
     }
+#endif // CC_USE_3D
 }
 
 void Camera::setFrameBufferObject(experimental::FrameBuffer *fbo)
@@ -478,11 +481,13 @@ void Camera::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t par
     return Node::visit(renderer, parentTransform, parentFlags);
 }
 
+#if CC_USE_3D > 0
 void Camera::setBackgroundBrush(CameraBackgroundBrush* clearBrush)
 {
     CC_SAFE_RETAIN(clearBrush);
     CC_SAFE_RELEASE(_clearBrush);
     _clearBrush = clearBrush;
 }
+#endif // CC_USE_3D
 
 NS_CC_END

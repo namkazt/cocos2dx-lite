@@ -1048,14 +1048,6 @@
 		9F6A4A6F1C4B7A1C00831F4A /* CCPolygonInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A4A6C1C4B7A1C00831F4A /* CCPolygonInfo.cpp */; };
 		9F6A4A701C4B7A1C00831F4A /* CCPolygonInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F6A4A6D1C4B7A1C00831F4A /* CCPolygonInfo.h */; };
 		9F6A4A711C4B7A1C00831F4A /* CCPolygonInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F6A4A6D1C4B7A1C00831F4A /* CCPolygonInfo.h */; };
-		A045F6D61BA81577005076C7 /* CCTextureCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A045F6D41BA81577005076C7 /* CCTextureCube.cpp */; };
-		A045F6D71BA81577005076C7 /* CCTextureCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A045F6D41BA81577005076C7 /* CCTextureCube.cpp */; };
-		A045F6D81BA81577005076C7 /* CCTextureCube.h in Headers */ = {isa = PBXBuildFile; fileRef = A045F6D51BA81577005076C7 /* CCTextureCube.h */; };
-		A045F6D91BA81577005076C7 /* CCTextureCube.h in Headers */ = {isa = PBXBuildFile; fileRef = A045F6D51BA81577005076C7 /* CCTextureCube.h */; };
-		A045F6DC1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A045F6DA1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp */; };
-		A045F6DD1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A045F6DA1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp */; };
-		A045F6DE1BA816A1005076C7 /* CCCameraBackgroundBrush.h in Headers */ = {isa = PBXBuildFile; fileRef = A045F6DB1BA816A1005076C7 /* CCCameraBackgroundBrush.h */; };
-		A045F6DF1BA816A1005076C7 /* CCCameraBackgroundBrush.h in Headers */ = {isa = PBXBuildFile; fileRef = A045F6DB1BA816A1005076C7 /* CCCameraBackgroundBrush.h */; };
 		A0534A651B872FFD006B03E5 /* CCDownloader-apple.h in Headers */ = {isa = PBXBuildFile; fileRef = A0534A631B872FFD006B03E5 /* CCDownloader-apple.h */; };
 		A0534A661B872FFD006B03E5 /* CCDownloader-apple.h in Headers */ = {isa = PBXBuildFile; fileRef = A0534A631B872FFD006B03E5 /* CCDownloader-apple.h */; };
 		A0534A671B872FFD006B03E5 /* CCDownloader-apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0534A641B872FFD006B03E5 /* CCDownloader-apple.mm */; };
@@ -1846,10 +1838,6 @@
 		85B374381B204B9400C488D6 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
 		9F6A4A6C1C4B7A1C00831F4A /* CCPolygonInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCPolygonInfo.cpp; sourceTree = "<group>"; };
 		9F6A4A6D1C4B7A1C00831F4A /* CCPolygonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPolygonInfo.h; sourceTree = "<group>"; };
-		A045F6D41BA81577005076C7 /* CCTextureCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCTextureCube.cpp; sourceTree = "<group>"; };
-		A045F6D51BA81577005076C7 /* CCTextureCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTextureCube.h; sourceTree = "<group>"; };
-		A045F6DA1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCameraBackgroundBrush.cpp; sourceTree = "<group>"; };
-		A045F6DB1BA816A1005076C7 /* CCCameraBackgroundBrush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCameraBackgroundBrush.h; sourceTree = "<group>"; };
 		A0534A631B872FFD006B03E5 /* CCDownloader-apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCDownloader-apple.h"; sourceTree = "<group>"; };
 		A0534A641B872FFD006B03E5 /* CCDownloader-apple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CCDownloader-apple.mm"; sourceTree = "<group>"; };
 		A0534A691B87306E006B03E5 /* CCIDownloaderImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCIDownloaderImpl.h; sourceTree = "<group>"; };
@@ -3115,8 +3103,6 @@
 			children = (
 				3EACC99C19F5014D00EB3C5E /* CCCamera.cpp */,
 				3EACC99D19F5014D00EB3C5E /* CCCamera.h */,
-				A045F6DA1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp */,
-				A045F6DB1BA816A1005076C7 /* CCCameraBackgroundBrush.h */,
 				1A570046180BC59A0088DEC7 /* actions */,
 				1A570095180BC5B00088DEC7 /* base-nodes */,
 				1A570109180BC8DC0088DEC7 /* draw-nodes */,
@@ -3185,8 +3171,6 @@
 			isa = PBXGroup;
 			children = (
 				5034CA5D191D591900CE6051 /* shaders */,
-				A045F6D41BA81577005076C7 /* CCTextureCube.cpp */,
-				A045F6D51BA81577005076C7 /* CCTextureCube.h */,
 				B240C5E71B09DFB000137F50 /* CCFrameBuffer.cpp */,
 				B240C5E81B09DFB000137F50 /* CCFrameBuffer.h */,
 				B276EF5B1988D1D500CD400F /* CCVertexIndexData.h */,
@@ -3599,7 +3583,6 @@
 				D0FD035D1A3B51AA00825BB5 /* CCAllocatorStrategyGlobalSmallBlock.h in Headers */,
 				15AE1BC119AADFFB00C27E9E /* cocos-ext.h in Headers */,
 				1A5701BF180BCB5A0088DEC7 /* CCLabelAtlas.h in Headers */,
-				A045F6DE1BA816A1005076C7 /* CCCameraBackgroundBrush.h in Headers */,
 				50ABBED91925AB6F00A911A9 /* ZipUtils.h in Headers */,
 				50643BDB19BFAF4400EF68ED /* CCStdC.h in Headers */,
 				50ABBE5F1925AB6F00A911A9 /* CCEventListener.h in Headers */,
@@ -3653,7 +3636,6 @@
 				50643BE219BFCF1800EF68ED /* CCPlatformConfig.h in Headers */,
 				B29A7DF519EE1B7700872B35 /* Skeleton.h in Headers */,
 				5034CA49191D591100CE6051 /* ccShader_Label_df.frag in Headers */,
-				A045F6D81BA81577005076C7 /* CCTextureCube.h in Headers */,
 				B29A7DD919EE1B7700872B35 /* SkeletonRenderer.h in Headers */,
 				50CB247919D9C5A100687767 /* AudioEngine-inl.h in Headers */,
 				1A01C68C18F57BE800EFE3A6 /* CCDeprecated.h in Headers */,
@@ -4044,7 +4026,6 @@
 				15AE1AC519AAD40300C27E9E /* b2FrictionJoint.h in Headers */,
 				50ABBE2A1925AB6F00A911A9 /* CCAutoreleasePool.h in Headers */,
 				15AE1AD519AAD40300C27E9E /* b2WeldJoint.h in Headers */,
-				A045F6D91BA81577005076C7 /* CCTextureCube.h in Headers */,
 				1A087AEB1860400400196EF5 /* edtaa3func.h in Headers */,
 				15AE185D19AAD31200C27E9E /* CocosDenshion.h in Headers */,
 				D0FD035C1A3B51AA00825BB5 /* CCAllocatorStrategyFixedBlock.h in Headers */,
@@ -4148,7 +4129,6 @@
 				50ABBE581925AB6F00A911A9 /* CCEventFocus.h in Headers */,
 				15AE1AAF19AAD40300C27E9E /* b2ChainAndCircleContact.h in Headers */,
 				50ABC00A1926664800A911A9 /* CCCommon.h in Headers */,
-				A045F6DF1BA816A1005076C7 /* CCCameraBackgroundBrush.h in Headers */,
 				15FB209E1AE7C57D00C31518 /* sweep_context.h in Headers */,
 				50ABBE5C1925AB6F00A911A9 /* CCEventKeyboard.h in Headers */,
 				50ABC01C1926664800A911A9 /* CCSAXParser.h in Headers */,
@@ -4301,7 +4281,6 @@
 				50ED2BD919BE5D5D00A0AB90 /* CCEventListenerController.cpp in Sources */,
 				B257B460198A353E00D9A687 /* CCPrimitiveCommand.cpp in Sources */,
 				291901451B05895600F8B4BA /* CCNinePatchImageParser.cpp in Sources */,
-				A045F6D61BA81577005076C7 /* CCTextureCube.cpp in Sources */,
 				50ABBE651925AB6F00A911A9 /* CCEventListenerCustom.cpp in Sources */,
 				D0FD034B1A3B51AA00825BB5 /* CCAllocatorDiagnostics.cpp in Sources */,
 				50ABBE391925AB6F00A911A9 /* CCData.cpp in Sources */,
@@ -4366,7 +4345,6 @@
 				B29A7DD719EE1B7700872B35 /* SkeletonData.c in Sources */,
 				3EACC9A019F5014D00EB3C5E /* CCCamera.cpp in Sources */,
 				1A570214180BCBF40088DEC7 /* CCRenderTexture.cpp in Sources */,
-				A045F6DC1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp in Sources */,
 				15AE1A5519AAD40300C27E9E /* b2Math.cpp in Sources */,
 				B276EF651988D1D500CD400F /* CCVertexIndexBuffer.cpp in Sources */,
 				50ABBE411925AB6F00A911A9 /* CCDirector.cpp in Sources */,
@@ -4740,7 +4718,6 @@
 				50ABBD451925AB0000A911A9 /* CCVertex.cpp in Sources */,
 				50ABBEB01925AB6F00A911A9 /* CCUserDefault.cpp in Sources */,
 				50ABBE521925AB6F00A911A9 /* CCEventDispatcher.cpp in Sources */,
-				A045F6D71BA81577005076C7 /* CCTextureCube.cpp in Sources */,
 				52B47A2F1A5349A3004E4C60 /* HttpAsynConnection-apple.m in Sources */,
 				1A01C68B18F57BE800EFE3A6 /* CCDeprecated.cpp in Sources */,
 				50ABBD391925AB0000A911A9 /* CCAffineTransform.cpp in Sources */,
@@ -4767,7 +4744,6 @@
 				B63990CD1A490AFE00B07923 /* CCAsyncTaskPool.cpp in Sources */,
 				50ABBE361925AB6F00A911A9 /* CCConsole.cpp in Sources */,
 				B29A7E1419EE1B7700872B35 /* Bone.c in Sources */,
-				A045F6DD1BA816A1005076C7 /* CCCameraBackgroundBrush.cpp in Sources */,
 				503DD8E51926736A00CD74DD /* CCDirectorCaller-ios.mm in Sources */,
 				50CB247819D9C5A100687767 /* AudioCache.mm in Sources */,
 				50ABBD5D1925AB0000A911A9 /* Vec3.cpp in Sources */,
