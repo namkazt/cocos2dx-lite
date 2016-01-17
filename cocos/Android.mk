@@ -174,7 +174,6 @@ deprecated/CCString.cpp \
 ../external/unzip/ioapi_mem.cpp \
 ../external/unzip/ioapi.cpp \
 ../external/unzip/unzip.cpp \
-../external/edtaa3func/edtaa3func.cpp \
 ../external/xxhash/xxhash.c \
 ../external/poly2tri/common/shapes.cc \
 ../external/poly2tri/sweep/advancing_front.cc \
