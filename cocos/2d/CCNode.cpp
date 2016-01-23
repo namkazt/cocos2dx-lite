@@ -2056,11 +2056,4 @@ void Node::setCameraMask(unsigned short mask, bool applyChildren)
     }
 }
 
-// MARK: Deprecated
-
-__NodeRGBA::__NodeRGBA()
-{
-    CCLOG("NodeRGBA deprecated.");
-}
-
 NS_CC_END
