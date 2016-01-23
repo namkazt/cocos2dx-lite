@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding=utf-8
 # generator.py
 # simple C++ generator, originally targetted for Spidermonkey bindings
 #
@@ -13,6 +14,7 @@ import re
 import os
 import inspect
 import traceback
+import platform
 from Cheetah.Template import Template
 
 type_map = {
@@ -973,6 +975,10 @@ class NativeClass(object):
 
 class Generator(object):
     def __init__(self, opts):
+        if platform.system() == 'Darwin':
+            current_dir = os.path.split(os.path.realpath(__file__))[0]
+            libclang_dylib_dir = os.path.join(current_dir, 'libclang')
+            cindex.Config.set_library_path(libclang_dylib_dir)
         self.index = cindex.Index.create()
         self.outdir = opts['outdir']
         self.prefix = opts['prefix']
