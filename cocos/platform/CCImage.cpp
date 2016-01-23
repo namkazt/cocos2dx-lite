@@ -58,6 +58,12 @@ extern "C"
 #if CC_USE_PNG
 #include "png.h"
 #endif //CC_USE_PNG
+    
+#if CC_USE_STB_IMAGE > 0
+#define  STB_IMAGE_IMPLEMENTATION
+//#define  STBI_ONLY_PNG 1
+#include "stb_image.h"
+#endif
 
 #if CC_USE_TIFF
 #include "tiffio.h"
@@ -814,6 +820,45 @@ namespace
 #endif // CC_USE_JPEG
 }
 
+#if CC_USE_STB_IMAGE > 0
+bool Image::decodeWithStbImage(const unsigned char *data, ssize_t datalen)
+{
+    int comp=0;
+    int req_comp=0;
+    
+    stbi__context s;
+    stbi__start_mem(&s,data,(int)datalen);
+    _data = stbi__load_flip(&s,&_width,&_height,&comp,req_comp);
+    {
+        _dataLen = s.buflen;
+        switch (comp)
+        {
+            case 1:
+                _renderFormat = Texture2D::PixelFormat::I8;
+                break;
+                
+            case 2:
+                _renderFormat = Texture2D::PixelFormat::AI88;
+                break;
+            case 3:
+                _renderFormat = Texture2D::PixelFormat::RGB888;
+                break;
+                
+            case 4:
+                _renderFormat = Texture2D::PixelFormat::RGBA8888;
+                premultipliedAlpha();
+                break;
+            default:
+                _renderFormat = Texture2D::PixelFormat::RGBA4444;
+                break;
+        }
+        return true;
+    }
+    
+    return true;
+}
+#endif
+
 #ifdef CC_USE_WIC
 bool Image::decodeWithWIC(const unsigned char *data, ssize_t dataLen)
 {
@@ -1009,6 +1054,10 @@ bool Image::initWithJpgData(const unsigned char * data, ssize_t dataLen)
 
 bool Image::initWithPngData(const unsigned char * data, ssize_t dataLen)
 {
+#if CC_USE_STB_IMAGE > 0
+    return decodeWithStbImage(data, dataLen);
+#endif
+    
 #if CC_USE_WIC
     return decodeWithWIC(data, dataLen);
 #elif CC_USE_PNG
