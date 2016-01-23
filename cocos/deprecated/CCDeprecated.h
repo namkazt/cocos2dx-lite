@@ -1029,7 +1029,6 @@ CC_DEPRECATED_ATTRIBUTE typedef __String CCString;
 CC_DEPRECATED_ATTRIBUTE typedef __String String;
 
 CC_DEPRECATED_ATTRIBUTE typedef __RGBAProtocol RGBAProtocol;
-CC_DEPRECATED_ATTRIBUTE typedef __NodeRGBA NodeRGBA;
 CC_DEPRECATED_ATTRIBUTE typedef __LayerRGBA LayerRGBA;
 
 //deprecated attributes and methods for kazMath
