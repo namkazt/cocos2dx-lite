@@ -14,3 +14,9 @@ cocos2d-x is:
   * ~~Easy to use~~
   * Community Supported
 
+
+*BUT, I THINK https://github.com/IppClub/Dorothy IS A BETTER COCOS2D-X FORK*
+
+*BUT, I THINK https://github.com/IppClub/Dorothy IS A BETTER COCOS2D-X FORK*
+
+*BUT, I THINK https://github.com/IppClub/Dorothy IS A BETTER COCOS2D-X FORK*
