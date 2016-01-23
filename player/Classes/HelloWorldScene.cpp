@@ -44,6 +44,7 @@ bool HelloWorld::init()
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [](Touch *touch, Event *event) -> bool {
         if (event->getCurrentTarget()->getBoundingBox().containsPoint(touch->getLocation())) {
+            
             Director::getInstance()->end();
             
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
