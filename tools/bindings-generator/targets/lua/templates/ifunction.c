@@ -5,20 +5,20 @@ int ${signature_name}(lua_State* tolua_S)
     ${namespaced_class_name}* cobj = nullptr;
     bool ok  = true;
 
-\#if COCOS2D_DEBUG >= 1
+\#if TOLUA_DEBUG >= 1
     tolua_Error tolua_err;
 \#endif
 
 
 #if not $is_constructor
-\#if COCOS2D_DEBUG >= 1
+\#if TOLUA_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"${generator.scriptname_from_native($namespaced_class_name, $namespace_name)}",0,&tolua_err)) goto tolua_lerror;
 \#endif
 
     cobj = (${namespaced_class_name}*)tolua_tousertype(tolua_S,1,0);
 
-\#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
+\#if TOLUA_DEBUG >= 1
+    if (!cobj)
     {
         tolua_error(tolua_S,"invalid 'cobj' in function '${signature_name}'", nullptr);
         return 0;
@@ -31,7 +31,7 @@ int ${signature_name}(lua_State* tolua_S)
     #set arg_count = len($arguments)
     #set arg_idx = $min_args
     #while $arg_idx <= $arg_count
-    if (argc == ${arg_idx}) 
+    if (argc == ${arg_idx})
     {
         #set $count = 0
         #while $count < $arg_idx
@@ -105,7 +105,7 @@ int ${signature_name}(lua_State* tolua_S)
         lua_settop(tolua_S, 1);
         return 1;
                 #end if
-        #end if         
+        #end if
     }
         #set $arg_idx = $arg_idx + 1
     #end while
@@ -113,7 +113,7 @@ int ${signature_name}(lua_State* tolua_S)
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "${generator.scriptname_from_native($namespaced_class_name, $namespace_name)}:${func_name}",argc, ${min_args});
     return 0;
 
-\#if COCOS2D_DEBUG >= 1
+\#if TOLUA_DEBUG >= 1
 #if not $is_constructor
     tolua_lerror:
 #end if
