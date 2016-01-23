@@ -714,18 +714,6 @@ bool luaval_to_object(lua_State* L, int lo, const char* type, T** ret, const cha
 }
 
 /**
- * Get a cocos2d::MeshVertexAttrib object value from the given accpetable index of stack.
- * If the value at the given accpetable index of stack is a table it returns true, otherwise returns false.
- * If the table has the `size`, `type`, `vertexAttrib`, `vertexAttrib` and `attribSizeBytes` keys and the corresponding values are not nil, this function would assign the values to the corresponding members of outValue.
- * @param L the current lua_State.
- * @param lo the given accpetable index of stack.
- * @param ret the pointer to a cocos2d::MeshVertexAttrib object which stores the values from the Lua table.
- * @param funcName the name of calling function, it is used for error output in the debug model.
- * @return Return true if the value at the given accpetable index of stack is a table, otherwise return false.
- */
-extern bool luaval_to_mesh_vertex_attrib(lua_State* L, int lo, cocos2d::MeshVertexAttrib* ret, const char* funcName = "");
-
-/**
  * Get a pointer points to a std::vector<float> from a Lua array table in the stack.
  *
  * @param L the current lua_State.
@@ -1212,15 +1200,6 @@ void object_to_luaval(lua_State* L,const char* type, T* ret)
         lua_pushnil(L);
     }
 }
-
-/**
- * Push a table converted from a cocos2d::MeshVertexAttrib object into the Lua stack.
- * The format of table as follows: {size=numberValue1, type=numberValue2, vertexAttrib=numberValue3, attribSizeBytes=numberValue4}
- *
- * @param L the current lua_State.
- * @param inValue a cocos2d::MeshVertexAttrib object.
- */
-void mesh_vertex_attrib_to_luaval(lua_State* L, const cocos2d::MeshVertexAttrib& inValue);
 
 /**
  * Push a Lua array table converted from a std::vector<std::string> into the Lua stack.

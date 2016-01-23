@@ -203,16 +203,6 @@ public:
      * @return default return 0 otherwise return values according different ScriptHandlerMgr::HandlerType.
      */
     virtual int handleEvent(ScriptHandlerMgr::HandlerType type,void* data);
-    /**
-     * Pass on the events related with TableCell and TableView to lua to handle.
-     *
-     * @param type Different ScriptHandlerMgr::HandlerType means different processing for the data.
-     * @param data The pointer point to the information which should be pass on to lua, it would be parsed in the function to convert to the specific data according to the ScriptHandlerMgr::HandlerType,then pass to lua as function parameters.
-     * @param numResults The number of the return values.
-     * @param func The callback would be called when numResults is > 0.
-     * @return default return 0 otherwise return values according different ScriptHandlerMgr::HandlerType.
-     */
-    virtual int handleEvent(ScriptHandlerMgr::HandlerType type, void* data, int numResults, const std::function<void(lua_State*,int)>& func);
 private:
     LuaEngine(void)
     : _stack(nullptr)
@@ -230,10 +220,6 @@ private:
     int handleTouchesEvent(void* data);
     int handlerControlEvent(void* data);
     int handleEvenCustom(void* data);
-    int handleAssetsManagerEvent(ScriptHandlerMgr::HandlerType type,void* data);
-    int handleTableViewEvent(ScriptHandlerMgr::HandlerType type,void* data);
-    int handleTableViewEvent(ScriptHandlerMgr::HandlerType type,void* data, int numResults, const std::function<void(lua_State*,int)>& func);
-    int handleArmatureWrapper(ScriptHandlerMgr::HandlerType type,void* data);
     int handleEventAcc(void* data);
     int handleEventKeyboard(ScriptHandlerMgr::HandlerType type,void* data);
     int handleEventTouch(ScriptHandlerMgr::HandlerType type, void* data);
