@@ -154,6 +154,10 @@ public:
     static void setPVRImagesHavePremultipliedAlpha(bool haveAlphaPremultiplied);
 
 protected:
+#if CC_USE_STB_IMAGE > 0
+    bool decodeWithStbImage(const unsigned char *data, ssize_t datalen);
+#endif
+    
 #if defined(CC_USE_WIC)
     bool encodeWithWIC(const std::string& filePath, bool isToRGB, GUID containerFormat);
     bool decodeWithWIC(const unsigned char *data, ssize_t dataLen);

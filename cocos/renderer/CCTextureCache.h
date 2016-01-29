@@ -65,7 +65,7 @@ class CC_DLL TextureCache : public Ref
 {
 public:
     /** Returns the shared instance of the cache. */
-    CC_DEPRECATED_ATTRIBUTE static TextureCache * getInstance();
+    static TextureCache * getInstance();
 
     /** @deprecated Use getInstance() instead. */
     CC_DEPRECATED_ATTRIBUTE static TextureCache * sharedTextureCache();
