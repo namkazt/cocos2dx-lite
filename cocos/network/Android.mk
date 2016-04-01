@@ -10,7 +10,9 @@ WebSocket.cpp \
 CCDownloader.cpp \
 CCDownloader-android.cpp
 
-LOCAL_EXPORT_C_INCLUDES :=
+# LOCAL_CFLAGS := -std=c++11
+
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../external/curl/include/android \
                     $(LOCAL_PATH)/../../external/websockets/include/android

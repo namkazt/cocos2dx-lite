@@ -118,6 +118,10 @@ const char* GLProgram::ATTRIBUTE_NAME_TEX_COORD3 = "a_texCoord3";
 const char* GLProgram::ATTRIBUTE_NAME_NORMAL = "a_normal";
 const char* GLProgram::ATTRIBUTE_NAME_BLEND_WEIGHT = "a_blendWeight";
 const char* GLProgram::ATTRIBUTE_NAME_BLEND_INDEX = "a_blendIndex";
+const char* GLProgram::ATTRIBUTE_NAME_TANGENT = "a_tangent";
+const char* GLProgram::ATTRIBUTE_NAME_BINORMAL = "a_binormal";
+
+
 
 static const char * COCOS2D_SHADER_UNIFORMS =
         "uniform mat4 CC_PMatrix;\n"
@@ -175,7 +179,6 @@ GLProgram* GLProgram::createWithFilenames(const std::string& vShaderFilename, co
     return nullptr;
 }
 
-
 GLProgram::GLProgram()
 : _program(0)
 , _vertShader(0)
@@ -191,17 +194,7 @@ GLProgram::~GLProgram()
 {
     CCLOGINFO("%s %d deallocing GLProgram: %p", __FUNCTION__, __LINE__, this);
 
-    if (_vertShader)
-    {
-        glDeleteShader(_vertShader);
-    }
-
-    if (_fragShader)
-    {
-        glDeleteShader(_fragShader);
-    }
-
-    _vertShader = _fragShader = 0;
+    clearShader();
 
     if (_program)
     {
@@ -553,17 +546,7 @@ bool GLProgram::link()
     parseVertexAttribs();
     parseUniforms();
 
-    if (_vertShader)
-    {
-        glDeleteShader(_vertShader);
-    }
-
-    if (_fragShader)
-    {
-        glDeleteShader(_fragShader);
-    }
-
-    _vertShader = _fragShader = 0;
+    clearShader();
 
 #if DEBUG || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
     glGetProgramiv(_program, GL_LINK_STATUS, &status);
@@ -876,7 +859,7 @@ void GLProgram::setUniformsForBuiltins()
 
 void GLProgram::setUniformsForBuiltins(const Mat4 &matrixMV)
 {
-    auto& matrixP = _director->getMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
+    const auto& matrixP = _director->getMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
 
     if (_flags.usesP)
         setUniformLocationWithMatrix4fv(_builtInUniforms[UNIFORM_P_MATRIX], matrixP.m, 1);
@@ -884,7 +867,8 @@ void GLProgram::setUniformsForBuiltins(const Mat4 &matrixMV)
     if (_flags.usesMV)
         setUniformLocationWithMatrix4fv(_builtInUniforms[UNIFORM_MV_MATRIX], matrixMV.m, 1);
 
-    if (_flags.usesMVP) {
+    if (_flags.usesMVP)
+    {
         Mat4 matrixMVP = matrixP * matrixMV;
         setUniformLocationWithMatrix4fv(_builtInUniforms[UNIFORM_MVP_MATRIX], matrixMVP.m, 1);
     }
@@ -933,6 +917,21 @@ void GLProgram::reset()
     }
 
     _hashForUniforms.clear();
+}
+
+inline void GLProgram::clearShader()
+{
+    if (_vertShader)
+    {
+        glDeleteShader(_vertShader);
+    }
+
+    if (_fragShader)
+    {
+        glDeleteShader(_fragShader);
+    }
+
+    _vertShader = _fragShader = 0;
 }
 
 NS_CC_END

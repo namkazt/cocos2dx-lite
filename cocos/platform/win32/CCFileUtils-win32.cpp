@@ -26,7 +26,7 @@ THE SOFTWARE.
 #include "platform/CCPlatformConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_WIN32
 
-#include "CCFileUtils-win32.h"
+#include "platform/win32/CCFileUtils-win32.h"
 #include "platform/CCCommon.h"
 #include <Shlobj.h>
 #include <cstdlib>
@@ -136,8 +136,9 @@ static void _checkPath()
 {
     if (s_resourcePath.empty())
     {
-        WCHAR *pUtf16ExePath = nullptr;
-        _get_wpgmptr(&pUtf16ExePath);
+        WCHAR utf16Path[CC_MAX_PATH] = { 0 };
+        GetModuleFileNameW(NULL, utf16Path, CC_MAX_PATH - 1);
+        WCHAR *pUtf16ExePath = &(utf16Path[0]);
 
         // We need only directory part without exe
         WCHAR *pUtf16DirEnd = wcsrchr(pUtf16ExePath, L'\\');

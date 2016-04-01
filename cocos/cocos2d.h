@@ -30,7 +30,7 @@ THE SOFTWARE.
 
 // 0x00 HI ME LO
 // 00   03 08 00
-#define COCOS2D_VERSION 0x00030800
+#define COCOS2D_VERSION 0x00031100
 
 //
 // all cocos2d include files
@@ -114,6 +114,8 @@ THE SOFTWARE.
 #include "2d/CCFontFNT.h"
 #include "2d/CCLabel.h"
 #include "2d/CCLabelAtlas.h"
+//#include "2d/CCLabelBMFont.h"
+//#include "2d/CCLabelTTF.h"
 #include "2d/CCLayer.h"
 #include "2d/CCMotionStreak.h"
 #include "2d/CCNode.h"
@@ -153,6 +155,7 @@ THE SOFTWARE.
 #include "renderer/CCTexture2D.h"
 #include "renderer/CCTextureCache.h"
 #include "renderer/CCTrianglesCommand.h"
+//#include "renderer/CCVertexAttribBinding.h"
 #include "renderer/CCVertexIndexBuffer.h"
 #include "renderer/CCVertexIndexData.h"
 #include "renderer/CCPrimitive.h"

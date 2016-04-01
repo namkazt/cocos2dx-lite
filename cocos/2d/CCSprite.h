@@ -461,14 +461,17 @@ public:
     virtual bool isOpacityModifyRGB() const override;
     /// @}
 
-CC_CONSTRUCTOR_ACCESS:
+    int getResourceType() const { return _fileType; }
+    const std::string& getResourceName() const { return _fileName; }
+
+CC_CONSTRUCTOR_ACCESS :
 	/**
      * @js ctor
      */
     Sprite();
     virtual ~Sprite();
 
-    /* Initializes an empty sprite with nothing init. */
+    /* Initializes an empty sprite with no parameters. */
     virtual bool init() override;
 
     /**
@@ -498,7 +501,7 @@ CC_CONSTRUCTOR_ACCESS:
      *
      * After initialization, the offset will be (0,0).
      *
-     * @param   texture    A pointer to an exisiting Texture2D object.
+     * @param   texture    A pointer to an existing Texture2D object.
      *                      You can use a Texture2D object for many sprites.
      * @param   rect        Only the contents inside rect of this texture will be applied for this sprite.
      * @return  True if the sprite is initialized properly, false otherwise.
@@ -532,7 +535,7 @@ CC_CONSTRUCTOR_ACCESS:
      * A SpriteFrame will be fetched from the SpriteFrameCache by name.
      * If the SpriteFrame doesn't exist it will raise an exception.
      *
-     * @param   spriteFrameName  A key string that can fected a volid SpriteFrame from SpriteFrameCache.
+     * @param   spriteFrameName  A key string that can fected a valid SpriteFrame from SpriteFrameCache.
      * @return  True if the sprite is initialized properly, false otherwise.
      */
     virtual bool initWithSpriteFrameName(const std::string& spriteFrameName);
@@ -570,7 +573,7 @@ CC_CONSTRUCTOR_ACCESS:
      *
      * @return a copy of PolygonInfo
      */
-    PolygonInfo getPolygonInfo() const;
+    PolygonInfo& getPolygonInfo();
     
     /**
      * set the sprite to use this new PolygonInfo
@@ -634,6 +637,10 @@ protected:
     bool _flippedY;                         /// Whether the sprite is flipped vertically or not
 
     bool _insideBounds;                     /// whether or not the sprite was inside bounds the previous frame
+
+    std::string _fileName;
+    int _fileType;
+
 private:
     CC_DISALLOW_COPY_AND_ASSIGN(Sprite);
 };

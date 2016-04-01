@@ -66,7 +66,7 @@ public:
     
     /** 
      * Destructor, it will be called in HttpClient internal.
-     * Users don't need to desturct HttpResponse object manully.
+     * Users don't need to destruct HttpResponse object manually.
      */
     virtual ~HttpResponse()
     {
@@ -101,8 +101,8 @@ public:
     }
         
     /** 
-     * To see if the http reqeust is returned successfully.
-     * Althrough users can judge if (http response code = 200), we want an easier way.
+     * To see if the http request is returned successfully.
+     * Although users can judge if (http response code = 200), we want an easier way.
      * If this getter returns false, you can call getResponseCode and getErrorBuffer to find more details.
      * @return bool the flag that represent whether the http request return successfully or not.
      */
@@ -141,7 +141,7 @@ public:
     }
 
     /** 
-     * Get the rror buffer which will tell you more about the reason why http request failed.
+     * Get the error buffer which will tell you more about the reason why http request failed.
      * @return const char* the pointer that point to _errorBuffer.
      */
     inline const char* getErrorBuffer()
@@ -228,7 +228,7 @@ protected:
     
     // properties
     HttpRequest*        _pHttpRequest;  /// the corresponding HttpRequest pointer who leads to this response 
-    bool                _succeed;       /// to indecate if the http reqeust is successful simply
+    bool                _succeed;       /// to indicate if the http request is successful simply
     std::vector<char>   _responseData;  /// the returned raw data. You can also dump it as a string
     std::vector<char>   _responseHeader;  /// the returned raw header data. You can also dump it as a string
     long                _responseCode;    /// the status code returned from libcurl, e.g. 200, 404
