@@ -123,7 +123,7 @@ Sprite* Sprite::createWithSpriteFrameName(const std::string& spriteFrameName)
     
 #if COCOS2D_DEBUG > 0
     char msg[256] = {0};
-    sprintf(msg, "Invalid spriteFrameName: %s", spriteFrameName.c_str());
+    snprintf(msg, sizeof(msg), "Invalid spriteFrameName: %s", spriteFrameName.c_str());
     CCASSERT(frame != nullptr, msg);
 #endif
     

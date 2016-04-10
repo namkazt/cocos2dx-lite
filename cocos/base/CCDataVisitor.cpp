@@ -93,35 +93,35 @@ std::string PrettyPrinter::getResult()
 void PrettyPrinter::visitObject(const Ref *p)
 {
     char buf[50] = {0};
-    sprintf(buf, "%p", p);
+    snprintf(buf, sizeof(buf), "%p", p);
     _result += buf;
 }
 
 void PrettyPrinter::visit(const __Bool * p)
 {
     char buf[50] = {0};
-    sprintf(buf, "%s", p->getValue() ? "true" : "false");
+    snprintf(buf, sizeof(buf), "%s", p->getValue() ? "true" : "false");
    _result += buf;
 }
 
 void PrettyPrinter::visit(const __Integer *p)
 {
     char buf[50] = {0};
-    sprintf(buf, "%d", p->getValue());
+    snprintf(buf, sizeof(buf), "%d", p->getValue());
     _result += buf;
 }
 
 void PrettyPrinter::visit(const __Float *p)
 {
     char buf[50] = {0};
-    sprintf(buf, "%f", p->getValue());
+    snprintf(buf, sizeof(buf), "%f", p->getValue());
     _result += buf;
 }
 
 void PrettyPrinter::visit(const __Double *p)
 {
     char buf[50] = {0};
-    sprintf(buf, "%lf", p->getValue());
+    snprintf(buf, sizeof(buf), "%lf", p->getValue());
     _result += buf;
 }
 
@@ -145,7 +145,7 @@ void PrettyPrinter::visit(const __Array *p)
         if (i > 0) {
             _result += "\n";
         }
-        sprintf(buf, "%s%02d: ", _indentStr.c_str(), i);
+        snprintf(buf, sizeof(buf), "%s%02d: ", _indentStr.c_str(), i);
         _result += buf;
         PrettyPrinter v(_indentLevel);
 //FIXME:james        obj->acceptVisitor(v);
@@ -174,7 +174,7 @@ void PrettyPrinter::visit(const __Dictionary *p)
         if (!bFirstElement) {
             _result += "\n";
         }
-        sprintf(buf, "%s%s: ", _indentStr.c_str(),element->getStrKey());
+        snprintf(buf, sizeof(buf), "%s%s: ", _indentStr.c_str(),element->getStrKey());
         _result += buf;
         PrettyPrinter v(_indentLevel);
 //FIXME:james        element->getObject()->acceptVisitor(v);

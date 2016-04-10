@@ -415,7 +415,8 @@ bool GLViewImpl::initWithRect(const std::string& viewName, Rect rect, float fram
     if ( utils::atof((const char*)glVersion) < 1.5 )
     {
         char strComplain[256] = {0};
-        sprintf(strComplain,
+        snprintf(strComplain,
+                 sizeof(strComplain),
                 "OpenGL 1.5 or higher is required (your version is %s). Please upgrade the driver of your video card.",
                 glVersion);
         MessageBox(strComplain, "OpenGL version too old");

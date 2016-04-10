@@ -1958,8 +1958,8 @@ void Label::updateColor()
 
 std::string Label::getDescription() const
 {
-    char tmp[50];
-    sprintf(tmp, "<Label | Tag = %d, Label = >", _tag);
+    char tmp[50] = {0};
+    snprintf(tmp, sizeof(tmp), "<Label | Tag = %d, Label = >", _tag);
     std::string ret = tmp;
     ret += _utf8Text;
 

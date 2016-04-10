@@ -36,3 +36,10 @@ USING_NS_CC;
 #pragma warning (push)
 #pragma warning (disable: 4996)
 #endif
+
+int register_all_cocos2dx_deprecated(lua_State* tolua_S) {
+    return 0;
+}
+int register_all_cocos2dx_manual_deprecated(lua_State* tolua_S) {
+    return 0;
+}

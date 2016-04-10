@@ -25,6 +25,7 @@
 
 #include "CCLuaStack.h"
 #include "tolua_fix.h"
+#include "external/lua/lua_extensions.h"
 #include "external/xxtea/xxtea.h"
 extern "C" {
 #include "lua.h"
@@ -166,6 +167,9 @@ LuaStack *LuaStack::attach(lua_State *L)
 bool LuaStack::init(void)
 {
     _state = lua_open();
+    // crash here ?
+    // Mac/iOS : add "Other Link Flags"
+    // -pagezero_size 10000 -image_base 100000000
     luaL_openlibs(_state);
     toluafix_open(_state);
 
@@ -177,6 +181,7 @@ bool LuaStack::init(void)
     };
     luaL_register(_state, "_G", global_functions);
 
+    luaopen_lua_extensions(_state);
     g_luaType.clear();
     register_all_cocos2dx(_state);
     tolua_opengl_open(_state);
@@ -777,6 +782,11 @@ void LuaStack::cleanupXXTEAKeyAndSign()
 
 int LuaStack::loadChunksFromZIP(const char *zipFilePath)
 {
+    if (!FileUtils::getInstance()->isFileExist(zipFilePath)) {
+        CCLOGWARN("LuaStack::%s -> zipFilePath=%s is not exist.", __FUNCTION__, zipFilePath);
+        return -1;
+    }
+    
     pushString(zipFilePath);
     luaLoadChunksFromZIP(_state);
     int ret = lua_toboolean(_state, -1);

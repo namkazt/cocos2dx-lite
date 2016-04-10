@@ -348,9 +348,8 @@ void UserDefault::setIntegerForKey(const char* pKey, int value)
     }
 
     // format the value
-    char tmp[50];
-    memset(tmp, 0, 50);
-    sprintf(tmp, "%d", value);
+    char tmp[50] = {0};
+    snprintf(tmp, sizeof(tmp), "%d", value);
 
     setValueForKey(pKey, tmp);
 }
@@ -369,9 +368,8 @@ void UserDefault::setDoubleForKey(const char* pKey, double value)
     }
 
     // format the value
-    char tmp[50];
-    memset(tmp, 0, 50);
-    sprintf(tmp, "%f", value);
+    char tmp[50] = {0};
+    snprintf(tmp, sizeof(tmp), "%f", value);
 
     setValueForKey(pKey, tmp);
 }

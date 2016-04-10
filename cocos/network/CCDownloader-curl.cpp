@@ -408,7 +408,8 @@ namespace cocos2d { namespace network {
                 if (200 != httpResponseCode)
                 {
                     char buf[256] = {0};
-                    sprintf(buf
+                    snprintf(buf
+                            , sizeof(buf)
                             , "When crequest url(%s) header info, return unexcept http response code(%ld)"
                             , wrapper.first->requestURL.c_str()
                             , httpResponseCode);
@@ -718,8 +719,8 @@ namespace cocos2d { namespace network {
             return dataLen;
         };
         
-        char key[128];
-        sprintf(key, "DownloaderCURL(%p)", this);
+        char key[128] = {0};
+        snprintf(key, sizeof(key), "DownloaderCURL(%p)", this);
         _schedulerKey = key;
         
         _scheduler->schedule(bind(&DownloaderCURL::_onSchedule, this, placeholders::_1),

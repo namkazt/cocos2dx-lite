@@ -18,7 +18,7 @@
 
 ProjectConfig::ProjectConfig()
     : _isWelcome(false)
-    , _scriptFile("$(PROJDIR)/src/main.lua")
+    , _scriptFile("$(PROJDIR)/scripts/main.lua")
     , _writablePath("")
     , _packagePath("")
     , _frameSize(960, 640)
@@ -49,7 +49,7 @@ void ProjectConfig::resetToWelcome()
     SimulatorConfig::makeNormalizePath(&path);
     setProjectDir(path);
     setWritablePath(path);
-    setScriptFile("$(PROJDIR)/src/main.lua");
+    setScriptFile("$(PROJDIR)/scripts/main.lua");
     setFrameSize(cocos2d::Size(960, 640));
     setFrameScale(1.0f);
     setLoadPrecompiledFramework(false);
@@ -70,7 +70,7 @@ void ProjectConfig::resetToCreator()
     SimulatorConfig::makeNormalizePath(&path);
     setProjectDir(path);
     setWritablePath(path);
-    setScriptFile("$(PROJDIR)/src/main.lua");
+    setScriptFile("$(PROJDIR)/scripts/main.lua");
     setFrameSize(cocos2d::Size(960, 640));
     setFrameScale(1.0f);
     setLoadPrecompiledFramework(false);

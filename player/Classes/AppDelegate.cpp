@@ -1,19 +1,22 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "CCLuaEngine.h"
+// #include "SimpleAudioEngine.h"
+#include "cocos2d.h"
+ #include "lua_module_register.h"
+#include "ProjectConfig/SimulatorConfig.h"
+
+// using namespace CocosDenshion;
 
 USING_NS_CC;
+using namespace std;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
-static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
-static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
-static cocos2d::Size largeResolutionSize = cocos2d::Size(2048, 1536);
-
-AppDelegate::AppDelegate() {
-
+AppDelegate::AppDelegate()
+{
 }
 
-AppDelegate::~AppDelegate() 
+AppDelegate::~AppDelegate()
 {
+    // SimpleAudioEngine::end();
 }
 
 //if you want a different context,just modify the value of glContextAttrs
@@ -27,81 +30,96 @@ void AppDelegate::initGLContextAttrs()
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
-// If you want to use packages manager to install more packages, 
+// If you want to use packages manager to install more packages,
 // don't modify or remove this function
 static int register_all_packages()
 {
     return 0; //flag for packages manager
 }
 
-bool AppDelegate::applicationDidFinishLaunching() {
-    // initialize director
-    auto director = Director::getInstance();
-    auto glview = director->getOpenGLView();
-    if(!glview) {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        //glview = GLViewImpl::createWithRect("quick-x-player 3.9", Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
-		std::string title("quick-x-player ");
-		title.append("(");
-		title.append(cocos2dVersion());
-		title.append(")");
-		extern void createSimulator(const std::string& viewName, int width, int height, float frameZoomFactor = 1.0f);
-		createSimulator(title, designResolutionSize.width, designResolutionSize.height);
-        glview = director->getOpenGLView();
-#else
-        glview = GLViewImpl::create("player");
-		director->setOpenGLView(glview);
-#endif
-    }
+bool AppDelegate::applicationDidFinishLaunching()
+{
+    // set default FPS
+    Director::getInstance()->setAnimationInterval(1.0 / 60.0f);
 
-    // turn on display FPS
-    director->setDisplayStats(true);
-
-    // set FPS. the default value is 1.0/60 if you don't call this
-    director->setAnimationInterval(1.0 / 60);
-
-    // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
-    Size frameSize = glview->getFrameSize();
-    // if the frame's height is larger than the height of medium size.
-    if (frameSize.height > mediumResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is larger than the height of small size.
-    else if (frameSize.height > smallResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is smaller than the height of medium size.
-    else
-    {        
-        director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
-    }
+    // register lua module
+    auto engine = LuaEngine::getInstance();
+    ScriptEngineManager::getInstance()->setScriptEngine(engine);
+    lua_State* L = engine->getLuaStack()->getLuaState();
+     lua_module_register(L);
 
     register_all_packages();
 
-    // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    LuaStack* stack = engine->getLuaStack();
+    stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
 
-    // run
-    director->runWithScene(scene);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    // load framework
+    stack->loadChunksFromZIP("res/framework_precompiled.zip");
+#else
+    // load framework
+    if (_projectConfig.isLoadPrecompiledFramework())
+    {
+        const string precompiledFrameworkPath = SimulatorConfig::getInstance()->getPrecompiledFrameworkPath();
+        stack->loadChunksFromZIP(precompiledFrameworkPath.c_str());
+    }
+#endif
+
+    // set script path
+    string path = FileUtils::getInstance()->fullPathForFilename("scripts/main.lua");
+
+    size_t pos;
+    while ((pos = path.find_first_of("\\")) != std::string::npos)
+    {
+        path.replace(pos, 1, "/");
+    }
+    size_t p = path.find_last_of("/\\");
+    if (p != path.npos)
+    {
+        const string dir = path.substr(0, p);
+        stack->addSearchPath(dir.c_str());
+
+        p = dir.find_last_of("/\\");
+        if (p != dir.npos)
+        {
+            stack->addSearchPath(dir.substr(0, p).c_str());
+        }
+    }
+
+    string env = "__LUA_STARTUP_FILE__=\"";
+    env.append(path);
+    env.append("\"");
+    engine->executeString(env.c_str());
+
+    CCLOG("------------------------------------------------");
+    CCLOG("LOAD LUA FILE: %s", path.c_str());
+    CCLOG("------------------------------------------------");
+    engine->executeScriptFile(path.c_str());
 
     return true;
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
-void AppDelegate::applicationDidEnterBackground() {
+void AppDelegate::applicationDidEnterBackground()
+{
     Director::getInstance()->stopAnimation();
-
-    // if you use SimpleAudioEngine, it must be pause
+    Director::getInstance()->pause();
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    // SimpleAudioEngine::getInstance()->pauseAllEffects();
+    NotificationCenter::getInstance()->postNotification("APP_ENTER_BACKGROUND_EVENT");
 }
 
 // this function will be called when the app is active again
-void AppDelegate::applicationWillEnterForeground() {
+void AppDelegate::applicationWillEnterForeground()
+{
     Director::getInstance()->startAnimation();
-
-    // if you use SimpleAudioEngine, it must resume here
+    Director::getInstance()->resume();
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    // SimpleAudioEngine::getInstance()->resumeAllEffects();
+    NotificationCenter::getInstance()->postNotification("APP_ENTER_FOREGROUND_EVENT");
+}
+
+void AppDelegate::setProjectConfig(const ProjectConfig& config)
+{
+    _projectConfig = config;
 }

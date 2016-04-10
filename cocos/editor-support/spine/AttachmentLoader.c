@@ -77,6 +77,6 @@ void _spAttachmentLoader_setError (spAttachmentLoader* self, const char* error1,
 
 void _spAttachmentLoader_setUnknownTypeError (spAttachmentLoader* self, spAttachmentType type) {
 	char buffer[16];
-	sprintf(buffer, "%d", type);
+	snprintf(buffer, sizeof(buffer), "%d", type);
 	_spAttachmentLoader_setError(self, "Unknown attachment type: ", buffer);
 }

@@ -80,7 +80,7 @@ static void printWebSocketLog(int level, const char *line)
     for (n = 0; n < LLL_COUNT; n++) {
         if (level != (1 << n))
             continue;
-        sprintf(buf, "%s: ", log_level_names[n]);
+        snprintf(buf, sizeof(buf), "%s: ", log_level_names[n]);
         break;
     }
 
@@ -618,8 +618,8 @@ void WebSocket::onSubThreadStarted()
             if (_wsProtocols[i+1].callback != nullptr) name += ", ";
         }
 
-        char portStr[10];
-        sprintf(portStr, "%d", _port);
+        char portStr[10] = {0};
+        snprintf(portStr, sizeof(portStr), "%d", _port);
         std::string ads_port = _host + ":" + portStr;
 
         _wsInstance = lws_client_connect(_wsContext, _host.c_str(), _port, _SSLConnection,

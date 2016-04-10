@@ -6,8 +6,12 @@
     ],
     "copy_resources": [
         {
-            "from": "../Resources",
-            "to": ""
+            "from": "../res",
+            "to": "res"
+        },
+        {
+            "from": "../scripts",
+            "to": "scripts"
         }
     ]
 }

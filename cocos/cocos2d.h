@@ -268,7 +268,7 @@ THE SOFTWARE.
 #include "3d/CCSprite3D.h"
 #include "3d/CCSprite3DMaterial.h"
 #include "3d/CCTerrain.h"
-#endif
+#endif // CC_USE_3D
 
 // Deprecated include
 #include "deprecated/CCArray.h"

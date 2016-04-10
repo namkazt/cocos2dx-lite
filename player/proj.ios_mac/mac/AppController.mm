@@ -464,6 +464,9 @@ void createSimulator(const std::string& viewName, int width, int height, float f
         CCLOG("%s\n",Configuration::getInstance()->getInfo().c_str());
     }
 
+    // add .app/Contents/Resources to search path
+    FileUtils::getInstance()->addSearchPath([[NSBundle mainBundle] resourcePath].UTF8String);
+
     [self loadLuaConfig];
     [self adjustEditMenuIndex];
 //    if (!_project.isAppMenu())
@@ -479,7 +482,7 @@ void createSimulator(const std::string& viewName, int width, int height, float f
 
     // app
     _app = new AppDelegate();
-//    _app->setProjectConfig(_project);
+    _app->setProjectConfig(_project);
     Application::getInstance()->run();
     // After run, application needs to be terminated immediately.
     [NSApp terminate: self];
