@@ -15,8 +15,7 @@ cocos2d-x is:
   * Community Supported
 
 
-*BUT, I THINK https://github.com/IppClub/Dorothy IS A BETTER COCOS2D-X FORK*
+There are lots of better cocos2d-x forks:
 
-*BUT, I THINK https://github.com/IppClub/Dorothy IS A BETTER COCOS2D-X FORK*
-
-*BUT, I THINK https://github.com/IppClub/Dorothy IS A BETTER COCOS2D-X FORK*
+- https://github.com/stubma/cocos2dx-classical
+- https://github.com/IppClub/Dorothy
