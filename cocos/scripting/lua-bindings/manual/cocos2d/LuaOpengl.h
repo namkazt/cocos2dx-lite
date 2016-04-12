@@ -43,7 +43,7 @@ extern "C" {
 /**
  * The GLNode is wrapped to call the callback function about draw in the Lua.
  */
-class GLNode:public cocos2d::Node
+class GLNode : public cocos2d::Node
 {
 public:
     /**
