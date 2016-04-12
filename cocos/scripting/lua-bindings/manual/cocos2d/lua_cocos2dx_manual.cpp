@@ -4447,55 +4447,55 @@ static void extendDrawNode(lua_State* tolua_S)
     lua_pop(tolua_S, 1);
 }
 
-int lua_cocos2dx_Sprite_initWithPolygon(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Sprite* cobj = nullptr;
-    bool ok  = true;
-    
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    
-    
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Sprite",0,&tolua_err)) goto tolua_lerror;
-#endif
-    
-    cobj = (cocos2d::Sprite*)tolua_tousertype(tolua_S,1,0);
-    
-#if COCOS2D_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Sprite_initWithPolygon'", nullptr);
-        return 0;
-    }
-#endif
-    
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        cocos2d::PolygonInfo* arg0;
-        
-        ok &= luaval_to_object<cocos2d::PolygonInfo>(tolua_S, 2, "cc.PolygonInfo",&arg0, "cc.Sprite:initWithPolygon");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Sprite_initWithPolygon'", nullptr);
-            return 0;
-        }
-        bool ret = cobj->initWithPolygon(*arg0);
-        tolua_pushboolean(tolua_S,(bool)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Sprite:initWithPolygon",argc, 1);
-    return 0;
-    
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Sprite_initWithPolygon'.",&tolua_err);
-#endif
-    return 0;
-}
+//int lua_cocos2dx_Sprite_initWithPolygon(lua_State* tolua_S)
+//{
+//    int argc = 0;
+//    cocos2d::Sprite* cobj = nullptr;
+//    bool ok  = true;
+//    
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    
+//    
+//#if COCOS2D_DEBUG >= 1
+//    if (!tolua_isusertype(tolua_S,1,"cc.Sprite",0,&tolua_err)) goto tolua_lerror;
+//#endif
+//    
+//    cobj = (cocos2d::Sprite*)tolua_tousertype(tolua_S,1,0);
+//    
+//#if COCOS2D_DEBUG >= 1
+//    if (!cobj)
+//    {
+//        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Sprite_initWithPolygon'", nullptr);
+//        return 0;
+//    }
+//#endif
+//    
+//    argc = lua_gettop(tolua_S)-1;
+//    if (argc == 1)
+//    {
+//        cocos2d::PolygonInfo* arg0;
+//        
+//        ok &= luaval_to_object<cocos2d::PolygonInfo>(tolua_S, 2, "cc.PolygonInfo",&arg0, "cc.Sprite:initWithPolygon");
+//        if(!ok)
+//        {
+//            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Sprite_initWithPolygon'", nullptr);
+//            return 0;
+//        }
+//        bool ret = cobj->initWithPolygon(*arg0);
+//        tolua_pushboolean(tolua_S,(bool)ret);
+//        return 1;
+//    }
+//    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Sprite:initWithPolygon",argc, 1);
+//    return 0;
+//    
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Sprite_initWithPolygon'.",&tolua_err);
+//#endif
+//    return 0;
+//}
 
 int lua_cocos2dx_Sprite_setPolygonInfo(lua_State* tolua_S)
 {
@@ -4629,8 +4629,8 @@ static void extendSprite(lua_State* tolua_S)
     if (lua_istable(tolua_S,-1))
     {
         tolua_function(tolua_S, "setBlendFunc", tolua_cocos2dx_Sprite_setBlendFunc01);
-        tolua_function(tolua_S, "initWithPolygon", lua_cocos2dx_Sprite_initWithPolygon);
-        tolua_function(tolua_S, "setPolygonInfo", lua_cocos2dx_Sprite_setPolygonInfo);
+//        tolua_function(tolua_S, "initWithPolygon", lua_cocos2dx_Sprite_initWithPolygon);
+//        tolua_function(tolua_S, "setPolygonInfo", lua_cocos2dx_Sprite_setPolygonInfo);
         tolua_function(tolua_S, "create", lua_cocos2dx_Sprite_create);
     }
     lua_pop(tolua_S, 1);
@@ -6975,703 +6975,703 @@ int register_all_cocos2dx_module_manual(lua_State* tolua_S)
     return 0;
 }
 
-static int tolua_cocos2d_Mat4_getInversed(lua_State* tolua_S)
-{
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-    if (!tolua_istable(tolua_S, 1, 0, &tolua_err))
-        goto tolua_lerror;
-    else
-#endif
-    {
-        cocos2d::Mat4 mat;
-        bool ok = luaval_to_mat4(tolua_S, 1, &mat);
-        if (ok)
-        {
-            mat4_to_luaval(tolua_S, mat.getInversed());
-            return 1;
-        }
-    }
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'mat4_getInversed'.",&tolua_err);
-    return 0;
-#endif
-}
+//static int tolua_cocos2d_Mat4_getInversed(lua_State* tolua_S)
+//{
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//    if (!tolua_istable(tolua_S, 1, 0, &tolua_err))
+//        goto tolua_lerror;
+//    else
+//#endif
+//    {
+//        cocos2d::Mat4 mat;
+//        bool ok = luaval_to_mat4(tolua_S, 1, &mat);
+//        if (ok)
+//        {
+//            mat4_to_luaval(tolua_S, mat.getInversed());
+//            return 1;
+//        }
+//    }
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'mat4_getInversed'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//static int tolua_cocos2d_Mat4_transformVector(lua_State* tolua_S)
+//{
+//    bool ok = true;
+//    int argc = lua_gettop(tolua_S);
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    if (argc == 3)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//
+//        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//            !tolua_istable(tolua_S, 2, 0, &tolua_err) ||
+//            !tolua_istable(tolua_S, 3, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Mat4 mat;
+//            cocos2d::Vec4 vector;
+//            cocos2d::Vec4 dst;
+//            ok &= luaval_to_mat4(tolua_S, 1, &mat);
+//            if (!ok)
+//                return 0;
+//            
+//            ok &= luaval_to_vec4(tolua_S, 2, &vector);
+//            if (!ok)
+//                return 0;
+//            
+//            ok &= luaval_to_vec4(tolua_S, 3, &dst);
+//            if (!ok)
+//                return 0;
+//            
+//            mat.transformVector(vector, &dst);
+//            vec4_to_luaval(tolua_S, dst);
+//            return 1;
+//        }
+//    }
+//    else if(argc == 6)
+//    {
+//        /*
+//         float x, float y, float z, float w, Vec3* dst
+//         */
+//#if COCOS2D_DEBUG >= 1
+//        if (!tolua_istable(tolua_S, 1, 0, &tolua_err)  ||
+//            !tolua_isnumber(tolua_S, 2, 0, &tolua_err) ||
+//            !tolua_isnumber(tolua_S, 3, 0, &tolua_err) ||
+//            !tolua_isnumber(tolua_S, 4, 0, &tolua_err) ||
+//            !tolua_isnumber(tolua_S, 5, 0, &tolua_err) ||
+//            !tolua_istable(tolua_S, 6, 0, &tolua_err) )
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Mat4 mat;
+//            float x,y,z,w;
+//            cocos2d::Vec3 dst;
+//            ok &= luaval_to_mat4(tolua_S, 1, &mat);
+//            if (!ok)
+//                return 0;
+//            
+//            x = tolua_tonumber(tolua_S, 2, 0);
+//            y = tolua_tonumber(tolua_S, 3, 0);
+//            z = tolua_tonumber(tolua_S, 4, 0);
+//            w = tolua_tonumber(tolua_S, 5, 0);
+//            
+//            ok &= luaval_to_vec3(tolua_S, 6, &dst);
+//            if (!ok)
+//                return 0;
+//            
+//            mat.transformVector(x,y,z,w, &dst);
+//            vec3_to_luaval(tolua_S, dst);
+//            return 1;
+//        }
+//    }
+//    
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'mat4_transformVector'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//static int tolua_cocos2d_Mat4_decompose(lua_State* tolua_S)
+//{
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//    
+//    if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//        (!lua_isnil(tolua_S, 2) && !tolua_istable(tolua_S, 2, 0, &tolua_err)) ||
+//        (!lua_isnil(tolua_S, 3) && !tolua_istable(tolua_S, 3, 0, &tolua_err)) ||
+//        (!lua_isnil(tolua_S, 4) && !tolua_istable(tolua_S, 4, 0, &tolua_err)) )
+//        goto tolua_lerror;
+//    else
+//#endif
+//    {
+//        cocos2d::Mat4 mat;
+//        cocos2d::Vec3 scale;
+//        cocos2d::Quaternion rotation;
+//        cocos2d::Vec3 translation;
+//        bool ok = true;
+//        
+//        ok &= luaval_to_mat4(tolua_S, 1, &mat);
+//        if (!ok)
+//            return 0;
+//        
+//        if (lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
+//        {
+//            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
+//            if (!ok)
+//                return 0;
+//            
+//
+//            ok &= luaval_to_vec3(tolua_S, 4, &translation);
+//            if (!ok)
+//                return 0;
+//            
+//            
+//            mat.decompose(nullptr, &rotation, &translation);
+//            
+//            lua_newtable(tolua_S);
+//            
+//            lua_pushstring(tolua_S, "scale");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "rotation");
+//            quaternion_to_luaval(tolua_S, rotation);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "translation");
+//            vec3_to_luaval(tolua_S, translation);
+//            lua_rawset(tolua_S, -3);
+//
+//            return 1;
+//        }
+//        
+//        if (lua_isnil(tolua_S, 2) && lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
+//        {
+//            ok &= luaval_to_vec3(tolua_S, 4, &translation);
+//            if (!ok)
+//                return 0;
+//            
+//            
+//            mat.decompose(nullptr, nullptr, &translation);
+//            
+//            lua_newtable(tolua_S);
+//            
+//            lua_pushstring(tolua_S, "scale");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "rotation");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "translation");
+//            vec3_to_luaval(tolua_S, translation);
+//            lua_rawset(tolua_S, -3);
+//            
+//            return 1;
+//        }
+//        
+//        if (!lua_isnil(tolua_S, 2) && lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
+//        {
+//            ok &= luaval_to_vec3(tolua_S, 2, &scale);
+//            if (!ok)
+//                return 0;
+//        
+//            ok &= luaval_to_vec3(tolua_S, 4, &translation);
+//            if (!ok)
+//                return 0;
+//            
+//            mat.decompose(&scale, nullptr, &translation);
+//            
+//            lua_newtable(tolua_S);
+//            
+//            lua_pushstring(tolua_S, "scale");
+//            vec3_to_luaval(tolua_S, scale);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "rotation");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "translation");
+//            vec3_to_luaval(tolua_S, translation);
+//            lua_rawset(tolua_S, -3);
+//            
+//            return 1;
+//        }
+//        
+//        if (!lua_isnil(tolua_S, 2) && lua_isnil(tolua_S, 3) && lua_isnil(tolua_S, 4))
+//        {
+//            ok &= luaval_to_vec3(tolua_S, 2, &scale);
+//            if (!ok)
+//                return 0;
+//            
+//            
+//            mat.decompose(&scale, nullptr, nullptr);
+//            
+//            lua_newtable(tolua_S);
+//            
+//            lua_pushstring(tolua_S, "scale");
+//            vec3_to_luaval(tolua_S, scale);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "rotation");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "translation");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            return 1;
+//        }
+//        
+//        if (!lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && lua_isnil(tolua_S, 4))
+//        {
+//            ok &= luaval_to_vec3(tolua_S, 2, &scale);
+//            if (!ok)
+//                return 0;
+//            
+//            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
+//            if (!ok)
+//                return 0;
+//            
+//            mat.decompose(&scale, &rotation, nullptr);
+//            
+//            lua_newtable(tolua_S);
+//            
+//            lua_pushstring(tolua_S, "scale");
+//            vec3_to_luaval(tolua_S, scale);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "rotation");
+//            quaternion_to_luaval(tolua_S, rotation);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "translation");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            return 1;
+//            
+//        }
+//        
+//        if (lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && lua_isnil(tolua_S, 4))
+//        {
+//            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
+//            if (!ok)
+//                return 0;
+//            
+//            mat.decompose(nullptr, &rotation, nullptr);
+//            
+//            lua_newtable(tolua_S);
+//            
+//            lua_pushstring(tolua_S, "scale");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "rotation");
+//            quaternion_to_luaval(tolua_S, rotation);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "translation");
+//            lua_pushnil(tolua_S);
+//            lua_rawset(tolua_S, -3);
+//        }
+//        
+//        if (!lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
+//        {
+//            ok &= luaval_to_vec3(tolua_S, 2, &scale);
+//            if (!ok)
+//                return 0;
+//            
+//            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
+//            if (!ok)
+//                return 0;
+//            
+//            ok &= luaval_to_vec3(tolua_S, 4, &translation);
+//            if (!ok)
+//                return 0;
+//            
+//            mat.decompose(&scale, &rotation, &translation);
+//            
+//            lua_newtable(tolua_S);
+//            
+//            lua_pushstring(tolua_S, "scale");
+//            vec3_to_luaval(tolua_S, scale);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "rotation");
+//            quaternion_to_luaval(tolua_S, rotation);
+//            lua_rawset(tolua_S, -3);
+//            
+//            lua_pushstring(tolua_S, "translation");
+//            vec3_to_luaval(tolua_S, translation);
+//            lua_rawset(tolua_S, -3);
+//            
+//            return 1;
+//        }
+//        
+//        return 0;
+//    }
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'mat4_decompose'.",&tolua_err);
+//    return 0;
+//#endif
+//}
 
-static int tolua_cocos2d_Mat4_transformVector(lua_State* tolua_S)
-{
-    bool ok = true;
-    int argc = lua_gettop(tolua_S);
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    if (argc == 3)
-    {
-#if COCOS2D_DEBUG >= 1
-
-        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-            !tolua_istable(tolua_S, 2, 0, &tolua_err) ||
-            !tolua_istable(tolua_S, 3, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Mat4 mat;
-            cocos2d::Vec4 vector;
-            cocos2d::Vec4 dst;
-            ok &= luaval_to_mat4(tolua_S, 1, &mat);
-            if (!ok)
-                return 0;
-            
-            ok &= luaval_to_vec4(tolua_S, 2, &vector);
-            if (!ok)
-                return 0;
-            
-            ok &= luaval_to_vec4(tolua_S, 3, &dst);
-            if (!ok)
-                return 0;
-            
-            mat.transformVector(vector, &dst);
-            vec4_to_luaval(tolua_S, dst);
-            return 1;
-        }
-    }
-    else if(argc == 6)
-    {
-        /*
-         float x, float y, float z, float w, Vec3* dst
-         */
-#if COCOS2D_DEBUG >= 1
-        if (!tolua_istable(tolua_S, 1, 0, &tolua_err)  ||
-            !tolua_isnumber(tolua_S, 2, 0, &tolua_err) ||
-            !tolua_isnumber(tolua_S, 3, 0, &tolua_err) ||
-            !tolua_isnumber(tolua_S, 4, 0, &tolua_err) ||
-            !tolua_isnumber(tolua_S, 5, 0, &tolua_err) ||
-            !tolua_istable(tolua_S, 6, 0, &tolua_err) )
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Mat4 mat;
-            float x,y,z,w;
-            cocos2d::Vec3 dst;
-            ok &= luaval_to_mat4(tolua_S, 1, &mat);
-            if (!ok)
-                return 0;
-            
-            x = tolua_tonumber(tolua_S, 2, 0);
-            y = tolua_tonumber(tolua_S, 3, 0);
-            z = tolua_tonumber(tolua_S, 4, 0);
-            w = tolua_tonumber(tolua_S, 5, 0);
-            
-            ok &= luaval_to_vec3(tolua_S, 6, &dst);
-            if (!ok)
-                return 0;
-            
-            mat.transformVector(x,y,z,w, &dst);
-            vec3_to_luaval(tolua_S, dst);
-            return 1;
-        }
-    }
-    
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'mat4_transformVector'.",&tolua_err);
-    return 0;
-#endif
-}
-
-static int tolua_cocos2d_Mat4_decompose(lua_State* tolua_S)
-{
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-    
-    if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-        (!lua_isnil(tolua_S, 2) && !tolua_istable(tolua_S, 2, 0, &tolua_err)) ||
-        (!lua_isnil(tolua_S, 3) && !tolua_istable(tolua_S, 3, 0, &tolua_err)) ||
-        (!lua_isnil(tolua_S, 4) && !tolua_istable(tolua_S, 4, 0, &tolua_err)) )
-        goto tolua_lerror;
-    else
-#endif
-    {
-        cocos2d::Mat4 mat;
-        cocos2d::Vec3 scale;
-        cocos2d::Quaternion rotation;
-        cocos2d::Vec3 translation;
-        bool ok = true;
-        
-        ok &= luaval_to_mat4(tolua_S, 1, &mat);
-        if (!ok)
-            return 0;
-        
-        if (lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
-        {
-            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
-            if (!ok)
-                return 0;
-            
-
-            ok &= luaval_to_vec3(tolua_S, 4, &translation);
-            if (!ok)
-                return 0;
-            
-            
-            mat.decompose(nullptr, &rotation, &translation);
-            
-            lua_newtable(tolua_S);
-            
-            lua_pushstring(tolua_S, "scale");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "rotation");
-            quaternion_to_luaval(tolua_S, rotation);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "translation");
-            vec3_to_luaval(tolua_S, translation);
-            lua_rawset(tolua_S, -3);
-
-            return 1;
-        }
-        
-        if (lua_isnil(tolua_S, 2) && lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
-        {
-            ok &= luaval_to_vec3(tolua_S, 4, &translation);
-            if (!ok)
-                return 0;
-            
-            
-            mat.decompose(nullptr, nullptr, &translation);
-            
-            lua_newtable(tolua_S);
-            
-            lua_pushstring(tolua_S, "scale");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "rotation");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "translation");
-            vec3_to_luaval(tolua_S, translation);
-            lua_rawset(tolua_S, -3);
-            
-            return 1;
-        }
-        
-        if (!lua_isnil(tolua_S, 2) && lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
-        {
-            ok &= luaval_to_vec3(tolua_S, 2, &scale);
-            if (!ok)
-                return 0;
-        
-            ok &= luaval_to_vec3(tolua_S, 4, &translation);
-            if (!ok)
-                return 0;
-            
-            mat.decompose(&scale, nullptr, &translation);
-            
-            lua_newtable(tolua_S);
-            
-            lua_pushstring(tolua_S, "scale");
-            vec3_to_luaval(tolua_S, scale);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "rotation");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "translation");
-            vec3_to_luaval(tolua_S, translation);
-            lua_rawset(tolua_S, -3);
-            
-            return 1;
-        }
-        
-        if (!lua_isnil(tolua_S, 2) && lua_isnil(tolua_S, 3) && lua_isnil(tolua_S, 4))
-        {
-            ok &= luaval_to_vec3(tolua_S, 2, &scale);
-            if (!ok)
-                return 0;
-            
-            
-            mat.decompose(&scale, nullptr, nullptr);
-            
-            lua_newtable(tolua_S);
-            
-            lua_pushstring(tolua_S, "scale");
-            vec3_to_luaval(tolua_S, scale);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "rotation");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "translation");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            return 1;
-        }
-        
-        if (!lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && lua_isnil(tolua_S, 4))
-        {
-            ok &= luaval_to_vec3(tolua_S, 2, &scale);
-            if (!ok)
-                return 0;
-            
-            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
-            if (!ok)
-                return 0;
-            
-            mat.decompose(&scale, &rotation, nullptr);
-            
-            lua_newtable(tolua_S);
-            
-            lua_pushstring(tolua_S, "scale");
-            vec3_to_luaval(tolua_S, scale);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "rotation");
-            quaternion_to_luaval(tolua_S, rotation);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "translation");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            return 1;
-            
-        }
-        
-        if (lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && lua_isnil(tolua_S, 4))
-        {
-            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
-            if (!ok)
-                return 0;
-            
-            mat.decompose(nullptr, &rotation, nullptr);
-            
-            lua_newtable(tolua_S);
-            
-            lua_pushstring(tolua_S, "scale");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "rotation");
-            quaternion_to_luaval(tolua_S, rotation);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "translation");
-            lua_pushnil(tolua_S);
-            lua_rawset(tolua_S, -3);
-        }
-        
-        if (!lua_isnil(tolua_S, 2) && !lua_isnil(tolua_S, 3) && !lua_isnil(tolua_S, 4))
-        {
-            ok &= luaval_to_vec3(tolua_S, 2, &scale);
-            if (!ok)
-                return 0;
-            
-            ok &= luaval_to_quaternion(tolua_S, 3, &rotation);
-            if (!ok)
-                return 0;
-            
-            ok &= luaval_to_vec3(tolua_S, 4, &translation);
-            if (!ok)
-                return 0;
-            
-            mat.decompose(&scale, &rotation, &translation);
-            
-            lua_newtable(tolua_S);
-            
-            lua_pushstring(tolua_S, "scale");
-            vec3_to_luaval(tolua_S, scale);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "rotation");
-            quaternion_to_luaval(tolua_S, rotation);
-            lua_rawset(tolua_S, -3);
-            
-            lua_pushstring(tolua_S, "translation");
-            vec3_to_luaval(tolua_S, translation);
-            lua_rawset(tolua_S, -3);
-            
-            return 1;
-        }
-        
-        return 0;
-    }
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'mat4_decompose'.",&tolua_err);
-    return 0;
-#endif
-}
-
-static int tolua_cocos2d_Vec3_cross(lua_State* tolua_S)
-{
-    int argc = lua_gettop(tolua_S);
-    
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    
-    if (2 == argc)
-    {
-#if COCOS2D_DEBUG >= 1
-        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-            !tolua_istable(tolua_S, 2, 0, &tolua_err) )
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Vec3 cobj;
-            cocos2d::Vec3 v;
-            
-            bool ok = true;
-            
-            ok &= luaval_to_vec3(tolua_S, 1, &cobj);
-            if (!ok)
-                return 0;
-            
-            ok &= luaval_to_vec3(tolua_S, 2, &v);
-            if (!ok)
-                return 0;
-            
-            cobj.cross(v);
-            
-            vec3_to_luaval(tolua_S, cobj);
-            return 1;
-        }
-    }
-    else if (3 == argc)
-    {
-#if COCOS2D_DEBUG >= 1
-        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-            !tolua_istable(tolua_S, 2, 0, &tolua_err) ||
-            !tolua_istable(tolua_S, 3, 0, &tolua_err) )
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Vec3 v1;
-            cocos2d::Vec3 v2;
-            cocos2d::Vec3 dst;
-            bool ok = true;
-        
-        
-            ok &= luaval_to_vec3(tolua_S, 1, &v1);
-            if (!ok)
-                return 0;
-        
-            ok &= luaval_to_vec3(tolua_S, 2, &v2);
-            if (!ok)
-                return 0;
-        
-            ok &= luaval_to_vec3(tolua_S, 3, &dst);
-            if (!ok)
-                return 0;
-            
-            cocos2d::Vec3::cross(v1, v2, &dst);
-        
-            vec3_to_luaval(tolua_S, dst);
-            return 1;
-        }
-    }
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'MathUtil_gcrossVec3'.",&tolua_err);
-    return 0;
-#endif
-}
-
-static int tolua_cocos2d_Mat4_multiply(lua_State* tolua_S)
-{
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-    if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-        !tolua_istable(tolua_S, 2, 0, &tolua_err) )
-        goto tolua_lerror;
-    else
-#endif
-    {
-        cocos2d::Mat4 mat1;
-        bool ok = luaval_to_mat4(tolua_S, 1, &mat1);
-        if(!ok)
-            return 0;
-        
-        cocos2d::Mat4 mat2;
-        ok = luaval_to_mat4(tolua_S, 2, &mat2);
-        if(!ok)
-            return 0;
-        
-        cocos2d::Mat4 ret = mat1 * mat2;
-        mat4_to_luaval(tolua_S, ret);
-        return 1;
-    }
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'mat4_multiply'.",&tolua_err);
-    return 0;
-#endif
-}
-
-int tolua_cocos2d_Mat4_translate(lua_State* tolua_S)
-{
-    bool ok = true;
-    int argc = lua_gettop(tolua_S);
-    
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    if (argc == 1)
-    {
-#if COCOS2D_DEBUG >= 1
-        
-        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-            !tolua_istable(tolua_S, 2, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Mat4 mat;
-            cocos2d::Vec3 vec3;
-            ok &= luaval_to_mat4(tolua_S, 1, &mat);
-            if (!ok)
-                return 0;
-            
-            ok &= luaval_to_vec3(tolua_S, 2, &vec3);
-            if (!ok)
-                return 0;
-            
-            mat.translate(vec3);
-            mat4_to_luaval(tolua_S, mat);
-            return 1;
-        }
-    }
-    
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_translate'.",&tolua_err);
-    return 0;
-#endif
-}
-
-int tolua_cocos2d_Mat4_createRotationZ(lua_State* tolua_S)
-{
-    bool ok = true;
-    int argc = lua_gettop(tolua_S);
-    
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    if (argc == 2)
-    {
-#if COCOS2D_DEBUG >= 1
-        
-        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-            !tolua_isnumber(tolua_S, 2, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Mat4 mat;
-            float angle;
-            ok &= luaval_to_mat4(tolua_S, 1, &mat);
-            if (!ok)
-                return 0;
-            angle = lua_tonumber(tolua_S, 2);
-            cocos2d::Mat4::createRotationZ(angle, &mat);
-            mat4_to_luaval(tolua_S, mat);
-            return 1;
-        }
-    }
-    
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_createRotationZ'.",&tolua_err);
-    return 0;
-#endif
-}
-
-int tolua_cocos2d_Mat4_setIdentity(lua_State* tolua_S)
-{
-    bool ok = true;
-    int argc = lua_gettop(tolua_S);
-    
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    if (argc == 1)
-    {
-#if COCOS2D_DEBUG >= 1
-        
-        if (!tolua_istable(tolua_S, 1, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Mat4 mat;
-            ok &= luaval_to_mat4(tolua_S, 1, &mat);
-            if (!ok)
-                return 0;
-            mat.setIdentity();
-            mat4_to_luaval(tolua_S, mat);
-            return 1;
-        }
-    }
-    
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_setIdentity'.",&tolua_err);
-    return 0;
-#endif
-}
-
-int tolua_cocos2d_Mat4_createTranslation(lua_State* tolua_S)
-{
-    bool ok = true;
-    int argc = lua_gettop(tolua_S);
-    
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    if (argc == 4)
-    {
-#if COCOS2D_DEBUG >= 1
-        
-        if ( !tolua_isnumber(tolua_S, 1, 0, &tolua_err) ||
-             !tolua_isnumber(tolua_S, 2, 0, &tolua_err)  ||
-             !tolua_isnumber(tolua_S, 3, 0, &tolua_err)  ||
-             !tolua_istable(tolua_S, 4, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Mat4 dst;
-            ok &= luaval_to_mat4(tolua_S, 4, &dst, "cc.Mat4.createTranslation");
-            if (!ok)
-                return 0;
-            
-            float xTranslation = (float)lua_tonumber(tolua_S, 1);
-            float yTranslation = (float)lua_tonumber(tolua_S, 2);
-            float zTranslation = (float)lua_tonumber(tolua_S, 3);
-
-            cocos2d::Mat4::createTranslation(xTranslation, yTranslation, zTranslation, &dst);
-            mat4_to_luaval(tolua_S, dst);
-            return 1;
-        }
-    }
-    else if (argc == 2)
-    {
-#if COCOS2D_DEBUG >= 1
-        
-        if ( !tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-             !tolua_istable(tolua_S, 2, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Vec3 translation;
-            cocos2d::Mat4 dst;
-            
-            ok &= luaval_to_vec3(tolua_S, 1, &translation, "cc.Mat4.createTranslation");
-            ok &= luaval_to_mat4(tolua_S, 2, &dst, "cc.Mat4.createTranslation");
-            if (!ok)
-                return 0;
-            
-            cocos2d::Mat4::createTranslation(translation, &dst);
-            mat4_to_luaval(tolua_S, dst);
-            return 1;
-        }
-    }
-    
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_createTranslation'.",&tolua_err);
-    return 0;
-#endif
-}
-
-int tolua_cocos2d_Mat4_createRotation(lua_State* tolua_S)
-{
-    bool ok = true;
-    int argc = lua_gettop(tolua_S);
-    
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-    if (argc == 2)
-    {
-#if COCOS2D_DEBUG >= 1
-        
-        if ( !tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-             !tolua_istable(tolua_S, 2, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Quaternion quat;
-            cocos2d::Mat4 dst;
-            
-            ok &= luaval_to_quaternion(tolua_S, 1, &quat, "cc.Mat4.createRotation");
-            ok &= luaval_to_mat4(tolua_S, 2, &dst, "cc.Mat4.createRotation");
-            if (!ok)
-                return 0;
-            
-            cocos2d::Mat4::createRotation(quat, &dst);
-            mat4_to_luaval(tolua_S, dst);
-            return 1;
-        }
-    }
-    else if (argc == 3)
-    {
-#if COCOS2D_DEBUG >= 1
-        
-        if ( !tolua_istable(tolua_S, 1, 0, &tolua_err) ||
-             !tolua_isnumber(tolua_S, 2, 0, &tolua_err) ||
-             !tolua_istable(tolua_S, 3, 0, &tolua_err))
-            goto tolua_lerror;
-        else
-#endif
-        {
-            cocos2d::Vec3 axis;
-            cocos2d::Mat4 dst;
-            
-            ok &= luaval_to_vec3(tolua_S, 1, &axis, "cc.Mat4.createRotation");
-            ok &= luaval_to_mat4(tolua_S, 3, &dst, "cc.Mat4.createRotation");
-            if (!ok)
-                return 0;
-            
-            float angle = (float)tolua_tonumber(tolua_S, 2, 0);
-            
-            cocos2d::Mat4::createRotation(axis, angle, &dst);
-            mat4_to_luaval(tolua_S, dst);
-            return 1;
-        }
-    }
-    
-    return 0;
-#if COCOS2D_DEBUG >= 1
-tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_createRotation'.",&tolua_err);
-    return 0;
-#endif
-}
+//static int tolua_cocos2d_Vec3_cross(lua_State* tolua_S)
+//{
+//    int argc = lua_gettop(tolua_S);
+//    
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    
+//    if (2 == argc)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//            !tolua_istable(tolua_S, 2, 0, &tolua_err) )
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Vec3 cobj;
+//            cocos2d::Vec3 v;
+//            
+//            bool ok = true;
+//            
+//            ok &= luaval_to_vec3(tolua_S, 1, &cobj);
+//            if (!ok)
+//                return 0;
+//            
+//            ok &= luaval_to_vec3(tolua_S, 2, &v);
+//            if (!ok)
+//                return 0;
+//            
+//            cobj.cross(v);
+//            
+//            vec3_to_luaval(tolua_S, cobj);
+//            return 1;
+//        }
+//    }
+//    else if (3 == argc)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//            !tolua_istable(tolua_S, 2, 0, &tolua_err) ||
+//            !tolua_istable(tolua_S, 3, 0, &tolua_err) )
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Vec3 v1;
+//            cocos2d::Vec3 v2;
+//            cocos2d::Vec3 dst;
+//            bool ok = true;
+//        
+//        
+//            ok &= luaval_to_vec3(tolua_S, 1, &v1);
+//            if (!ok)
+//                return 0;
+//        
+//            ok &= luaval_to_vec3(tolua_S, 2, &v2);
+//            if (!ok)
+//                return 0;
+//        
+//            ok &= luaval_to_vec3(tolua_S, 3, &dst);
+//            if (!ok)
+//                return 0;
+//            
+//            cocos2d::Vec3::cross(v1, v2, &dst);
+//        
+//            vec3_to_luaval(tolua_S, dst);
+//            return 1;
+//        }
+//    }
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'MathUtil_gcrossVec3'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//static int tolua_cocos2d_Mat4_multiply(lua_State* tolua_S)
+//{
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//    if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//        !tolua_istable(tolua_S, 2, 0, &tolua_err) )
+//        goto tolua_lerror;
+//    else
+//#endif
+//    {
+//        cocos2d::Mat4 mat1;
+//        bool ok = luaval_to_mat4(tolua_S, 1, &mat1);
+//        if(!ok)
+//            return 0;
+//        
+//        cocos2d::Mat4 mat2;
+//        ok = luaval_to_mat4(tolua_S, 2, &mat2);
+//        if(!ok)
+//            return 0;
+//        
+//        cocos2d::Mat4 ret = mat1 * mat2;
+//        mat4_to_luaval(tolua_S, ret);
+//        return 1;
+//    }
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'mat4_multiply'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//int tolua_cocos2d_Mat4_translate(lua_State* tolua_S)
+//{
+//    bool ok = true;
+//    int argc = lua_gettop(tolua_S);
+//    
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    if (argc == 1)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        
+//        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//            !tolua_istable(tolua_S, 2, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Mat4 mat;
+//            cocos2d::Vec3 vec3;
+//            ok &= luaval_to_mat4(tolua_S, 1, &mat);
+//            if (!ok)
+//                return 0;
+//            
+//            ok &= luaval_to_vec3(tolua_S, 2, &vec3);
+//            if (!ok)
+//                return 0;
+//            
+//            mat.translate(vec3);
+//            mat4_to_luaval(tolua_S, mat);
+//            return 1;
+//        }
+//    }
+//    
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_translate'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//int tolua_cocos2d_Mat4_createRotationZ(lua_State* tolua_S)
+//{
+//    bool ok = true;
+//    int argc = lua_gettop(tolua_S);
+//    
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    if (argc == 2)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        
+//        if (!tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//            !tolua_isnumber(tolua_S, 2, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Mat4 mat;
+//            float angle;
+//            ok &= luaval_to_mat4(tolua_S, 1, &mat);
+//            if (!ok)
+//                return 0;
+//            angle = lua_tonumber(tolua_S, 2);
+//            cocos2d::Mat4::createRotationZ(angle, &mat);
+//            mat4_to_luaval(tolua_S, mat);
+//            return 1;
+//        }
+//    }
+//    
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_createRotationZ'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//int tolua_cocos2d_Mat4_setIdentity(lua_State* tolua_S)
+//{
+//    bool ok = true;
+//    int argc = lua_gettop(tolua_S);
+//    
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    if (argc == 1)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        
+//        if (!tolua_istable(tolua_S, 1, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Mat4 mat;
+//            ok &= luaval_to_mat4(tolua_S, 1, &mat);
+//            if (!ok)
+//                return 0;
+//            mat.setIdentity();
+//            mat4_to_luaval(tolua_S, mat);
+//            return 1;
+//        }
+//    }
+//    
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_setIdentity'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//int tolua_cocos2d_Mat4_createTranslation(lua_State* tolua_S)
+//{
+//    bool ok = true;
+//    int argc = lua_gettop(tolua_S);
+//    
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    if (argc == 4)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        
+//        if ( !tolua_isnumber(tolua_S, 1, 0, &tolua_err) ||
+//             !tolua_isnumber(tolua_S, 2, 0, &tolua_err)  ||
+//             !tolua_isnumber(tolua_S, 3, 0, &tolua_err)  ||
+//             !tolua_istable(tolua_S, 4, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Mat4 dst;
+//            ok &= luaval_to_mat4(tolua_S, 4, &dst, "cc.Mat4.createTranslation");
+//            if (!ok)
+//                return 0;
+//            
+//            float xTranslation = (float)lua_tonumber(tolua_S, 1);
+//            float yTranslation = (float)lua_tonumber(tolua_S, 2);
+//            float zTranslation = (float)lua_tonumber(tolua_S, 3);
+//
+//            cocos2d::Mat4::createTranslation(xTranslation, yTranslation, zTranslation, &dst);
+//            mat4_to_luaval(tolua_S, dst);
+//            return 1;
+//        }
+//    }
+//    else if (argc == 2)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        
+//        if ( !tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//             !tolua_istable(tolua_S, 2, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Vec3 translation;
+//            cocos2d::Mat4 dst;
+//            
+//            ok &= luaval_to_vec3(tolua_S, 1, &translation, "cc.Mat4.createTranslation");
+//            ok &= luaval_to_mat4(tolua_S, 2, &dst, "cc.Mat4.createTranslation");
+//            if (!ok)
+//                return 0;
+//            
+//            cocos2d::Mat4::createTranslation(translation, &dst);
+//            mat4_to_luaval(tolua_S, dst);
+//            return 1;
+//        }
+//    }
+//    
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_createTranslation'.",&tolua_err);
+//    return 0;
+//#endif
+//}
+//
+//int tolua_cocos2d_Mat4_createRotation(lua_State* tolua_S)
+//{
+//    bool ok = true;
+//    int argc = lua_gettop(tolua_S);
+//    
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//    if (argc == 2)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        
+//        if ( !tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//             !tolua_istable(tolua_S, 2, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Quaternion quat;
+//            cocos2d::Mat4 dst;
+//            
+//            ok &= luaval_to_quaternion(tolua_S, 1, &quat, "cc.Mat4.createRotation");
+//            ok &= luaval_to_mat4(tolua_S, 2, &dst, "cc.Mat4.createRotation");
+//            if (!ok)
+//                return 0;
+//            
+//            cocos2d::Mat4::createRotation(quat, &dst);
+//            mat4_to_luaval(tolua_S, dst);
+//            return 1;
+//        }
+//    }
+//    else if (argc == 3)
+//    {
+//#if COCOS2D_DEBUG >= 1
+//        
+//        if ( !tolua_istable(tolua_S, 1, 0, &tolua_err) ||
+//             !tolua_isnumber(tolua_S, 2, 0, &tolua_err) ||
+//             !tolua_istable(tolua_S, 3, 0, &tolua_err))
+//            goto tolua_lerror;
+//        else
+//#endif
+//        {
+//            cocos2d::Vec3 axis;
+//            cocos2d::Mat4 dst;
+//            
+//            ok &= luaval_to_vec3(tolua_S, 1, &axis, "cc.Mat4.createRotation");
+//            ok &= luaval_to_mat4(tolua_S, 3, &dst, "cc.Mat4.createRotation");
+//            if (!ok)
+//                return 0;
+//            
+//            float angle = (float)tolua_tonumber(tolua_S, 2, 0);
+//            
+//            cocos2d::Mat4::createRotation(axis, angle, &dst);
+//            mat4_to_luaval(tolua_S, dst);
+//            return 1;
+//        }
+//    }
+//    
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'tolua_cocos2d_Mat4_createRotation'.",&tolua_err);
+//    return 0;
+//#endif
+//}
 
 int register_all_cocos2dx_math_manual(lua_State* tolua_S)
 {
@@ -7679,18 +7679,18 @@ int register_all_cocos2dx_math_manual(lua_State* tolua_S)
         return 0;
     
     
-    tolua_module(tolua_S, nullptr, 0);
-    tolua_beginmodule(tolua_S, nullptr);
-        tolua_function(tolua_S, "mat4_getInversed", tolua_cocos2d_Mat4_getInversed);
-        tolua_function(tolua_S, "mat4_transformVector", tolua_cocos2d_Mat4_transformVector);
-        tolua_function(tolua_S, "mat4_decompose", tolua_cocos2d_Mat4_decompose);
-        tolua_function(tolua_S, "mat4_multiply", tolua_cocos2d_Mat4_multiply);
-        tolua_function(tolua_S, "mat4_translate", tolua_cocos2d_Mat4_translate);
-        tolua_function(tolua_S, "mat4_createRotationZ", tolua_cocos2d_Mat4_createRotationZ);
-        tolua_function(tolua_S, "mat4_setIdentity", tolua_cocos2d_Mat4_setIdentity);
-        tolua_function(tolua_S, "mat4_createTranslation", tolua_cocos2d_Mat4_createTranslation);
-        tolua_function(tolua_S, "mat4_createRotation", tolua_cocos2d_Mat4_createRotation);
-        tolua_function(tolua_S, "vec3_cross", tolua_cocos2d_Vec3_cross);
-    tolua_endmodule(tolua_S);
+//    tolua_module(tolua_S, nullptr, 0);
+//    tolua_beginmodule(tolua_S, nullptr);
+//        tolua_function(tolua_S, "mat4_getInversed", tolua_cocos2d_Mat4_getInversed);
+//        tolua_function(tolua_S, "mat4_transformVector", tolua_cocos2d_Mat4_transformVector);
+//        tolua_function(tolua_S, "mat4_decompose", tolua_cocos2d_Mat4_decompose);
+//        tolua_function(tolua_S, "mat4_multiply", tolua_cocos2d_Mat4_multiply);
+//        tolua_function(tolua_S, "mat4_translate", tolua_cocos2d_Mat4_translate);
+//        tolua_function(tolua_S, "mat4_createRotationZ", tolua_cocos2d_Mat4_createRotationZ);
+//        tolua_function(tolua_S, "mat4_setIdentity", tolua_cocos2d_Mat4_setIdentity);
+//        tolua_function(tolua_S, "mat4_createTranslation", tolua_cocos2d_Mat4_createTranslation);
+//        tolua_function(tolua_S, "mat4_createRotation", tolua_cocos2d_Mat4_createRotation);
+//        tolua_function(tolua_S, "vec3_cross", tolua_cocos2d_Vec3_cross);
+//    tolua_endmodule(tolua_S);
     return 0;
 }
