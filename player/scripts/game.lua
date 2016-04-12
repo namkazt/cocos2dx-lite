@@ -30,7 +30,7 @@ function game.benchmark()
     coil.add(function()
         for i = 1,5 do
             print("hello")
-            coil.wait(1) // wait 1s
+            coil.wait(1) -- wait 1s
         end
     end)
 
