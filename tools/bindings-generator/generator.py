@@ -998,6 +998,7 @@ class Generator(object):
         self.impl_file = None
         self.head_file = None
         self.skip_classes = {}
+        self.only_classes = {}
         self.bind_fields = {}
         self.generated_classes = {}
         self.rename_functions = {}
@@ -1026,6 +1027,17 @@ class Generator(object):
 
         if sys.platform == 'win32' and self.win32_clang_flags != None:
             self.clang_args.extend(self.win32_clang_flags)
+
+        if 'only' in opts:
+            list_of_only = re.split(",\n?", opts['only'])
+            for only in list_of_only:
+                class_name, methods = only.split("::")
+                self.only_classes[class_name] = []
+                match = re.match("\[([^]]+)\]", methods)
+                if match:
+                    self.only_classes[class_name] = match.group(1).split()
+                else:
+                    raise Exception("invalid list of skip methods")
 
         if opts['skip']:
             list_of_skips = re.split(",\n?", opts['skip'])
@@ -1093,6 +1105,12 @@ class Generator(object):
                 if re.match(func, method_name):
                     return True
         else:
+            # just export this function
+            if class_name in self.only_classes and method_name not in self.only_classes[class_name] and method_name != None:
+                if verbose:
+                    print "The class=%s only export %s, skip the method=%s" % (class_name, ' '.join(self.only_classes[class_name]), method_name)
+                return True
+
             for key in self.skip_classes.iterkeys():
                 if key == "*" or re.match("^" + key + "$", class_name):
                     if verbose:
@@ -1541,6 +1559,10 @@ def main():
                 'cpp_headers': config.get(s, 'cpp_headers', 0, dict(userconfig.items('DEFAULT'))).split(' ') if config.has_option(s, 'cpp_headers') else None,
                 'win32_clang_flags': (config.get(s, 'win32_clang_flags', 0, dict(userconfig.items('DEFAULT'))) or "").split() if config.has_option(s, 'win32_clang_flags') else None
                 }
+
+            if config.has_option(s, 'only'):
+                gen_opts['only'] = config.get(s, 'only')
+
             generator = Generator(gen_opts)
             generator.generate_code()
 

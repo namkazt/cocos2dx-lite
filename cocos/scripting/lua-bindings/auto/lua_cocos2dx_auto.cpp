@@ -5567,259 +5567,6 @@ int lua_register_cocos2dx_Director(lua_State* tolua_S)
     return 1;
 }
 
-int lua_cocos2dx_Scheduler_unscheduleUpdate(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_unscheduleUpdate'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        void* arg0;
-
-        #pragma warning NO CONVERSION TO NATIVE FOR void*
-		ok = false;
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_unscheduleUpdate'", nullptr);
-            return 0;
-        }
-        cobj->unscheduleUpdate(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:unscheduleUpdate",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_unscheduleUpdate'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_setTimeScale(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_setTimeScale'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        double arg0;
-
-        ok &= luaval_to_number(tolua_S, 2,&arg0, "cc.Scheduler:setTimeScale");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_setTimeScale'", nullptr);
-            return 0;
-        }
-        cobj->setTimeScale(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:setTimeScale",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_setTimeScale'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_isTargetPaused(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_isTargetPaused'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        void* arg0;
-
-        #pragma warning NO CONVERSION TO NATIVE FOR void*
-		ok = false;
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_isTargetPaused'", nullptr);
-            return 0;
-        }
-        bool ret = cobj->isTargetPaused(arg0);
-        tolua_pushboolean(tolua_S,(bool)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:isTargetPaused",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_isTargetPaused'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_update(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_update'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        double arg0;
-
-        ok &= luaval_to_number(tolua_S, 2,&arg0, "cc.Scheduler:update");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_update'", nullptr);
-            return 0;
-        }
-        cobj->update(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:update",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_update'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_resumeTarget(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_resumeTarget'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        void* arg0;
-
-        #pragma warning NO CONVERSION TO NATIVE FOR void*
-		ok = false;
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_resumeTarget'", nullptr);
-            return 0;
-        }
-        cobj->resumeTarget(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:resumeTarget",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_resumeTarget'.",&tolua_err);
-#endif
-
-    return 0;
-}
 int lua_cocos2dx_Scheduler_unscheduleScriptEntry(lua_State* tolua_S)
 {
     int argc = 0;
@@ -5870,7 +5617,7 @@ int lua_cocos2dx_Scheduler_unscheduleScriptEntry(lua_State* tolua_S)
 
     return 0;
 }
-int lua_cocos2dx_Scheduler_performFunctionInCocosThread(lua_State* tolua_S)
+int lua_cocos2dx_Scheduler_scheduleScriptFunc(lua_State* tolua_S)
 {
     int argc = 0;
     cocos2d::Scheduler* cobj = nullptr;
@@ -5890,286 +5637,38 @@ int lua_cocos2dx_Scheduler_performFunctionInCocosThread(lua_State* tolua_S)
 #if TOLUA_DEBUG >= 1
     if (!cobj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_performFunctionInCocosThread'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_scheduleScriptFunc'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
+    if (argc == 3)
     {
-        std::function<void ()> arg0;
+        unsigned int arg0;
+        double arg1;
+        bool arg2;
 
-        do {
-			// Lambda binding for lua is not supported.
-			assert(false);
-		} while(0)
-		;
+        ok &= luaval_to_uint32(tolua_S, 2,&arg0, "cc.Scheduler:scheduleScriptFunc");
+
+        ok &= luaval_to_number(tolua_S, 3,&arg1, "cc.Scheduler:scheduleScriptFunc");
+
+        ok &= luaval_to_boolean(tolua_S, 4,&arg2, "cc.Scheduler:scheduleScriptFunc");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_performFunctionInCocosThread'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_scheduleScriptFunc'", nullptr);
             return 0;
         }
-        cobj->performFunctionInCocosThread(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:performFunctionInCocosThread",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_performFunctionInCocosThread'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_unschedule(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_unschedule'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 2)
-    {
-        std::string arg0;
-        void* arg1;
-
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "cc.Scheduler:unschedule");
-
-        #pragma warning NO CONVERSION TO NATIVE FOR void*
-		ok = false;
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_unschedule'", nullptr);
-            return 0;
-        }
-        cobj->unschedule(arg0, arg1);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:unschedule",argc, 2);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_unschedule'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_unscheduleAll(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_unscheduleAll'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0)
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_unscheduleAll'", nullptr);
-            return 0;
-        }
-        cobj->unscheduleAll();
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:unscheduleAll",argc, 0);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_unscheduleAll'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_unscheduleAllForTarget(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_unscheduleAllForTarget'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        void* arg0;
-
-        #pragma warning NO CONVERSION TO NATIVE FOR void*
-		ok = false;
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_unscheduleAllForTarget'", nullptr);
-            return 0;
-        }
-        cobj->unscheduleAllForTarget(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:unscheduleAllForTarget",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_unscheduleAllForTarget'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_pauseTarget(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_pauseTarget'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1)
-    {
-        void* arg0;
-
-        #pragma warning NO CONVERSION TO NATIVE FOR void*
-		ok = false;
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_pauseTarget'", nullptr);
-            return 0;
-        }
-        cobj->pauseTarget(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:pauseTarget",argc, 1);
-    return 0;
-
-#if TOLUA_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_pauseTarget'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cocos2dx_Scheduler_getTimeScale(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scheduler* cobj = nullptr;
-    bool ok  = true;
-
-#if TOLUA_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if TOLUA_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scheduler",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scheduler*)tolua_tousertype(tolua_S,1,0);
-
-#if TOLUA_DEBUG >= 1
-    if (!cobj)
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scheduler_getTimeScale'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0)
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scheduler_getTimeScale'", nullptr);
-            return 0;
-        }
-        double ret = cobj->getTimeScale();
+        unsigned int ret = cobj->scheduleScriptFunc(arg0, arg1, arg2);
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:getTimeScale",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scheduler:scheduleScriptFunc",argc, 3);
     return 0;
 
 #if TOLUA_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_getTimeScale'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scheduler_scheduleScriptFunc'.",&tolua_err);
 #endif
 
     return 0;
@@ -6224,18 +5723,8 @@ int lua_register_cocos2dx_Scheduler(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"Scheduler");
         tolua_function(tolua_S,"new",lua_cocos2dx_Scheduler_constructor);
-        tolua_function(tolua_S,"unscheduleUpdate",lua_cocos2dx_Scheduler_unscheduleUpdate);
-        tolua_function(tolua_S,"setTimeScale",lua_cocos2dx_Scheduler_setTimeScale);
-        tolua_function(tolua_S,"isTargetPaused",lua_cocos2dx_Scheduler_isTargetPaused);
-        tolua_function(tolua_S,"update",lua_cocos2dx_Scheduler_update);
-        tolua_function(tolua_S,"resumeTarget",lua_cocos2dx_Scheduler_resumeTarget);
         tolua_function(tolua_S,"unscheduleScriptEntry",lua_cocos2dx_Scheduler_unscheduleScriptEntry);
-        tolua_function(tolua_S,"performFunctionInCocosThread",lua_cocos2dx_Scheduler_performFunctionInCocosThread);
-        tolua_function(tolua_S,"unschedule",lua_cocos2dx_Scheduler_unschedule);
-        tolua_function(tolua_S,"unscheduleAll",lua_cocos2dx_Scheduler_unscheduleAll);
-        tolua_function(tolua_S,"unscheduleAllForTarget",lua_cocos2dx_Scheduler_unscheduleAllForTarget);
-        tolua_function(tolua_S,"pauseTarget",lua_cocos2dx_Scheduler_pauseTarget);
-        tolua_function(tolua_S,"getTimeScale",lua_cocos2dx_Scheduler_getTimeScale);
+        tolua_function(tolua_S,"scheduleScriptFunc",lua_cocos2dx_Scheduler_scheduleScriptFunc);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(cocos2d::Scheduler).name();
     g_luaType[typeName] = "cc.Scheduler";
