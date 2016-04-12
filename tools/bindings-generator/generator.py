@@ -1034,7 +1034,7 @@ class Generator(object):
                 self.skip_classes[class_name] = []
                 match = re.match("\[([^]]+)\]", methods)
                 if match:
-                    self.skip_classes[class_name] = match.group(1).split(" ")
+                    self.skip_classes[class_name] = match.group(1).split()
                 else:
                     raise Exception("invalid list of skip methods")
         if opts['field']:
@@ -1044,7 +1044,7 @@ class Generator(object):
                 self.bind_fields[class_name] = []
                 match = re.match("\[([^]]+)\]", fields)
                 if match:
-                    self.bind_fields[class_name] = match.group(1).split(" ")
+                    self.bind_fields[class_name] = match.group(1).split()
                 else:
                     raise Exception("invalid list of bind fields")
         if opts['rename_functions']:
@@ -1054,7 +1054,7 @@ class Generator(object):
                 self.rename_functions[class_name] = {}
                 match = re.match("\[([^]]+)\]", methods)
                 if match:
-                    list_of_methods = match.group(1).split(" ")
+                    list_of_methods = match.group(1).split()
                     for pair in list_of_methods:
                         k, v = pair.split("=")
                         self.rename_functions[class_name][k] = v
@@ -1520,7 +1520,7 @@ def main():
                 'replace_headers': config.get(s, 'replace_headers') if config.has_option(s, 'replace_headers') else None,
                 'classes': config.get(s, 'classes').split(' '),
                 'classes_need_extend': config.get(s, 'classes_need_extend').split(' ') if config.has_option(s, 'classes_need_extend') else [],
-                'clang_args': (config.get(s, 'extra_arguments', 0, dict(userconfig.items('DEFAULT'))) or "").split(" "),
+                'clang_args': (config.get(s, 'extra_arguments', 0, dict(userconfig.items('DEFAULT'))) or "").split(),
                 'target': os.path.join(workingdir, "targets", t),
                 'outdir': outdir,
                 'remove_prefix': config.get(s, 'remove_prefix'),
@@ -1539,7 +1539,7 @@ def main():
                 'macro_judgement': config.get(s, 'macro_judgement') if config.has_option(s, 'macro_judgement') else None,
                 'hpp_headers': config.get(s, 'hpp_headers', 0, dict(userconfig.items('DEFAULT'))).split(' ') if config.has_option(s, 'hpp_headers') else None,
                 'cpp_headers': config.get(s, 'cpp_headers', 0, dict(userconfig.items('DEFAULT'))).split(' ') if config.has_option(s, 'cpp_headers') else None,
-                'win32_clang_flags': (config.get(s, 'win32_clang_flags', 0, dict(userconfig.items('DEFAULT'))) or "").split(" ") if config.has_option(s, 'win32_clang_flags') else None
+                'win32_clang_flags': (config.get(s, 'win32_clang_flags', 0, dict(userconfig.items('DEFAULT'))) or "").split() if config.has_option(s, 'win32_clang_flags') else None
                 }
             generator = Generator(gen_opts)
             generator.generate_code()
