@@ -2,7 +2,7 @@
     "common": [
         "AUTHORS",
         "build/cocos2d-win32.sln",
-        "build/libcocosx.xcodeproj/project.pbxproj",
+        "build/cocos2d_libs.xcodeproj/project.pbxproj",
         "build/win32-msvc-2013-x86.cmd",
         "CHANGELOG",
         "cocos/2d/CCAction.cpp",
