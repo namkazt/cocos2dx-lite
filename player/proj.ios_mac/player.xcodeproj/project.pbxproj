@@ -58,16 +58,16 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
-		9F6A4ACC1C52304800831F4A /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6A4AC51C522FF500831F4A /* libcocos2d Mac.a */; };
-		9F6A4ACD1C52304B00831F4A /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6A4AC71C522FF500831F4A /* libcocos2d iOS.a */; };
 		9FD5AFEB1CBA81780030DF72 /* ProjectConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1905C7131BD27C0300E0855E /* ProjectConfig.cpp */; };
 		9FD5AFEC1CBA81800030DF72 /* SimulatorConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1905C7151BD27C0300E0855E /* SimulatorConfig.cpp */; };
-		9FD5AFF11CBA83860030DF72 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD5AFEF1CBA83060030DF72 /* libluajit.a */; };
+		9FD5AFF11CBA83860030DF72 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD5AFEF1CBA83060030DF72 /* libluajit.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9FE981741CAF8B420038012F /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE981731CAF8B420038012F /* libcurl.tbd */; };
 		9FE981771CAFA33C0038012F /* res in Resources */ = {isa = PBXBuildFile; fileRef = 9FE981751CAFA33C0038012F /* res */; };
 		9FE981781CAFA33C0038012F /* res in Resources */ = {isa = PBXBuildFile; fileRef = 9FE981751CAFA33C0038012F /* res */; };
 		9FE981791CAFA33C0038012F /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 9FE981761CAFA33C0038012F /* scripts */; };
 		9FE9817A1CAFA33C0038012F /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 9FE981761CAFA33C0038012F /* scripts */; };
+		9FFAD48E1CC085A900986F50 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFAD48B1CC0858E00986F50 /* libcocos2d iOS.a */; };
+		9FFAD4911CC085B300986F50 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFAD4891CC0858E00986F50 /* libcocos2d Mac.a */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -80,30 +80,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9F6A4AC41C522FF500831F4A /* PBXContainerItemProxy */ = {
+		9FFAD4881CC0858E00986F50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F6A4ABF1C522FF500831F4A /* libcocosx.xcodeproj */;
+			containerPortal = 9FFAD4831CC0858E00986F50 /* cocos2d_libs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
 			remoteInfo = "libcocos2d Mac";
 		};
-		9F6A4AC61C522FF500831F4A /* PBXContainerItemProxy */ = {
+		9FFAD48A1CC0858E00986F50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F6A4ABF1C522FF500831F4A /* libcocosx.xcodeproj */;
+			containerPortal = 9FFAD4831CC0858E00986F50 /* cocos2d_libs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A07A4D641783777C0073F6A7;
 			remoteInfo = "libcocos2d iOS";
 		};
-		9F6A4AC81C52300F00831F4A /* PBXContainerItemProxy */ = {
+		9FFAD48C1CC0859E00986F50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F6A4ABF1C522FF500831F4A /* libcocosx.xcodeproj */;
+			containerPortal = 9FFAD4831CC0858E00986F50 /* cocos2d_libs.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A07A4C241783777C0073F6A7;
 			remoteInfo = "libcocos2d iOS";
 		};
-		9F6A4ACA1C52301400831F4A /* PBXContainerItemProxy */ = {
+		9FFAD48F1CC085AE00986F50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F6A4ABF1C522FF500831F4A /* libcocosx.xcodeproj */;
+			containerPortal = 9FFAD4831CC0858E00986F50 /* cocos2d_libs.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
 			remoteInfo = "libcocos2d Mac";
@@ -174,13 +174,13 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		9F6A4ABF1C522FF500831F4A /* libcocosx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libcocosx.xcodeproj; path = ../../build/libcocosx.xcodeproj; sourceTree = "<group>"; };
 		9FD5AFEA1CBA2FBF0030DF72 /* lua_module_register.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_module_register.h; sourceTree = "<group>"; };
 		9FD5AFEF1CBA83060030DF72 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../../external/lua/luajit/prebuilt/ios/libluajit.a; sourceTree = "<group>"; };
 		9FE9814C1CAED7B40038012F /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../../external/lua/luajit/prebuilt/mac/libluajit.a; sourceTree = "<group>"; };
 		9FE981731CAF8B420038012F /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 		9FE981751CAFA33C0038012F /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../res; sourceTree = "<group>"; };
 		9FE981761CAFA33C0038012F /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../scripts; sourceTree = "<group>"; };
+		9FFAD4831CC0858E00986F50 /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../../build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -197,8 +197,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFAD48E1CC085A900986F50 /* libcocos2d iOS.a in Frameworks */,
 				9FD5AFF11CBA83860030DF72 /* libluajit.a in Frameworks */,
-				9F6A4ACD1C52304B00831F4A /* libcocos2d iOS.a in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -218,8 +218,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFAD4911CC085B300986F50 /* libcocos2d Mac.a in Frameworks */,
 				9FE981741CAF8B420038012F /* libcurl.tbd in Frameworks */,
-				9F6A4ACC1C52304800831F4A /* libcocos2d Mac.a in Frameworks */,
 				ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */,
 				5087E76717EB910900C73F5D /* libz.dylib in Frameworks */,
 				8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */,
@@ -275,7 +275,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				9F6A4ABF1C522FF500831F4A /* libcocosx.xcodeproj */,
+				9FFAD4831CC0858E00986F50 /* cocos2d_libs.xcodeproj */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -400,11 +400,11 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
-		9F6A4AC01C522FF500831F4A /* Products */ = {
+		9FFAD4841CC0858E00986F50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F6A4AC51C522FF500831F4A /* libcocos2d Mac.a */,
-				9F6A4AC71C522FF500831F4A /* libcocos2d iOS.a */,
+				9FFAD4891CC0858E00986F50 /* libcocos2d Mac.a */,
+				9FFAD48B1CC0858E00986F50 /* libcocos2d iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -423,7 +423,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9F6A4AC91C52300F00831F4A /* PBXTargetDependency */,
+				9FFAD48D1CC0859E00986F50 /* PBXTargetDependency */,
 			);
 			name = "player-mobile";
 			productName = iphone;
@@ -441,7 +441,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9F6A4ACB1C52301400831F4A /* PBXTargetDependency */,
+				9FFAD4901CC085AE00986F50 /* PBXTargetDependency */,
 			);
 			name = "player-desktop";
 			productName = iphone;
@@ -470,8 +470,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9F6A4AC01C522FF500831F4A /* Products */;
-					ProjectRef = 9F6A4ABF1C522FF500831F4A /* libcocosx.xcodeproj */;
+					ProductGroup = 9FFAD4841CC0858E00986F50 /* Products */;
+					ProjectRef = 9FFAD4831CC0858E00986F50 /* cocos2d_libs.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -483,18 +483,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9F6A4AC51C522FF500831F4A /* libcocos2d Mac.a */ = {
+		9FFAD4891CC0858E00986F50 /* libcocos2d Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libcocos2d Mac.a";
-			remoteRef = 9F6A4AC41C522FF500831F4A /* PBXContainerItemProxy */;
+			remoteRef = 9FFAD4881CC0858E00986F50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9F6A4AC71C522FF500831F4A /* libcocos2d iOS.a */ = {
+		9FFAD48B1CC0858E00986F50 /* libcocos2d iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libcocos2d iOS.a";
-			remoteRef = 9F6A4AC61C522FF500831F4A /* PBXContainerItemProxy */;
+			remoteRef = 9FFAD48A1CC0858E00986F50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -577,15 +577,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9F6A4AC91C52300F00831F4A /* PBXTargetDependency */ = {
+		9FFAD48D1CC0859E00986F50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libcocos2d iOS";
-			targetProxy = 9F6A4AC81C52300F00831F4A /* PBXContainerItemProxy */;
+			targetProxy = 9FFAD48C1CC0859E00986F50 /* PBXContainerItemProxy */;
 		};
-		9F6A4ACB1C52301400831F4A /* PBXTargetDependency */ = {
+		9FFAD4901CC085AE00986F50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libcocos2d Mac";
-			targetProxy = 9F6A4ACA1C52301400831F4A /* PBXContainerItemProxy */;
+			targetProxy = 9FFAD48F1CC085AE00986F50 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

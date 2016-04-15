@@ -910,6 +910,12 @@
 		9FE9816B1CAED8FE0038012F /* xxtea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE981681CAED8FE0038012F /* xxtea.cpp */; };
 		9FE9816C1CAED8FE0038012F /* xxtea.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE981691CAED8FE0038012F /* xxtea.h */; };
 		9FE9816D1CAED8FE0038012F /* xxtea.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE981691CAED8FE0038012F /* xxtea.h */; };
+		9FFAD4A01CC0953100986F50 /* edtaa3func.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAD49E1CC0953100986F50 /* edtaa3func.cpp */; };
+		9FFAD4A11CC0953100986F50 /* edtaa3func.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAD49E1CC0953100986F50 /* edtaa3func.cpp */; };
+		9FFAD4A21CC0953100986F50 /* edtaa3func.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD49F1CC0953100986F50 /* edtaa3func.h */; };
+		9FFAD4A31CC0953100986F50 /* edtaa3func.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD49F1CC0953100986F50 /* edtaa3func.h */; };
+		9FFAD4A51CC0955300986F50 /* c2dConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD4A41CC0955300986F50 /* c2dConfig.h */; };
+		9FFAD4A61CC0955300986F50 /* c2dConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD4A41CC0955300986F50 /* c2dConfig.h */; };
 		9FFEE6EC1CB0082E00B4DECF /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEE6C51CB0082E00B4DECF /* fpconv.c */; };
 		9FFEE6ED1CB0082E00B4DECF /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEE6C51CB0082E00B4DECF /* fpconv.c */; };
 		9FFEE6EE1CB0082E00B4DECF /* fpconv.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFEE6C61CB0082E00B4DECF /* fpconv.h */; };
@@ -1649,6 +1655,9 @@
 		9FE9814E1CAED7EE0038012F /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../external/lua/luajit/prebuilt/mac/libluajit.a; sourceTree = "<group>"; };
 		9FE981681CAED8FE0038012F /* xxtea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xxtea.cpp; sourceTree = "<group>"; };
 		9FE981691CAED8FE0038012F /* xxtea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxtea.h; sourceTree = "<group>"; };
+		9FFAD49E1CC0953100986F50 /* edtaa3func.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = edtaa3func.cpp; sourceTree = "<group>"; };
+		9FFAD49F1CC0953100986F50 /* edtaa3func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edtaa3func.h; sourceTree = "<group>"; };
+		9FFAD4A41CC0955300986F50 /* c2dConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = c2dConfig.h; path = ../base/c2dConfig.h; sourceTree = "<group>"; };
 		9FFEE6C51CB0082E00B4DECF /* fpconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpconv.c; sourceTree = "<group>"; };
 		9FFEE6C61CB0082E00B4DECF /* fpconv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpconv.h; sourceTree = "<group>"; };
 		9FFEE6C71CB0082E00B4DECF /* lua_cjson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_cjson.c; sourceTree = "<group>"; };
@@ -2002,6 +2011,7 @@
 				50ABBDC71925AB6E00A911A9 /* ccCArray.cpp */,
 				50ABBDC81925AB6E00A911A9 /* ccCArray.h */,
 				50ABBDC91925AB6E00A911A9 /* ccConfig.h */,
+				9FFAD4A41CC0955300986F50 /* c2dConfig.h */,
 				50ABBDCA1925AB6E00A911A9 /* CCConfiguration.cpp */,
 				50ABBDCB1925AB6E00A911A9 /* CCConfiguration.h */,
 				50ABBDCC1925AB6E00A911A9 /* CCConsole.cpp */,
@@ -2196,6 +2206,7 @@
 		1A57033E180BD0490088DEC7 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				9FFAD49D1CC0953100986F50 /* edtaa3func */,
 				9FFEE6C31CB0082E00B4DECF /* lua */,
 				9FE981671CAED8FE0038012F /* xxtea */,
 				68B39B391B1C5C670084F72C /* clipper */,
@@ -3080,6 +3091,16 @@
 			path = ../external/xxtea;
 			sourceTree = "<group>";
 		};
+		9FFAD49D1CC0953100986F50 /* edtaa3func */ = {
+			isa = PBXGroup;
+			children = (
+				9FFAD49E1CC0953100986F50 /* edtaa3func.cpp */,
+				9FFAD49F1CC0953100986F50 /* edtaa3func.h */,
+			);
+			name = edtaa3func;
+			path = ../external/edtaa3func;
+			sourceTree = "<group>";
+		};
 		9FFEE6C31CB0082E00B4DECF /* lua */ = {
 			isa = PBXGroup;
 			children = (
@@ -3382,6 +3403,7 @@
 				50ABBE251925AB6F00A911A9 /* base64.h in Headers */,
 				A05DCF9E1B90584E00EE040B /* CCDownloader-curl.h in Headers */,
 				9F6A4BC11C5230E600831F4A /* lua_cocos2dx_controller_auto.hpp in Headers */,
+				9FFAD4A21CC0953100986F50 /* edtaa3func.h in Headers */,
 				50693C601B6BF2AE005C5820 /* CCDownloader.h in Headers */,
 				50ABBEC91925AB6F00A911A9 /* firePngData.h in Headers */,
 				503DD8F51926B0DB00CD74DD /* CCIMEDelegate.h in Headers */,
@@ -3403,6 +3425,7 @@
 				B29A7E0319EE1B7700872B35 /* BoundingBoxAttachment.h in Headers */,
 				9F6A4BB51C5230E600831F4A /* lua_cocos2dx_auto.hpp in Headers */,
 				50ABBEB91925AB6F00A911A9 /* ccUTF8.h in Headers */,
+				9FFAD4A51CC0955300986F50 /* c2dConfig.h in Headers */,
 				50ABBE671925AB6F00A911A9 /* CCEventListenerCustom.h in Headers */,
 				50ABBE2F1925AB6F00A911A9 /* ccConfig.h in Headers */,
 				1AAF5851180E40B9000584C8 /* LocalStorage.h in Headers */,
@@ -3612,6 +3635,7 @@
 				1A570224180BCC1A0088DEC7 /* CCParticleBatchNode.h in Headers */,
 				15FB20961AE7C57D00C31518 /* cdt.h in Headers */,
 				B29A7E2019EE1B7700872B35 /* BoneData.h in Headers */,
+				9FFAD4A61CC0955300986F50 /* c2dConfig.h in Headers */,
 				9F6A4BFE1C5230E600831F4A /* CCLuaBridge.h in Headers */,
 				9F6A4C0A1C5230E600831F4A /* CCLuaValue.h in Headers */,
 				503DD8F61926B0DB00CD74DD /* CCIMEDelegate.h in Headers */,
@@ -3686,6 +3710,7 @@
 				5027253B190BF1B900AAF4ED /* cocos2d.h in Headers */,
 				291901441B05895600F8B4BA /* CCNinePatchImageParser.h in Headers */,
 				3E6176691960F89B00DE83F5 /* CCController.h in Headers */,
+				9FFAD4A31CC0953100986F50 /* edtaa3func.h in Headers */,
 				3E6176781960F89B00DE83F5 /* CCGameController.h in Headers */,
 				50ABBE641925AB6F00A911A9 /* CCEventListenerAcceleration.h in Headers */,
 				9F6A4C741C5230E600831F4A /* CCLuaObjcBridge.h in Headers */,
@@ -3807,7 +3832,7 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "";
 			};
-			buildConfigurationList = 1551A339158F2AB200E66CFE /* Build configuration list for PBXProject "libcocosx" */;
+			buildConfigurationList = 1551A339158F2AB200E66CFE /* Build configuration list for PBXProject "cocos2d_libs" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -3865,6 +3890,7 @@
 				B240C5E91B09DFB000137F50 /* CCFrameBuffer.cpp in Sources */,
 				1A570069180BC5A10088DEC7 /* CCActionCatmullRom.cpp in Sources */,
 				B257B44E1989D5E800D9A687 /* CCPrimitive.cpp in Sources */,
+				9FFAD4A01CC0953100986F50 /* edtaa3func.cpp in Sources */,
 				9FFEE7181CB0082E00B4DECF /* tolua_is.c in Sources */,
 				299CF1FB19A434BC00C378C1 /* ccRandom.cpp in Sources */,
 				B29A7DDB19EE1B7700872B35 /* Event.c in Sources */,
@@ -4112,6 +4138,7 @@
 				503DD8EE1926736A00CD74DD /* CCImage-ios.mm in Sources */,
 				50ABBD941925AB4100A911A9 /* CCGLProgramState.cpp in Sources */,
 				B257B44F1989D5E800D9A687 /* CCPrimitive.cpp in Sources */,
+				9FFAD4A11CC0953100986F50 /* edtaa3func.cpp in Sources */,
 				50ABBE281925AB6F00A911A9 /* CCAutoreleasePool.cpp in Sources */,
 				B29A7E0C19EE1B7700872B35 /* Atlas.c in Sources */,
 				15AE185E19AAD31200C27E9E /* CocosDenshion.m in Sources */,
@@ -4569,7 +4596,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1551A339158F2AB200E66CFE /* Build configuration list for PBXProject "libcocosx" */ = {
+		1551A339158F2AB200E66CFE /* Build configuration list for PBXProject "cocos2d_libs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1551A34A158F2AB200E66CFE /* Debug */,

@@ -181,7 +181,8 @@ deprecated/CCString.cpp \
 ../external/poly2tri/sweep/cdt.cc \
 ../external/poly2tri/sweep/sweep_context.cc \
 ../external/poly2tri/sweep/sweep.cc \
-../external/clipper/clipper.cpp
+../external/clipper/clipper.cpp \
+../external/edtaa3func/edtaa3func.cpp
 
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH) \

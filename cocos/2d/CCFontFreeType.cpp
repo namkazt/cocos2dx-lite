@@ -23,9 +23,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#if CC_USE_FREETYPE > 0
-
 #include "2d/CCFontFreeType.h"
+
+#if CC_USE_FREETYPE > 0
 #include FT_BBOX_H
 #include "edtaa3func.h"
 #include "2d/CCFontAtlas.h"
