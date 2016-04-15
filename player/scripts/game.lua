@@ -23,6 +23,7 @@ function game.benchmark()
     local size = sharedDirector:getWinSize()
 
     local label = cc.Label:createWithSystemFont("hello, cocos2dx-lite!", "sans", 64)
+    -- local label = cc.Label:createWithTTF("Hello", "fonts/arial.ttf", 64)
     label:setPosition(size.width/2, size.height/2)
     scene:addChild(label)
 

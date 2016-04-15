@@ -65,6 +65,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     }
 #endif
 
+    FileUtils::getInstance()->setPopupNotify(false);
+
     // set script path
     string path = FileUtils::getInstance()->fullPathForFilename("scripts/main.lua");
 
