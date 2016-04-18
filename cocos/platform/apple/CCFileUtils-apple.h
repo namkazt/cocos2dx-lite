@@ -55,6 +55,8 @@ public:
 
     virtual ValueVector getValueVectorFromFile(const std::string& filename) override;
     void setBundle(NSBundle* bundle);
+    
+    virtual bool createDirectory(const std::string& path) override;
 private:
     virtual bool isFileExistInternal(const std::string& filePath) const override;
     virtual bool removeDirectory(const std::string& dirPath) override;
