@@ -24,10 +24,13 @@
  ****************************************************************************/
 
 #include "CCLuaEngine.h"
-#include "tolua_fix.h"
-#include "cocos2d.h"
-#include "LuaOpengl.h"
-#include "lua_cocos2dx_manual.hpp"
+
+//#include "scripting/lua-bindings/manual/CCLuaEngine.h"
+#include "scripting/lua-bindings/manual/tolua_fix.h"
+#include "scripting/lua-bindings/manual/cocos2d/LuaOpengl.h"
+#include "scripting/lua-bindings/manual/cocos2d/lua_cocos2dx_manual.hpp"
+#include "base/CCDirector.h"
+#include "base/CCEventCustom.h"
 
 #if _MSC_VER > 1800
 #pragma comment(lib,"lua51-2015.lib")

@@ -32,6 +32,35 @@
 #include <sys/socket.h>
 #endif
 
+#include "2d/CCActionCamera.h"
+#include "2d/CCActionCatmullRom.h"
+#include "2d/CCActionGrid.h"
+#include "2d/CCActionInterval.h"
+#include "2d/CCAtlasNode.h"
+#include "2d/CCCamera.h"
+#include "2d/CCMotionStreak.h"
+#include "2d/CCParticleBatchNode.h"
+#include "2d/CCParticleSystem.h"
+#include "2d/CCScene.h"
+#include "2d/CCLayer.h"
+#include "2d/CCSpriteBatchNode.h"
+#include "base/CCEventDispatcher.h"
+#include "base/CCEventListenerKeyboard.h"
+#include "base/CCEventListenerMouse.h"
+#include "base/CCEventListenerTouch.h"
+#include "base/CCScheduler.h"
+#include "base/CCUserDefault.h"
+#include "base/ccUtils.h"
+#include "deprecated/CCBool.h"
+#include "deprecated/CCInteger.h"
+#include "deprecated/CCDictionary.h"
+#include "platform/CCApplication.h"
+#include "platform/CCDevice.h"
+#include "platform/CCFileUtils.h"
+#include "platform/CCGLView.h"
+#include "renderer/CCTextureCache.h"
+#include "deprecated/CCDeprecated.h"
+
 static int executeScriptTouchHandler(Layer* layer, EventTouch::EventCode eventType, Touch* touch, Event* event)
 {
     TouchScriptData data(eventType, layer, touch, event);

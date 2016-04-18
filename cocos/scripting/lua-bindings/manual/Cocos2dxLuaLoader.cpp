@@ -26,8 +26,9 @@ THE SOFTWARE.
 #include <string>
 #include <algorithm>
 
-#include "CCLuaStack.h"
-#include "CCLuaEngine.h"
+#include "scripting/lua-bindings/manual/CCLuaStack.h"
+#include "scripting/lua-bindings/manual/CCLuaEngine.h"
+#include "platform/CCFileUtils.h"
 
 using namespace cocos2d;
 
