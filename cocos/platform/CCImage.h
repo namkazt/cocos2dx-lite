@@ -30,7 +30,7 @@ THE SOFTWARE.
 #include "base/CCRef.h"
 #include "renderer/CCTexture2D.h"
 
-#if defined(CC_USE_WIC)
+#if CC_USE_WIC > 0
 #include "platform/winrt/WICImageLoader-winrt.h"
 #endif
 
@@ -159,7 +159,7 @@ protected:
     bool decodeWithStbImage(const unsigned char *data, ssize_t datalen);
 #endif
     
-#if defined(CC_USE_WIC)
+#if CC_USE_WIC > 0
     bool encodeWithWIC(const std::string& filePath, bool isToRGB, GUID containerFormat);
     bool decodeWithWIC(const unsigned char *data, ssize_t dataLen);
 #endif

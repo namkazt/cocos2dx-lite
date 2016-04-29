@@ -426,7 +426,7 @@ namespace
         int offset;
     }tImageSource;
  
-#ifdef CC_USE_PNG
+#if CC_USE_PNG > 0
     static void pngReadCallback(png_structp png_ptr, png_bytep data, png_size_t length)
     {
         tImageSource* isource = (tImageSource*)png_get_io_ptr(png_ptr);
@@ -859,7 +859,7 @@ bool Image::decodeWithStbImage(const unsigned char *data, ssize_t datalen)
 }
 #endif
 
-#ifdef CC_USE_WIC
+#if CC_USE_WIC > 0
 bool Image::decodeWithWIC(const unsigned char *data, ssize_t dataLen)
 {
     bool bRet = false;
