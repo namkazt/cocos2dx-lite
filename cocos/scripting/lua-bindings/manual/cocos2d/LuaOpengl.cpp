@@ -1,18 +1,18 @@
 /****************************************************************************
  Copyright (c) 2013-2014 Chukong Technologies Inc.
- 
+
  http://www.cocos2d-x.org
- 
+
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
- 
+
  The above copyright notice and this permission notice shall be included in
  all copies or substantial portions of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -39,7 +39,7 @@
 
 using namespace cocos2d;
 
-    
+
 void GLNode::draw(Renderer *renderer, const cocos2d::Mat4& transform, uint32_t flags)
 {
     _renderCmd.init(_globalZOrder);
@@ -52,10 +52,10 @@ void GLNode::onDraw(const cocos2d::Mat4 &transform, uint32_t flags)
     int handler = ScriptHandlerMgr::getInstance()->getObjectHandler((void*)this, ScriptHandlerMgr::HandlerType::GL_NODE_DRAW);
     if (0 != handler)
     {
-        
+
         LuaStack* stack = LuaEngine::getInstance()->getLuaStack();
         lua_State* L = stack->getLuaState();
-        
+
         lua_newtable(L);
         for (int i =0; i < 16; i++)
         {
@@ -165,7 +165,7 @@ static int tolua_Cocos2d_glGetSupportedExtensions00(lua_State* tolua_S)
         size_t len  = strlen((const char*)extensions);
         GLubyte* copy = new (std::nothrow) GLubyte[len+1];
         strncpy((char*)copy, (const char*)extensions, len );
-        
+
         int start_extension=0;
         LuaValueArray array;
         for (unsigned int i=0; i < len+1; i++)
@@ -174,12 +174,12 @@ static int tolua_Cocos2d_glGetSupportedExtensions00(lua_State* tolua_S)
             {
                 copy[i] = 0;
                 LuaValue value = LuaValue::stringValue((const char*)&copy[start_extension]);
-                array.push_back(value);                
+                array.push_back(value);
                 start_extension = i+1;
                 i++;
             }
         }
-        
+
         lua_newtable(tolua_S);                                              /* L: table */
         int index = 1;
         for (LuaValueArrayIterator it = array.begin(); it != array.end(); ++it)
@@ -853,7 +853,7 @@ static int tolua_Cocos2d_glCompressedTexImage2D00(lua_State* tolua_S)
         int height   = (int)tolua_tonumber(tolua_S, 5, 0);
         int border   = (int)tolua_tonumber(tolua_S, 6, 0);
         int imageSize   = (int)tolua_tonumber(tolua_S, 7, 0);
-        
+
         long length   = (long)tolua_tonumber(tolua_S,8,0);
         float* floatArray     = new float[length];
         if (NULL == floatArray)
@@ -865,7 +865,7 @@ static int tolua_Cocos2d_glCompressedTexImage2D00(lua_State* tolua_S)
             floatArray[i - 1] = (float)tolua_tofieldnumber(tolua_S, 9, i, 0);
         }
         glCompressedTexImage2D((GLenum)target , (GLint)level , (GLenum)internalformat , (GLsizei)width , (GLsizei)height , (GLint)border , (GLsizei)imageSize , (GLvoid*)floatArray  );
-        
+
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
     return 0;
@@ -908,7 +908,7 @@ static int tolua_Cocos2d_glCompressedTexSubImage2D00(lua_State* tolua_S)
         int height   = (int)tolua_tonumber(tolua_S, 6, 0);
         unsigned int format = (unsigned int)tolua_tonumber(tolua_S,7,0);
         int imageSize   = (int)tolua_tonumber(tolua_S, 8, 0);
-        
+
         long length   = (long)tolua_tonumber(tolua_S,9,0);
         float* floatArray     = new float[length];
         if (NULL == floatArray)
@@ -920,7 +920,7 @@ static int tolua_Cocos2d_glCompressedTexSubImage2D00(lua_State* tolua_S)
             floatArray[i-1] = (float)tolua_tofieldnumber(tolua_S, 10, i, 0);
         }
         glCompressedTexSubImage2D((GLenum)target , (GLint)level , (GLint)xoffset , (GLint)yoffset , (GLsizei)width , (GLsizei)height , (GLenum)format , (GLsizei)imageSize , (GLvoid*)floatArray  );
-        
+
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
     return 0;
@@ -962,7 +962,7 @@ static int tolua_Cocos2d_glCopyTexImage2D00(lua_State* tolua_S)
         int height = (int)tolua_tonumber(tolua_S,7,0);
         int border   = (int)tolua_tonumber(tolua_S, 8, 0);
         glCopyTexImage2D((GLenum)target , (GLint)level , (GLenum)internalformat , (GLint)x , (GLint)y , (GLsizei)width , (GLsizei)height , (GLint)border  );
-        
+
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -1003,7 +1003,7 @@ static int tolua_Cocos2d_glCopyTexSubImage2D00(lua_State* tolua_S)
         int width   = (int)tolua_tonumber(tolua_S, 7, 0);
         int height = (int)tolua_tonumber(tolua_S,8,0);
         glCopyTexSubImage2D((GLenum)target , (GLint)level , (GLint)xoffset ,(GLint)yoffset , (GLint)x , (GLint)y , (GLsizei)width , (GLsizei)height);
-        
+
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -1027,7 +1027,7 @@ static int tolua_Cocos2d_glCreateProgram00(lua_State* tolua_S)
     {
         int retVal = glCreateProgram();
         tolua_pushnumber(tolua_S,retVal);
-        
+
     }
     return 1;
 #ifndef TOLUA_RELEASE
@@ -1475,7 +1475,7 @@ static int tolua_Cocos2d_glDrawElements00(lua_State* tolua_S)
                 }
                 glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)unit8Array);
                 CC_SAFE_DELETE_ARRAY(unit8Array);
-                
+
             }
             else
             {
@@ -1495,9 +1495,9 @@ static int tolua_Cocos2d_glDrawElements00(lua_State* tolua_S)
                 {
                     shortArray[i-1] = (unsigned short)tolua_tofieldnumber(tolua_S, 5, i, 0);
                 }
-                
+
                 glDrawElements((GLenum)arg0 , (GLsizei)arg1 , (GLenum)arg2 , (GLvoid*)shortArray);
-                
+
                 CC_SAFE_DELETE_ARRAY(shortArray);
             }
             else
@@ -1962,7 +1962,7 @@ static int tolua_Cocos2d_glGetAttachedShaders00(lua_State* tolua_S)
         //Fix bug 2448, it seems that glGetAttachedShaders will crash if we send NULL to the third parameter (eg Windows), same as in JS binding
         GLsizei realShaderCount = 0;
         glGetAttachedShaders(arg0, length, &realShaderCount, buffer);
-       
+
         lua_newtable(tolua_S);                                        /* L: table */
         int index = 1;
         for (int  i = 0; i < length; i++)
@@ -1971,7 +1971,7 @@ static int tolua_Cocos2d_glGetAttachedShaders00(lua_State* tolua_S)
             lua_rawseti(tolua_S, -2, index);                          /* table[index] = value, L: table */
             ++index;
         }
-        CC_SAFE_DELETE_ARRAY(buffer);        
+        CC_SAFE_DELETE_ARRAY(buffer);
     }
     return 1;
 #ifndef TOLUA_RELEASE
@@ -2267,16 +2267,16 @@ static int tolua_Cocos2d_glGetUniformfv00(lua_State* tolua_S)
     {
         unsigned int arg0 = (unsigned int)tolua_tonumber(tolua_S, 1, 0);
         unsigned int arg1 = (unsigned int)tolua_tonumber(tolua_S, 2, 0);
-        
+
         GLsizei length;
         glGetProgramiv(arg0, GL_ACTIVE_UNIFORM_MAX_LENGTH, &length);
         GLchar* namebuffer = new (std::nothrow) GLchar[length];
         GLint size = -1;
         GLenum type = -1;
-        
+
         glGetActiveUniform(arg0, arg1, length, NULL, &size, &type, namebuffer);
         CC_SAFE_DELETE_ARRAY(namebuffer);
-        
+
         int usize = 0;
         int utype = 0;
         switch(type) {
@@ -2309,7 +2309,7 @@ static int tolua_Cocos2d_glGetUniformfv00(lua_State* tolua_S)
                 usize = 4;
                 utype = GL_FLOAT;
                 break;
-                
+
                 // int
             case GL_INT:
                 usize = 1;
@@ -2327,7 +2327,7 @@ static int tolua_Cocos2d_glGetUniformfv00(lua_State* tolua_S)
                 usize = 1;
                 utype = GL_INT;
                 break;
-                
+
             default:
 #ifndef TOLUA_RELEASE
                 tolua_error(tolua_S,"#ferror in function 'glGetUniformfv'.",&tolua_err);
@@ -2338,7 +2338,7 @@ static int tolua_Cocos2d_glGetUniformfv00(lua_State* tolua_S)
         if( utype == GL_FLOAT) {
             GLfloat* param = new (std::nothrow) GLfloat[usize];
             glGetUniformfv(arg0, arg1, param);
-            
+
             lua_newtable(tolua_S);                                        /* L: table */
             int index = 1;
             for (int  i = 0; i < usize; i++)
@@ -2348,11 +2348,11 @@ static int tolua_Cocos2d_glGetUniformfv00(lua_State* tolua_S)
                 ++index;
             }
             CC_SAFE_DELETE_ARRAY(param);
-            
+
         } else if( utype == GL_INT ) {
             GLint* param = new (std::nothrow) GLint[usize];
             glGetUniformiv(arg0, arg1, param);
-            
+
             lua_newtable(tolua_S);                                        /* L: table */
             int index = 1;
             for (int  i = 0; i < usize; i++)
@@ -2726,7 +2726,7 @@ static int tolua_Cocos2d_glReadPixels00(lua_State* tolua_S)
         int arg3  = (int)tolua_tonumber(tolua_S, 4, 0);
         unsigned int arg4  = (unsigned int)tolua_tonumber(tolua_S, 5, 0);
         unsigned int arg5  = (unsigned int)tolua_tonumber(tolua_S, 6, 0);
-        
+
         long length   = (long)tolua_tonumber(tolua_S,7,0);
         unsigned char* unit8Array     = new unsigned char[length];
         if (NULL == unit8Array)
@@ -2739,7 +2739,7 @@ static int tolua_Cocos2d_glReadPixels00(lua_State* tolua_S)
         }
 
         glReadPixels((GLint)arg0 , (GLint)arg1 , (GLsizei)arg2 , (GLsizei)arg3 , (GLenum)arg4 , (GLenum)arg5 , (GLvoid*)unit8Array);
-        
+
         lua_newtable(tolua_S);                                              /* L: table */
         int index = 1;
         for (int i = 0; i < length; i++)
@@ -2748,7 +2748,7 @@ static int tolua_Cocos2d_glReadPixels00(lua_State* tolua_S)
             lua_rawseti(tolua_S, -2, index);                          /* table[index] = value, L: table */
             ++index;
         }
-        
+
         CC_SAFE_DELETE_ARRAY(unit8Array);
     }
     return 1;
@@ -2922,7 +2922,7 @@ static int tolua_Cocos2d_glStencilFunc00(lua_State* tolua_S)
     {
         unsigned int arg0 = (unsigned int)tolua_tonumber(tolua_S, 1, 0);
         int arg1 = (int)tolua_tonumber(tolua_S, 2, 0);
-        unsigned int arg2 = (unsigned int)tolua_tonumber(tolua_S, 3, 0);        
+        unsigned int arg2 = (unsigned int)tolua_tonumber(tolua_S, 3, 0);
         glStencilFunc((GLenum)arg0 , (GLint)arg1 , (GLuint)arg2  );
     }
     return 0;
@@ -3114,18 +3114,17 @@ static int tolua_Cocos2d_glTexImage2D00(lua_State* tolua_S)
         unsigned int arg6 = (unsigned int)tolua_tonumber(tolua_S, 7, 0);
         unsigned int arg7 = (unsigned int)tolua_tonumber(tolua_S, 8, 0);
         unsigned int arg8 = (unsigned int)tolua_tonumber(tolua_S, 9, 0);
-        
-        unsigned char* unit8Array     = new unsigned char[arg8];
+        unsigned char* unit8Array = new (std::nothrow) unsigned char[arg8];
         if (NULL == unit8Array)
         {
             return  0;
         }
-        
+
         for (unsigned int i = 1; i <= arg8; i++)
         {
             unit8Array[i-1] = (unsigned char)tolua_tofieldnumber(tolua_S, 10, i, 0);
         }
-        
+
         glTexImage2D((GLenum)arg0 , (GLint)arg1 , (GLint)arg2 , (GLsizei)arg3 , (GLsizei)arg4 , (GLint)arg5 , (GLenum)arg6 , (GLenum)arg7 , (GLvoid*)unit8Array);
 
 //        lua_newtable(tolua_S);                                         /* L: table */
@@ -3137,7 +3136,7 @@ static int tolua_Cocos2d_glTexImage2D00(lua_State* tolua_S)
 //            ++index;
 //        }
 
-        
+
         CC_SAFE_DELETE_ARRAY(unit8Array);
     }
     return 0;
@@ -3240,8 +3239,7 @@ static int tolua_Cocos2d_glTexSubImage2D00(lua_State* tolua_S)
         unsigned int arg6 = (unsigned int)tolua_tonumber(tolua_S, 7, 0);
         unsigned int arg7 = (unsigned int)tolua_tonumber(tolua_S, 8, 0);
         unsigned int arg8 = (unsigned int)tolua_tonumber(tolua_S, 9, 0);
-        
-        unsigned char* unit8Array     = new unsigned char[arg8];
+        unsigned char* unit8Array = new (std::nothrow) unsigned char[arg8];
         if (NULL == unit8Array)
         {
             return  0;
@@ -3250,9 +3248,9 @@ static int tolua_Cocos2d_glTexSubImage2D00(lua_State* tolua_S)
         {
             unit8Array[i] = 0;
         }
-        
+
         glTexSubImage2D((GLenum)arg0 , (GLint)arg1 , (GLint)arg2 , (GLint)arg3 , (GLsizei)arg4 , (GLsizei)arg5 , (GLenum)arg6 , (GLenum)arg7 , (GLvoid*)unit8Array  );
-        
+
         lua_newtable(tolua_S);                                         /* L: table */
         int index = 1;
         for (unsigned int i = 0; i < arg8; i++)
@@ -3261,7 +3259,7 @@ static int tolua_Cocos2d_glTexSubImage2D00(lua_State* tolua_S)
             lua_rawseti(tolua_S, -2, index);                          /* table[index] = value, L: table */
             ++index;
         }
-        
+
         CC_SAFE_DELETE_ARRAY(unit8Array);
     }
     return 1;
@@ -3915,12 +3913,12 @@ static int tolua_Cocos2d_glUniformMatrix3fv00(lua_State* tolua_S)
         {
             return  0;
         }
-        
+
         for (int i = 1; i <= arg2; i++)
         {
             floatArray[i-1] = (float)tolua_tofieldnumber(tolua_S, 4, i, 0);
         }
-        
+
         glUniformMatrix3fv(arg0, 1, (GLboolean)arg1 , (GLfloat*)floatArray  );
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
@@ -3958,12 +3956,12 @@ static int tolua_Cocos2d_glUniformMatrix4fv00(lua_State* tolua_S)
         {
             return  0;
         }
-        
+
         for (int i = 1; i <= arg2; i++)
         {
             floatArray[i-1] = (float)tolua_tofieldnumber(tolua_S, 4, i, 0);
         }
-        
+
         glUniformMatrix4fv(arg0, 1, (GLboolean)arg1 , (GLfloat*)floatArray  );
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
@@ -4079,12 +4077,12 @@ static int tolua_Cocos2d_glVertexAttrib1fv00(lua_State* tolua_S)
         {
             return  0;
         }
-        
+
         for (int i = 1; i <= arg1; i++)
         {
             floatArray[i-1] = (float)tolua_tofieldnumber(tolua_S, 3, i, 0);
         }
-        
+
         glVertexAttrib1fv((GLuint)arg0 , (GLfloat*)floatArray  );
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
@@ -4151,12 +4149,12 @@ static int tolua_Cocos2d_glVertexAttrib2fv00(lua_State* tolua_S)
         {
             return  0;
         }
-        
+
         for (int i = 1; i <= arg1; i++)
         {
             floatArray[i-1] = (float)tolua_tofieldnumber(tolua_S, 3, i, 0);
         }
-        
+
         glVertexAttrib2fv((GLuint)arg0 , (GLfloat*)floatArray  );
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
@@ -4166,7 +4164,7 @@ tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'glVertexAttrib2fv'.",&tolua_err);
     return 0;
 #endif
-    
+
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -4225,12 +4223,12 @@ static int tolua_Cocos2d_glVertexAttrib3fv00(lua_State* tolua_S)
         {
             return  0;
         }
-        
+
         for (int i = 1; i <= arg1; i++)
         {
             floatArray[i-1] = (float)tolua_tofieldnumber(tolua_S, 3, i, 0);
         }
-        
+
         glVertexAttrib3fv((GLuint)arg0 , (GLfloat*)floatArray  );
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
@@ -4240,7 +4238,7 @@ tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'glVertexAttrib3fv'.",&tolua_err);
     return 0;
 #endif
-    
+
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -4301,12 +4299,12 @@ static int tolua_Cocos2d_glVertexAttrib4fv00(lua_State* tolua_S)
         {
             return  0;
         }
-        
+
         for (int i = 1; i <= arg1; i++)
         {
             floatArray[i-1] = (float)tolua_tofieldnumber(tolua_S, 3, i, 0);
         }
-        
+
         glVertexAttrib4fv((GLuint)arg0 , (GLfloat*)floatArray  );
         CC_SAFE_DELETE_ARRAY(floatArray);
     }
@@ -4316,7 +4314,7 @@ tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'glVertexAttrib4fv'.",&tolua_err);
     return 0;
 #endif
-    
+
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -4353,7 +4351,7 @@ tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'glVertexAttribPointer'.",&tolua_err);
     return 0;
 #endif
-    
+
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -4386,7 +4384,7 @@ tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'glViewport'.",&tolua_err);
     return 0;
 #endif
-    
+
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -4413,7 +4411,7 @@ tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'glEnableVertexAttribs'.",&tolua_err);
     return 0;
 #endif
-    
+
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -4434,7 +4432,7 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawPoint00(lua_
         if(luaval_to_vec2(tolua_S, 1, &vec2, "cc.DrawPrimitives.drawPoint"))
         {
             DrawPrimitives::drawPoint(vec2);
-        }        
+        }
     }
     return 0;
 #ifndef TOLUA_RELEASE
@@ -4461,13 +4459,13 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawPoints00(lua
 #endif
     {
         unsigned int numberOfPoints = ((unsigned int)  tolua_tonumber(tolua_S,2,0));
-        
+
         if (numberOfPoints > 0)
         {
             cocos2d::Vec2* points = new cocos2d::Vec2[numberOfPoints];
             if (NULL == points)
                 return 0;
-            
+
             for (int i = 0; i < numberOfPoints; i++)
             {
                 lua_pushnumber(tolua_S,i + 1);
@@ -4477,7 +4475,7 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawPoints00(lua
                     CC_SAFE_DELETE_ARRAY(points);
                     goto tolua_lerror;
                 }
-                
+
                 if(!luaval_to_vec2(tolua_S, lua_gettop(tolua_S), &points[i], "cc.DrawPrimitives.drawPoints"))
                 {
                     lua_pop(tolua_S, 1);
@@ -4516,11 +4514,11 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawLine00(lua_S
         cocos2d::Vec2 origin;
         if (!luaval_to_vec2(tolua_S, 1, &origin, "cc.DrawPrimitives.drawLine"))
             return 0;
-        
+
         cocos2d::Vec2  destination;
         if (!luaval_to_vec2(tolua_S, 2, &destination, "cc.DrawPrimitives.drawLine"))
             return 0;
-        
+
         DrawPrimitives::drawLine(origin,destination);
     }
     return 0;
@@ -4584,16 +4582,16 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawSolidRect00(
         cocos2d::Vec2  origin;
         if (!luaval_to_vec2(tolua_S, 1, &origin, "cc.DrawPrimitives.drawSolidRect"))
             return 0;
-        
+
         cocos2d::Vec2  destination;
         if (!luaval_to_vec2(tolua_S, 2, &destination, "cc.DrawPrimitives.drawSolidRect"))
             return 0;
-        
+
         Color4F color;
         if (!luaval_to_color4f(tolua_S, 3, &color, "cc.DrawPrimitives.drawSolidRect"))
             return 0;
 
- 
+
         DrawPrimitives::drawSolidRect(origin,destination,color);
     }
     return 0;
@@ -4639,7 +4637,7 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawPoly00(lua_S
                     CC_SAFE_DELETE_ARRAY(points);
                     goto tolua_lerror;
                 }
-                
+
                 if(!luaval_to_vec2(tolua_S, lua_gettop(tolua_S), &points[i], "cc.DrawPrimitives.drawPoly"))
                 {
                     lua_pop(tolua_S, 1);
@@ -4693,7 +4691,7 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawSolidPoly00(
                     CC_SAFE_DELETE_ARRAY(points);
                     goto tolua_lerror;
                 }
-                
+
                 if(!luaval_to_vec2(tolua_S, lua_gettop(tolua_S), &points[i], "cc.DrawPrimitives.drawSolidPoly"))
                 {
                     lua_pop(tolua_S, 1);
@@ -4702,14 +4700,14 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawSolidPoly00(
                 }
                 lua_pop(tolua_S, 1);
             }
-            
+
             Color4F color;
             if (!luaval_to_color4f(tolua_S, 3, &color, "cc.DrawPrimitives.drawSolidPoly"))
             {
                 CC_SAFE_DELETE_ARRAY(points);
                 return 0;
             }
-            
+
             DrawPrimitives::drawSolidPoly(points,numberOfPoints,color);
             CC_SAFE_DELETE_ARRAY(points);
         }
@@ -4746,7 +4744,7 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawCircle00(lua
         cocos2d::Vec2 center;
         if (!luaval_to_vec2(tolua_S, 1, &center, "cc.DrawPrimitives.drawCircle"))
             return 0;
-        
+
         float radius = ((float)  tolua_tonumber(tolua_S,2,0));
         float angle = ((float)  tolua_tonumber(tolua_S,3,0));
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,4,0));
@@ -4824,15 +4822,15 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawQuadBezier00
         cocos2d::Vec2 origin;
         if (!luaval_to_vec2(tolua_S, 1, &origin, "cc.DrawPrimitives.drawQuadBezier"))
             return 0;
-        
+
         cocos2d::Vec2 control;
         if (!luaval_to_vec2(tolua_S, 2, &control, "cc.DrawPrimitives.drawQuadBezier"))
             return 0;
-        
+
         cocos2d::Vec2 destination;
         if (!luaval_to_vec2(tolua_S, 3, &destination, "cc.DrawPrimitives.drawQuadBezier"))
             return 0;
-        
+
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,4,0));
         DrawPrimitives::drawQuadBezier(origin,control,destination,segments);
     }
@@ -4863,23 +4861,23 @@ CC_DEPRECATED_ATTRIBUTE static int tolua_cocos2d_DrawPrimitives_drawCubicBezier0
     else
 #endif
     {
-        
+
         cocos2d::Vec2 origin;
         if (!luaval_to_vec2(tolua_S, 1, &origin, "cc.DrawPrimitives.drawCubicBezier"))
             return 0;
-        
+
         cocos2d::Vec2 control1;
         if (!luaval_to_vec2(tolua_S, 2, &control1, "cc.DrawPrimitives.drawCubicBezier"))
             return 0;
-        
+
         cocos2d::Vec2 control2;
         if (!luaval_to_vec2(tolua_S, 3, &control2, "cc.DrawPrimitives.drawCubicBezier"))
             return 0;
-        
+
         cocos2d::Vec2 destination;
         if (!luaval_to_vec2(tolua_S, 4, &destination, "cc.DrawPrimitives.drawCubicBezier"))
             return 0;
-        
+
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,5,0));
         DrawPrimitives::drawCubicBezier(origin,control1,control2,destination,segments);
     }
@@ -4911,22 +4909,22 @@ CC_DEPRECATED_ATTRIBUTE int tolua_cocos2d_DrawPrimitives_drawCatmullRom00(lua_St
         cocos2d::Vec2 *arr = NULL;
         if (!luaval_to_array_of_vec2(tolua_S, 1, &arr, &num, "cc.DrawPrimitives.drawCatmullRom"))
             return 0;
-        
-        
-        PointArray* points = PointArray::create(num);        
+
+
+        PointArray* points = PointArray::create(num);
         if (NULL == points)
         {
             CC_SAFE_DELETE_ARRAY(arr);
             return 0;
         }
-        
+
         for( int i = 0; i < num; i++) {
             points->addControlPoint(arr[i]);
         }
         CC_SAFE_DELETE_ARRAY(arr);
-        
+
         unsigned int segments = ((unsigned int)  tolua_tonumber(tolua_S,2,0));
-        
+
         DrawPrimitives::drawCatmullRom(points,segments);
     }
     return 0;
@@ -4958,15 +4956,15 @@ CC_DEPRECATED_ATTRIBUTE int tolua_cocos2d_DrawPrimitives_drawCardinalSpline00(lu
         cocos2d::Vec2 *arr = NULL;
         if (!luaval_to_array_of_vec2(tolua_S, 1, &arr, &num, "cc.DrawPrimitives.drawCatmullRom"))
             return 0;
-        
-        
+
+
         PointArray* config = PointArray::create(num);
         if (NULL == config)
         {
             CC_SAFE_DELETE_ARRAY(arr);
             return 0;
         }
-        
+
         for( int i = 0; i < num; i++) {
             config->addControlPoint(arr[i]);
         }
@@ -5289,7 +5287,7 @@ int register_glnode_manual(lua_State* tolua_S)
 {
     if (nullptr == tolua_S)
         return 0;
-    
+
     lua_pushstring(tolua_S,"cc.GLNode");
     lua_rawget(tolua_S,LUA_REGISTRYINDEX);
     if (lua_istable(tolua_S,-1))
@@ -5302,8 +5300,6 @@ int register_glnode_manual(lua_State* tolua_S)
         lua_rawset(tolua_S,-3);
     }
     lua_pop(tolua_S, 1);
-    
+
     return 1;
 }
-
-

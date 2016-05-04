@@ -558,7 +558,7 @@ void WebSocket::onSubThreadLoop()
     }
     else
     {
-        LOGD("Ready state is closing or was closed, code=%d, quit websocket thread!\n", _readyState);
+        LOGD("Ready state is closing or was closed, code=%d, quit websocket thread!\n", static_cast<int>(_readyState));
         _readStateMutex.unlock();
         _wsHelper->quitWebSocketThread();
     }
@@ -668,10 +668,10 @@ void WebSocket::onClientWritable()
         WsMessage* subThreadMsg = *iter;
         Data* data = (Data*)subThreadMsg->obj;
 
-        const size_t c_bufferSize = WS_RX_BUFFER_SIZE;
+        const ssize_t c_bufferSize = WS_RX_BUFFER_SIZE;
 
-        const size_t remaining = data->len - data->issued;
-        const size_t n = std::min(remaining, c_bufferSize );
+        const ssize_t remaining = data->len - data->issued;
+        const ssize_t n = std::min(remaining, c_bufferSize);
 
         WebSocketFrame* frame = nullptr;
 

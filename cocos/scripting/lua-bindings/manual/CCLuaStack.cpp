@@ -24,8 +24,10 @@
  ****************************************************************************/
 
 #include "CCLuaStack.h"
-#include "tolua_fix.h"
 #include "external/lua/lua_extensions.h"
+#include "scripting/lua-bindings/manual/tolua_fix.h"
+#include <string.h>
+
 #include "external/xxtea/xxtea.h"
 extern "C" {
 #include "lua.h"
@@ -622,19 +624,19 @@ int LuaStack::executeFunctionReturnArray(int handler,int numArgs,int numResults,
             if (lua_type(_state, -1) == LUA_TBOOLEAN) {
 
                 bool value = lua_toboolean(_state, -1);
-                resultArray.addObject(__Bool::create(value)) ;
+                resultArray.addObject(__Bool::create(value));
 
-            }else if (lua_type(_state, -1) == LUA_TNUMBER) {
+            } else if (lua_type(_state, -1) == LUA_TNUMBER) {
 
                 double value = lua_tonumber(_state, -1);
                 resultArray.addObject(__Double::create(value));
 
-            }else if (lua_type(_state, -1) == LUA_TSTRING) {
+            } else if (lua_type(_state, -1) == LUA_TSTRING) {
 
                 const char* value = lua_tostring(_state, -1);
                 resultArray.addObject(__String::create(value));
 
-            }else{
+            } else {
 
                 resultArray.addObject(static_cast<Ref*>(tolua_tousertype(_state, -1, nullptr)));
             }
@@ -812,29 +814,26 @@ int LuaStack::luaLoadChunksFromZIP(lua_State *L)
     LuaStack *stack = this;
 
     do {
-        ssize_t size = 0;
         void *buffer = nullptr;
-        unsigned char *zipFileData = utils->getFileData(zipFilePath.c_str(), "rb", &size);
         ZipFile *zip = nullptr;
 
-        bool isXXTEA = stack && stack->_xxteaEnabled && zipFileData;
-        for (int i = 0; isXXTEA && i < stack->_xxteaSignLen && i < size; ++i) {
-            isXXTEA = zipFileData[i] == stack->_xxteaSign[i];
-        }
+        Data zipFileData(utils->getDataFromFile(zipFilePath));
+        unsigned char* bytes = zipFileData.getBytes();
+        ssize_t size = zipFileData.getSize();
 
+        bool isXXTEA = stack && stack->_xxteaEnabled && size >= stack->_xxteaSignLen
+            && memcmp(stack->_xxteaSign, bytes, stack->_xxteaSignLen) == 0;
         if (isXXTEA) { // decrypt XXTEA
             xxtea_long len = 0;
-            buffer = xxtea_decrypt(zipFileData + stack->_xxteaSignLen,
+            buffer = xxtea_decrypt(bytes + stack->_xxteaSignLen,
                                    (xxtea_long)size - (xxtea_long)stack->_xxteaSignLen,
                                    (unsigned char*)stack->_xxteaKey,
                                    (xxtea_long)stack->_xxteaKeyLen,
                                    &len);
-            free(zipFileData);
-            zipFileData = nullptr;
             zip = ZipFile::createWithBuffer(buffer, len);
         } else {
-            if (zipFileData) {
-                zip = ZipFile::createWithBuffer(zipFileData, size);
+            if (size > 0) {
+                zip = ZipFile::createWithBuffer(bytes, (unsigned long)size);
             }
         }
 
@@ -858,7 +857,7 @@ int LuaStack::luaLoadChunksFromZIP(lua_State *L)
                             filename.erase(pos);
                         }
                     }
-                    // replace path seperator '/' '\' to '.'
+                    // replace path separator '/' '\' to '.'
                     for (int i=0; i<filename.size(); i++) {
                         if (filename[i] == '/' || filename[i] == '\\') {
                             filename[i] = '.';
@@ -881,10 +880,6 @@ int LuaStack::luaLoadChunksFromZIP(lua_State *L)
         } else {
             CCLOG("lua_loadChunksFromZIP() - not found or invalid zip file: %s", zipFilePath.c_str());
             lua_pushboolean(L, 0);
-        }
-
-        if (zipFileData) {
-            free(zipFileData);
         }
 
         if (buffer) {
