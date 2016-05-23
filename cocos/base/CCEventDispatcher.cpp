@@ -30,7 +30,7 @@
 #include "base/CCEventListenerMouse.h"
 #include "base/CCEventListenerKeyboard.h"
 #include "base/CCEventListenerCustom.h"
-#include "base/CCEventListenerFocus.h"
+//#include "base/CCEventListenerFocus.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "base/CCEventListenerController.h"
 #endif
@@ -86,9 +86,9 @@ static EventListener::ListenerID __getListenerID(Event* event)
         case Event::Type::MOUSE:
             ret = EventListenerMouse::LISTENER_ID;
             break;
-        case Event::Type::FOCUS:
-            ret = EventListenerFocus::LISTENER_ID;
-            break;
+//        case Event::Type::FOCUS:
+//            ret = EventListenerFocus::LISTENER_ID;
+//            break;
         case Event::Type::TOUCH:
             // Touch listener is very special, it contains two kinds of listeners, EventListenerTouchOneByOne and EventListenerTouchAllAtOnce.
             // return UNKNOWN instead.

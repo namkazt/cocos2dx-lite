@@ -611,10 +611,6 @@
 		50ABBE521925AB6F00A911A9 /* CCEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDDA1925AB6E00A911A9 /* CCEventDispatcher.cpp */; };
 		50ABBE531925AB6F00A911A9 /* CCEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDDB1925AB6E00A911A9 /* CCEventDispatcher.h */; };
 		50ABBE541925AB6F00A911A9 /* CCEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDDB1925AB6E00A911A9 /* CCEventDispatcher.h */; };
-		50ABBE551925AB6F00A911A9 /* CCEventFocus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDDC1925AB6E00A911A9 /* CCEventFocus.cpp */; };
-		50ABBE561925AB6F00A911A9 /* CCEventFocus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDDC1925AB6E00A911A9 /* CCEventFocus.cpp */; };
-		50ABBE571925AB6F00A911A9 /* CCEventFocus.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDDD1925AB6E00A911A9 /* CCEventFocus.h */; };
-		50ABBE581925AB6F00A911A9 /* CCEventFocus.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDDD1925AB6E00A911A9 /* CCEventFocus.h */; };
 		50ABBE591925AB6F00A911A9 /* CCEventKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDDE1925AB6E00A911A9 /* CCEventKeyboard.cpp */; };
 		50ABBE5A1925AB6F00A911A9 /* CCEventKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDDE1925AB6E00A911A9 /* CCEventKeyboard.cpp */; };
 		50ABBE5B1925AB6F00A911A9 /* CCEventKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDDF1925AB6E00A911A9 /* CCEventKeyboard.h */; };
@@ -631,10 +627,6 @@
 		50ABBE661925AB6F00A911A9 /* CCEventListenerCustom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDE41925AB6E00A911A9 /* CCEventListenerCustom.cpp */; };
 		50ABBE671925AB6F00A911A9 /* CCEventListenerCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDE51925AB6E00A911A9 /* CCEventListenerCustom.h */; };
 		50ABBE681925AB6F00A911A9 /* CCEventListenerCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDE51925AB6E00A911A9 /* CCEventListenerCustom.h */; };
-		50ABBE691925AB6F00A911A9 /* CCEventListenerFocus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDE61925AB6E00A911A9 /* CCEventListenerFocus.cpp */; };
-		50ABBE6A1925AB6F00A911A9 /* CCEventListenerFocus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDE61925AB6E00A911A9 /* CCEventListenerFocus.cpp */; };
-		50ABBE6B1925AB6F00A911A9 /* CCEventListenerFocus.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDE71925AB6E00A911A9 /* CCEventListenerFocus.h */; };
-		50ABBE6C1925AB6F00A911A9 /* CCEventListenerFocus.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDE71925AB6E00A911A9 /* CCEventListenerFocus.h */; };
 		50ABBE6D1925AB6F00A911A9 /* CCEventListenerKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDE81925AB6E00A911A9 /* CCEventListenerKeyboard.cpp */; };
 		50ABBE6E1925AB6F00A911A9 /* CCEventListenerKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50ABBDE81925AB6E00A911A9 /* CCEventListenerKeyboard.cpp */; };
 		50ABBE6F1925AB6F00A911A9 /* CCEventListenerKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ABBDE91925AB6E00A911A9 /* CCEventListenerKeyboard.h */; };
@@ -1499,8 +1491,6 @@
 		50ABBDD91925AB6E00A911A9 /* CCEventCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventCustom.h; path = ../base/CCEventCustom.h; sourceTree = "<group>"; };
 		50ABBDDA1925AB6E00A911A9 /* CCEventDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventDispatcher.cpp; path = ../base/CCEventDispatcher.cpp; sourceTree = "<group>"; };
 		50ABBDDB1925AB6E00A911A9 /* CCEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventDispatcher.h; path = ../base/CCEventDispatcher.h; sourceTree = "<group>"; };
-		50ABBDDC1925AB6E00A911A9 /* CCEventFocus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventFocus.cpp; path = ../base/CCEventFocus.cpp; sourceTree = "<group>"; };
-		50ABBDDD1925AB6E00A911A9 /* CCEventFocus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventFocus.h; path = ../base/CCEventFocus.h; sourceTree = "<group>"; };
 		50ABBDDE1925AB6E00A911A9 /* CCEventKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventKeyboard.cpp; path = ../base/CCEventKeyboard.cpp; sourceTree = "<group>"; };
 		50ABBDDF1925AB6E00A911A9 /* CCEventKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventKeyboard.h; path = ../base/CCEventKeyboard.h; sourceTree = "<group>"; };
 		50ABBDE01925AB6E00A911A9 /* CCEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventListener.cpp; path = ../base/CCEventListener.cpp; sourceTree = "<group>"; };
@@ -1509,8 +1499,6 @@
 		50ABBDE31925AB6E00A911A9 /* CCEventListenerAcceleration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventListenerAcceleration.h; path = ../base/CCEventListenerAcceleration.h; sourceTree = "<group>"; };
 		50ABBDE41925AB6E00A911A9 /* CCEventListenerCustom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventListenerCustom.cpp; path = ../base/CCEventListenerCustom.cpp; sourceTree = "<group>"; };
 		50ABBDE51925AB6E00A911A9 /* CCEventListenerCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventListenerCustom.h; path = ../base/CCEventListenerCustom.h; sourceTree = "<group>"; };
-		50ABBDE61925AB6E00A911A9 /* CCEventListenerFocus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventListenerFocus.cpp; path = ../base/CCEventListenerFocus.cpp; sourceTree = "<group>"; };
-		50ABBDE71925AB6E00A911A9 /* CCEventListenerFocus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventListenerFocus.h; path = ../base/CCEventListenerFocus.h; sourceTree = "<group>"; };
 		50ABBDE81925AB6E00A911A9 /* CCEventListenerKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventListenerKeyboard.cpp; path = ../base/CCEventListenerKeyboard.cpp; sourceTree = "<group>"; };
 		50ABBDE91925AB6E00A911A9 /* CCEventListenerKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEventListenerKeyboard.h; path = ../base/CCEventListenerKeyboard.h; sourceTree = "<group>"; };
 		50ABBDEA1925AB6E00A911A9 /* CCEventListenerMouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCEventListenerMouse.cpp; path = ../base/CCEventListenerMouse.cpp; sourceTree = "<group>"; };
@@ -3054,8 +3042,6 @@
 				50ABBDD91925AB6E00A911A9 /* CCEventCustom.h */,
 				50ABBDDA1925AB6E00A911A9 /* CCEventDispatcher.cpp */,
 				50ABBDDB1925AB6E00A911A9 /* CCEventDispatcher.h */,
-				50ABBDDC1925AB6E00A911A9 /* CCEventFocus.cpp */,
-				50ABBDDD1925AB6E00A911A9 /* CCEventFocus.h */,
 				50ABBDDE1925AB6E00A911A9 /* CCEventKeyboard.cpp */,
 				50ABBDDF1925AB6E00A911A9 /* CCEventKeyboard.h */,
 				50ABBDE01925AB6E00A911A9 /* CCEventListener.cpp */,
@@ -3064,8 +3050,6 @@
 				50ABBDE31925AB6E00A911A9 /* CCEventListenerAcceleration.h */,
 				50ABBDE41925AB6E00A911A9 /* CCEventListenerCustom.cpp */,
 				50ABBDE51925AB6E00A911A9 /* CCEventListenerCustom.h */,
-				50ABBDE61925AB6E00A911A9 /* CCEventListenerFocus.cpp */,
-				50ABBDE71925AB6E00A911A9 /* CCEventListenerFocus.h */,
 				50ABBDE81925AB6E00A911A9 /* CCEventListenerKeyboard.cpp */,
 				50ABBDE91925AB6E00A911A9 /* CCEventListenerKeyboard.h */,
 				50ABBDEA1925AB6E00A911A9 /* CCEventListenerMouse.cpp */,
@@ -3391,14 +3375,12 @@
 				50ABBE471925AB6F00A911A9 /* CCEvent.h in Headers */,
 				B257B4501989D5E800D9A687 /* CCPrimitive.h in Headers */,
 				B29A7DCF19EE1B7700872B35 /* RegionAttachment.h in Headers */,
-				50ABBE6B1925AB6F00A911A9 /* CCEventListenerFocus.h in Headers */,
 				50ABBDA51925AB4100A911A9 /* CCQuadCommand.h in Headers */,
 				50643BD919BFAF4400EF68ED /* CCApplication.h in Headers */,
 				50ABBD3A1925AB0000A911A9 /* CCAffineTransform.h in Headers */,
 				15AE186C19AAD31D00C27E9E /* SimpleAudioEngine_objc.h in Headers */,
 				B29A7E2319EE1B7700872B35 /* IkConstraint.h in Headers */,
 				15AE1BB319AADFEF00C27E9E /* HttpRequest.h in Headers */,
-				50ABBE571925AB6F00A911A9 /* CCEventFocus.h in Headers */,
 				1A01C69218F57BE800EFE3A6 /* CCDouble.h in Headers */,
 				50ABBE251925AB6F00A911A9 /* base64.h in Headers */,
 				A05DCF9E1B90584E00EE040B /* CCDownloader-curl.h in Headers */,
@@ -3686,7 +3668,6 @@
 				50ABBD531925AB0000A911A9 /* Quaternion.h in Headers */,
 				9F6A4C821C5230E600831F4A /* tolua_fix.h in Headers */,
 				503DD8E81926736A00CD74DD /* CCES2Renderer-ios.h in Headers */,
-				50ABBE6C1925AB6F00A911A9 /* CCEventListenerFocus.h in Headers */,
 				5034CA3E191D591100CE6051 /* ccShader_PositionColor.frag in Headers */,
 				50ABBE301925AB6F00A911A9 /* ccConfig.h in Headers */,
 				50ABBDAC1925AB4100A911A9 /* CCRenderCommandPool.h in Headers */,
@@ -3770,7 +3751,6 @@
 				1A01C68D18F57BE800EFE3A6 /* CCDeprecated.h in Headers */,
 				B29A7E3619EE1B7700872B35 /* AnimationStateData.h in Headers */,
 				503DD8EA1926736A00CD74DD /* CCESRenderer-ios.h in Headers */,
-				50ABBE581925AB6F00A911A9 /* CCEventFocus.h in Headers */,
 				50ABC00A1926664800A911A9 /* CCCommon.h in Headers */,
 				15FB209E1AE7C57D00C31518 /* sweep_context.h in Headers */,
 				50ABBE5C1925AB6F00A911A9 /* CCEventKeyboard.h in Headers */,
@@ -3947,7 +3927,6 @@
 				1A5701B5180BCB590088DEC7 /* CCFontFreeType.cpp in Sources */,
 				1A5701B9180BCB5A0088DEC7 /* CCLabel.cpp in Sources */,
 				1A5701BD180BCB5A0088DEC7 /* CCLabelAtlas.cpp in Sources */,
-				50ABBE551925AB6F00A911A9 /* CCEventFocus.cpp in Sources */,
 				85B3743A1B204B9400C488D6 /* clipper.cpp in Sources */,
 				50ABBE491925AB6F00A911A9 /* CCEventAcceleration.cpp in Sources */,
 				50ABBD4C1925AB0000A911A9 /* MathUtil.cpp in Sources */,
@@ -4016,7 +3995,6 @@
 				50ABBD971925AB4100A911A9 /* CCGLProgramStateCache.cpp in Sources */,
 				9F6A4C031C5230E600831F4A /* CCLuaStack.cpp in Sources */,
 				B29A7DC719EE1B7700872B35 /* SkeletonRenderer.cpp in Sources */,
-				50ABBE691925AB6F00A911A9 /* CCEventListenerFocus.cpp in Sources */,
 				B230ED7119B417AE00364AA8 /* CCTrianglesCommand.cpp in Sources */,
 				826294351AAF004C00CB7CF7 /* HttpCookie.cpp in Sources */,
 				50ABBD5C1925AB0000A911A9 /* Vec3.cpp in Sources */,
@@ -4128,7 +4106,6 @@
 				ED9C6A9518599AD8000A5232 /* CCNodeGrid.cpp in Sources */,
 				1A01C68F18F57BE800EFE3A6 /* CCDictionary.cpp in Sources */,
 				B276EF621988D1D500CD400F /* CCVertexIndexData.cpp in Sources */,
-				50ABBE561925AB6F00A911A9 /* CCEventFocus.cpp in Sources */,
 				503DD8E11926736A00CD74DD /* CCApplication-ios.mm in Sources */,
 				50ABC01A1926664800A911A9 /* CCSAXParser.cpp in Sources */,
 				B29A7E1C19EE1B7700872B35 /* SkeletonJson.c in Sources */,
@@ -4308,7 +4285,6 @@
 				9FFEE7151CB0082E00B4DECF /* tolua_event.c in Sources */,
 				5027253D190BF1B900AAF4ED /* cocos2d.cpp in Sources */,
 				B29A7E0819EE1B7700872B35 /* SkinnedMeshAttachment.c in Sources */,
-				50ABBE6A1925AB6F00A911A9 /* CCEventListenerFocus.cpp in Sources */,
 				50ABBE661925AB6F00A911A9 /* CCEventListenerCustom.cpp in Sources */,
 				503DD8F81926B0DB00CD74DD /* CCIMEDispatcher.cpp in Sources */,
 				50ABBDB21925AB4100A911A9 /* ccShaders.cpp in Sources */,

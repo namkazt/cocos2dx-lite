@@ -103,13 +103,11 @@ base/CCEventAcceleration.cpp \
 base/CCEventController.cpp \
 base/CCEventCustom.cpp \
 base/CCEventDispatcher.cpp \
-base/CCEventFocus.cpp \
 base/CCEventKeyboard.cpp \
 base/CCEventListener.cpp \
 base/CCEventListenerAcceleration.cpp \
 base/CCEventListenerController.cpp \
 base/CCEventListenerCustom.cpp \
-base/CCEventListenerFocus.cpp \
 base/CCEventListenerKeyboard.cpp \
 base/CCEventListenerMouse.cpp \
 base/CCEventListenerTouch.cpp \
