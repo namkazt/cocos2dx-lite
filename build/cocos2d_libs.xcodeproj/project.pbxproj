@@ -906,8 +906,8 @@
 		9FFAD4A11CC0953100986F50 /* edtaa3func.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAD49E1CC0953100986F50 /* edtaa3func.cpp */; };
 		9FFAD4A21CC0953100986F50 /* edtaa3func.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD49F1CC0953100986F50 /* edtaa3func.h */; };
 		9FFAD4A31CC0953100986F50 /* edtaa3func.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD49F1CC0953100986F50 /* edtaa3func.h */; };
-		9FFAD4A51CC0955300986F50 /* c2dConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD4A41CC0955300986F50 /* c2dConfig.h */; };
-		9FFAD4A61CC0955300986F50 /* c2dConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD4A41CC0955300986F50 /* c2dConfig.h */; };
+		9FFAD4A51CC0955300986F50 /* ccConfigUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD4A41CC0955300986F50 /* ccConfigUser.h */; };
+		9FFAD4A61CC0955300986F50 /* ccConfigUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFAD4A41CC0955300986F50 /* ccConfigUser.h */; };
 		9FFEE6EC1CB0082E00B4DECF /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEE6C51CB0082E00B4DECF /* fpconv.c */; };
 		9FFEE6ED1CB0082E00B4DECF /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEE6C51CB0082E00B4DECF /* fpconv.c */; };
 		9FFEE6EE1CB0082E00B4DECF /* fpconv.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFEE6C61CB0082E00B4DECF /* fpconv.h */; };
@@ -1645,7 +1645,7 @@
 		9FE981691CAED8FE0038012F /* xxtea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxtea.h; sourceTree = "<group>"; };
 		9FFAD49E1CC0953100986F50 /* edtaa3func.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = edtaa3func.cpp; sourceTree = "<group>"; };
 		9FFAD49F1CC0953100986F50 /* edtaa3func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edtaa3func.h; sourceTree = "<group>"; };
-		9FFAD4A41CC0955300986F50 /* c2dConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = c2dConfig.h; path = ../base/c2dConfig.h; sourceTree = "<group>"; };
+		9FFAD4A41CC0955300986F50 /* ccConfigUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ccConfigUser.h; path = ../base/ccConfigUser.h; sourceTree = "<group>"; };
 		9FFEE6C51CB0082E00B4DECF /* fpconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpconv.c; sourceTree = "<group>"; };
 		9FFEE6C61CB0082E00B4DECF /* fpconv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpconv.h; sourceTree = "<group>"; };
 		9FFEE6C71CB0082E00B4DECF /* lua_cjson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_cjson.c; sourceTree = "<group>"; };
@@ -1999,7 +1999,7 @@
 				50ABBDC71925AB6E00A911A9 /* ccCArray.cpp */,
 				50ABBDC81925AB6E00A911A9 /* ccCArray.h */,
 				50ABBDC91925AB6E00A911A9 /* ccConfig.h */,
-				9FFAD4A41CC0955300986F50 /* c2dConfig.h */,
+				9FFAD4A41CC0955300986F50 /* ccConfigUser.h */,
 				50ABBDCA1925AB6E00A911A9 /* CCConfiguration.cpp */,
 				50ABBDCB1925AB6E00A911A9 /* CCConfiguration.h */,
 				50ABBDCC1925AB6E00A911A9 /* CCConsole.cpp */,
@@ -3407,7 +3407,7 @@
 				B29A7E0319EE1B7700872B35 /* BoundingBoxAttachment.h in Headers */,
 				9F6A4BB51C5230E600831F4A /* lua_cocos2dx_auto.hpp in Headers */,
 				50ABBEB91925AB6F00A911A9 /* ccUTF8.h in Headers */,
-				9FFAD4A51CC0955300986F50 /* c2dConfig.h in Headers */,
+				9FFAD4A51CC0955300986F50 /* ccConfigUser.h in Headers */,
 				50ABBE671925AB6F00A911A9 /* CCEventListenerCustom.h in Headers */,
 				50ABBE2F1925AB6F00A911A9 /* ccConfig.h in Headers */,
 				1AAF5851180E40B9000584C8 /* LocalStorage.h in Headers */,
@@ -3617,7 +3617,7 @@
 				1A570224180BCC1A0088DEC7 /* CCParticleBatchNode.h in Headers */,
 				15FB20961AE7C57D00C31518 /* cdt.h in Headers */,
 				B29A7E2019EE1B7700872B35 /* BoneData.h in Headers */,
-				9FFAD4A61CC0955300986F50 /* c2dConfig.h in Headers */,
+				9FFAD4A61CC0955300986F50 /* ccConfigUser.h in Headers */,
 				9F6A4BFE1C5230E600831F4A /* CCLuaBridge.h in Headers */,
 				9F6A4C0A1C5230E600831F4A /* CCLuaValue.h in Headers */,
 				503DD8F61926B0DB00CD74DD /* CCIMEDelegate.h in Headers */,

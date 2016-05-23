@@ -397,6 +397,6 @@ THE SOFTWARE.
 #define CC_FILEUTILS_APPLE_ENABLE_OBJC  1
 #endif
 
-#include "c2dConfig.h"
+#include "ccConfigUser.h"
 
 #endif // __CCCONFIG_H__
