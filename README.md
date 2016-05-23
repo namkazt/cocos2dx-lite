@@ -1,19 +1,52 @@
 
-cocos2d-x
+cocos2dx-lite
 =========
 
+It bases on [cocos2d-x](https://github.com/cocos2d/cocos2d-x) v3 branch, but remove 3D and other features.
+It works on iOS, Android, OS X and ~~Windows~~.
 
-[cocos2d-x][1] is a multi-platform framework for building 2d games, interactive books, demos and other graphical applications.
-It is based on [cocos2d-iphone][2], but instead of using Objective-C, it uses C++.
-It works on iOS, Android, OS X, Windows platforms.
+The major change:
 
-cocos2d-x is:
+- Only support iOS,OS X,Android and Windows.
+- Remove 3D features
+- Remove support for JS script
+- Remove deprecated classes and functions
+- Remove Camera
+- Remove Physics integration
+- Remove C++ implementations of Component
+- Remove C++ implementations of CocoStudio parser
+- Remove C++ implementations of CocosBuilder parser
+- Remove AssetsManager, AssetsManagerEX
+- Remove support for WebP,S3TC,ATITC
+- Remove FastTileMap, TileMap
+- Remove *Menu*
+- Improve module compile `cocos/base/ccConfigUser.h`
 
-  * Fast
-  * Free
-  * ~~Easy to use~~
-  * Community Supported
+## How to start
 
+1. setup env
+
+    ```
+    $ # clone repo
+    $ git clone https://github.com/c0i/cocos2dx-lite.git
+    $ cd cocos2dx-lite
+    $ ./setup.py
+    $ source ~/.bash_profile
+    ```
+    
+2. try with player project
+
+    ```
+    $ open player/proj.ios_mac/player.xcodeproj/
+    $ or
+    $ cocos run -p mac # ios, android
+    ```
+
+## Contributing to the Project
+
+Cocos2dx-lite is licensed under the [MIT License](https://opensource.org/licenses/MIT). We welcome participation!
+
+## Others
 
 There are lots of better cocos2d-x forks:
 
