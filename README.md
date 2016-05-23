@@ -20,6 +20,7 @@ The major change:
 - Remove support for WebP,S3TC,ATITC
 - Remove FastTileMap, TileMap
 - Remove *Menu*
+- Remove `Focus` event
 - Improve module compile `cocos/base/ccConfigUser.h`
 
 ## How to start
@@ -33,7 +34,7 @@ The major change:
     $ ./setup.py
     $ source ~/.bash_profile
     ```
-    
+
 2. try with player project
 
     ```
