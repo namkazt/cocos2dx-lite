@@ -73,7 +73,7 @@ static size_t writeData(void* buffer, size_t sizes, HttpResponse* response)
 } 
 
 //static size_t writeHeaderData(void *ptr, size_t size, size_t nmemb, void *stream)
-size_t writeHeaderData(void* buffer, size_t sizes,HttpResponse* response)
+static size_t writeHeaderData(void* buffer, size_t sizes,HttpResponse* response)
 {
     std::vector<char> * recvBuffer = (std::vector<char>*) response->getResponseHeader();
     recvBuffer->clear();
