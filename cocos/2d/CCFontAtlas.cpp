@@ -325,16 +325,17 @@ bool FontAtlas::prepareLetterDefinitions(const std::u16string& utf16Text)
         return false;
     }
 
+    Rect tempRect;
+    FontLetterDefinition tempDef;
+
+#if CC_USE_FREETYPE > 0
     int adjustForDistanceMap = _letterPadding / 2;
     int adjustForExtend = _letterEdgeExtend / 2;
     long bitmapWidth;
     long bitmapHeight;
     int glyphHeight;
-    Rect tempRect;
-    FontLetterDefinition tempDef;
 
     auto scaleFactor = CC_CONTENT_SCALE_FACTOR();
-#if CC_USE_FREETYPE > 0
     auto pixelFormat = _fontFreeType->getOutlineSize() > 0 ? Texture2D::PixelFormat::AI88 : Texture2D::PixelFormat::A8;
 #else
     auto pixelFormat = Texture2D::PixelFormat::A8;
