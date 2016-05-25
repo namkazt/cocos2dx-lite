@@ -193,7 +193,7 @@
     [(id)certArrayRef release];
     [(id)certArrayRef release];
     //Did our custom trust chain evaluate successfully?
-    return trustResult = kSecTrustResultUnspecified || trustResult == kSecTrustResultProceed;    
+    return trustResult == kSecTrustResultUnspecified || trustResult == kSecTrustResultProceed;    
 }
 
 - (void) connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
