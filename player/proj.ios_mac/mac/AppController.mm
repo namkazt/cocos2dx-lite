@@ -364,7 +364,7 @@ void createSimulator(const std::string& viewName, int width, int height, float f
 
     const cocos2d::Rect frameRect = cocos2d::Rect(0, 0, frameSize.width, frameSize.height);
     NSString *title = [NSString stringWithFormat:@"quick-x-player (%s)", cocos2dVersion()];
-    GLViewImpl *eglView = GLViewImpl::createWithRect([title UTF8String], frameRect, frameScale);
+    GLViewImpl *eglView = GLViewImpl::createWithRect([title UTF8String], frameRect, frameScale, _project.isResizeWindow());
 
     auto director = Director::getInstance();
     director->setOpenGLView(eglView);
