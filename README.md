@@ -23,6 +23,9 @@ The major change:
 - Remove `Focus` event
 - Improve module compile `cocos/base/ccConfigUser.h`
 - Add [CC_MINI_2D / CC_USE_FREETYPE / CC_ONLY_PNG](https://github.com/c0i/cocos2dx-lite/blob/master/cocos/base/ccConfigUser.h)
+- Add CC_USE_SPINE
+- Add CC_USE_AUDIO_ENGINE
+- Add CC_USE_NETWORK
 
 ## How to start
 
