@@ -25,8 +25,6 @@
 
 #include "scripting/lua-bindings/manual/spine/LuaSkeletonAnimation.h"
 
-#if CC_USE_SPINE > 0
-
 #include "scripting/lua-bindings/manual/cocos2d/LuaScriptHandlerMgr.h"
 #include "scripting/lua-bindings/manual/CCLuaStack.h"
 #include "scripting/lua-bindings/manual/CCLuaEngine.h"
@@ -52,5 +50,3 @@ LuaSkeletonAnimation* LuaSkeletonAnimation::createWithFile (const char* skeleton
 	node->autorelease();
 	return node;
 }
-
-#endif // CC_USE_SPINE

@@ -1,7 +1,4 @@
 #include "lua_cocos2dx_spine_auto.hpp"
-
-#if CC_USE_SPINE > 0
-
 #include "spine-cocos2dx.h"
 #include "tolua_fix.h"
 #include "LuaBasicConversions.h"
@@ -1846,4 +1843,3 @@ TOLUA_API int register_all_cocos2dx_spine(lua_State* tolua_S)
 	return 1;
 }
 
-#endif // CC_USE_SPINE
