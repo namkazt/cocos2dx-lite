@@ -22,7 +22,9 @@ static int lua_module_register(lua_State* L)
 //    register_cocostudio_module(L);
 //    register_ui_moudle(L);
 //    register_extension_module(L);
+#if CC_USE_SPINE > 0
     register_spine_module(L);
+#endif
 //    register_cocos3d_module(L);
     register_audioengine_module(L);
 

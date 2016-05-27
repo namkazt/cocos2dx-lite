@@ -25,6 +25,10 @@
 
 #ifndef LUASKELETONANIMATION_H_
 #define LUASKELETONANIMATION_H_
+
+#include "base/ccConfig.h"
+
+#if CC_USE_SPINE > 0
 #include "spine-cocos2dx.h"
 
 /// @cond
@@ -37,4 +41,7 @@ public:
 	virtual ~LuaSkeletonAnimation();
 };
 /// @endcond
+
+#endif // CC_USE_SPINE
+
 #endif /* LUASKELETONANIMATION_H_ */

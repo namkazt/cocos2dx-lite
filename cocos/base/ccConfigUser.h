@@ -35,6 +35,7 @@
 #endif // CC_USE_STB_IMAGE
 
 #undef CC_ENABLE_BOX2D_INTEGRATION
+#define CC_USE_SPINE 0
 // #define CC_ENABLE_BOX2D_INTEGRATION 1
 
 #endif // __C2D_CONFIG_H__

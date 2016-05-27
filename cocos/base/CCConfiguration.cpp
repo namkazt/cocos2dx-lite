@@ -145,6 +145,12 @@ bool Configuration::init()
     disalbeModule.push_back(Value("image_zip"));
 #endif
 
+#if CC_USE_SPINE > 0
+    enableModule.push_back(Value("spine"));
+#else
+    disalbeModule.push_back(Value("spine"));
+#endif
+
     _valueDict["cocos2d.x.module.enabled"] = enableModule;
     _valueDict["cocos2d.x.module.disabled"] = disalbeModule;
 

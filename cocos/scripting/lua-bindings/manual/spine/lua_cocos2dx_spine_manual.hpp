@@ -24,6 +24,10 @@
 #ifndef COCOS_SCRIPTING_LUA_BINDINGS_LUA_COCOS2DX_SPINE_MANUAL_H
 #define COCOS_SCRIPTING_LUA_BINDINGS_LUA_COCOS2DX_SPINE_MANUAL_H
 
+#include "base/ccConfig.h"
+
+#if CC_USE_SPINE > 0
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -52,4 +56,7 @@ TOLUA_API int register_spine_module(lua_State* L);
 
 // end group
 /// @}
+
+#endif // CC_USE_SPINE
+
 #endif // #ifndef COCOS_SCRIPTING_LUA_BINDINGS_LUA_COCOS2DX_SPINE_MANUAL_H
