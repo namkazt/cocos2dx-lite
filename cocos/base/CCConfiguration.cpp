@@ -156,7 +156,13 @@ bool Configuration::init()
 #else
     disalbeModule.push_back(Value("audioengine"));
 #endif
-    
+
+#if CC_USE_NETWORK > 0
+    enableModule.push_back(Value("network"));
+#else
+    disalbeModule.push_back(Value("network"));
+#endif
+
     _valueDict["cocos2d.x.module.enabled"] = enableModule;
     _valueDict["cocos2d.x.module.disabled"] = disalbeModule;
 
