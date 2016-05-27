@@ -17,7 +17,9 @@ static int lua_module_register(lua_State* L)
 {
     //Dont' change the module register order unless you know what your are doing
 //    register_cocosdenshion_module(L);
+#if CC_USE_NETWORK > 0
     register_network_module(L);
+#endif
 //    register_cocosbuilder_module(L);
 //    register_cocostudio_module(L);
 //    register_ui_moudle(L);
