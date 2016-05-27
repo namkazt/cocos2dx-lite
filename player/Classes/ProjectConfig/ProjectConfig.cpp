@@ -420,6 +420,11 @@ void ProjectConfig::parseCommandLine(const vector<string> &args)
         {
             _isRetinaDisplay = true;
         }
+        else if ((arg.compare("-h") == 0) || (arg.compare("--help") == 0) || (arg.compare("-help") == 0))
+        {
+            printHelp();
+            exit(0);
+        }
 
         ++it;
     }
@@ -714,4 +719,51 @@ bool ProjectConfig::isAbsolutePath(const string &path) const
         return path.length() > 0 && path[0] == '/';
     }
     return path.length() > 2 && path[1] == ':';
+}
+
+void ProjectConfig::printHelp()
+{
+    const char *msg =
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+    "\n"
+    "usage: player -workdir /path/to/project\n"
+    "\n"
+    "options:\n"
+    "    -h                         show help\n"
+    "    -workdir [path]            set work directory\n"
+    "    -writable [path]           set writable path (default: same as workdir)\n"
+    "    -file [path]               set lua star script file (default: scripts/main.lua)\n"
+    "    -landscape                 set frame size with 960x640\n"
+    "    -portrait                  set frame size with 640x960\n"
+    "    -size [wxh]                set frame size, width x height\n"
+    "    -scale [scale]             set window scale factor (default: 1.0)\n"
+    "    -write-debug-log           enable write debug log (default: disable)\n"
+    "    -disable-write-debug-log   disable write debug log\n"
+    "    -console                   show console ui (default). It is Helpful but causes performace issue\n"
+    "    -disable-console           dont show console ui\n"
+    "    -load-framework            load precompiled framework (framework.zip)\n"
+    "    -disable-load-framework    dont load precompiled framework\n"
+    "    -offset [{0,0}]            set window bottom left position\n"
+    "    -resize-window             let window resizable\n"
+    "\n"
+    "examples:\n"
+    "\n"
+    "    # load project\n"
+    "    player -workdir /path/to/project\n"
+    "\n"
+    "    # load project with portrait\n"
+    "    player -workdir /path/to/project -portrait\n"
+    "\n"
+    "    # test with difference window size\n"
+    "    player -workdir /path/to/project -size 400x800\n"
+    "\n"
+    "    # load project without console ui\n"
+    "    player -workdir /path/to/project -disable-console\n"
+    "\n"
+#else
+    ""
+#endif
+    ;
+    CCLOG("%s", msg);
+
 }

@@ -120,6 +120,7 @@ private:
     string replaceProjectDirToMacro(const string &path) const;
     string replaceProjectDirToFullPath(const string &path) const;
     bool isAbsolutePath(const string &path) const;
+    void printHelp();
 };
 
 #endif // __PROJECT_CONFIG_H_
