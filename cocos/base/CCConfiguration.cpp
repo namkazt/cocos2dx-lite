@@ -87,60 +87,66 @@ bool Configuration::init()
     _valueDict["cocos2d.x.build_type"] = Value("RELEASE");
 #endif
 
-   //
+    //
+    ValueVector enableModule;
+    ValueVector disalbeModule;
+
 #if CC_USE_PNG > 0
-    _valueDict["cocos2d.x.module.png"] = Value(true);
+    enableModule.push_back(Value("png"));
 #else
-    _valueDict["cocos2d.x.module.png"] = Value(false);
+    disalbeModule.push_back(Value("png"));
 #endif
 
 #if CC_USE_JPEG > 0
-    _valueDict["cocos2d.x.module.jpeg"] = Value(true);
+    enableModule.push_back(Value("jpeg"));
 #else
-    _valueDict["cocos2d.x.module.jpeg"] = Value(false);
+    disalbeModule.push_back(Value("jpeg"));
 #endif
 
 #if CC_USE_TIFF > 0
-    _valueDict["cocos2d.x.module.tiff"] = Value(true);
+    enableModule.push_back(Value("tiff"));
 #else
-    _valueDict["cocos2d.x.module.tiff"] = Value(false);
+    disalbeModule.push_back(Value("tiff"));
 #endif
 
 #if CC_USE_WIC > 0
-    _valueDict["cocos2d.x.module.wic"] = Value(true);
+    enableModule.push_back(Value("wic"));
 #else
-    _valueDict["cocos2d.x.module.wic"] = Value(false);
+    disalbeModule.push_back(Value("wic"));
 #endif
 
 #if CC_USE_WEBP > 0
-    _valueDict["cocos2d.x.module.webp"] = Value(true);
+    enableModule.push_back(Value("webp"));
 #else
-    _valueDict["cocos2d.x.module.webp"] = Value(false);
+    disalbeModule.push_back(Value("webp"));
 #endif
 
 #if CC_USE_TGA > 0
-    _valueDict["cocos2d.x.module.tga"] = Value(true);
+    enableModule.push_back(Value("tga"));
 #else
-    _valueDict["cocos2d.x.module.tga"] = Value(false);
+    disalbeModule.push_back(Value("tga"));
 #endif
 
 #if CC_USE_S3TC > 0
-    _valueDict["cocos2d.x.module.s3tc"] = Value(true);
+    enableModule.push_back(Value("s3tc"));
 #else
-    _valueDict["cocos2d.x.module.s3tc"] = Value(false);
+    disalbeModule.push_back(Value("s3tc"));
 #endif
 
 #if CC_USE_FREETYPE > 0
-    _valueDict["cocos2d.x.module.freetype"] = Value(true);
+    enableModule.push_back(Value("freetype"));
 #else
-    _valueDict["cocos2d.x.module.freetype"] = Value(false);
+    disalbeModule.push_back(Value("freetype"));
 #endif
 
 #if CC_USE_IMAGE_ZIP > 0
-    _valueDict["cocos2d.x.module.image_zip"] = Value(true);
+    enableModule.push_back(Value("image_zip"));
 #else
-    _valueDict["cocos2d.x.module.image_zip"] = Value(false);
+    disalbeModule.push_back(Value("image_zip"));
 #endif
+
+    _valueDict["cocos2d.x.module.enabled"] = enableModule;
+    _valueDict["cocos2d.x.module.disabled"] = disalbeModule;
 
 	return true;
 }
