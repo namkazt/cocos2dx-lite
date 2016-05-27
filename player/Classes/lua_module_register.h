@@ -26,7 +26,10 @@ static int lua_module_register(lua_State* L)
     register_spine_module(L);
 #endif
 //    register_cocos3d_module(L);
+
+#if CC_USE_AUDIO_ENGINE > 0
     register_audioengine_module(L);
+#endif
 
 #if CC_USE_3D_PHYSICS && CC_ENABLE_BULLET_INTEGRATION
     register_physics3d_module(L);

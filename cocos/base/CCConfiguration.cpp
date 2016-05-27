@@ -151,6 +151,12 @@ bool Configuration::init()
     disalbeModule.push_back(Value("spine"));
 #endif
 
+#if CC_USE_AUDIO_ENGINE > 0
+    enableModule.push_back(Value("audioengine"));
+#else
+    disalbeModule.push_back(Value("audioengine"));
+#endif
+    
     _valueDict["cocos2d.x.module.enabled"] = enableModule;
     _valueDict["cocos2d.x.module.disabled"] = disalbeModule;
 
