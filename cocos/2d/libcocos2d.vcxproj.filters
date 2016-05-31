@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="physics">
-      <UniqueIdentifier>{08593631-5bf5-46aa-9436-62595c4f7bf6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="deprecated">
       <UniqueIdentifier>{0b1152b1-c732-4560-8629-87843b0fbd7c}</UniqueIdentifier>
     </Filter>
@@ -52,27 +49,6 @@
     <Filter Include="storage">
       <UniqueIdentifier>{44bdf58f-4af2-433c-b4af-58dc05ef96b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="cocosdenshion">
-      <UniqueIdentifier>{3bd71d42-dfa4-4649-bb01-ad607fdca1c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ui">
-      <UniqueIdentifier>{704c4ce6-b7ad-4406-9414-71169734bbc1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="extension">
-      <UniqueIdentifier>{976bf662-699e-482e-b5db-a20d4abab137}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="extension\AssetsManager">
-      <UniqueIdentifier>{ad47c713-2196-4c8f-9205-2a2a7ecc0b80}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="extension\physics_nodes">
-      <UniqueIdentifier>{1de7fce7-0dee-4571-8fcd-43eb617aaf8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="cocosdenshion\Header Files">
-      <UniqueIdentifier>{f42979de-0079-4eba-b469-81ebff9ec588}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="cocosdenshion\Source Files">
-      <UniqueIdentifier>{f42ec238-cddc-475a-b343-6d0984cb9681}</UniqueIdentifier>
-    </Filter>
     <Filter Include="network">
       <UniqueIdentifier>{31338a7d-ebe1-4867-9c17-d3645122a864}</UniqueIdentifier>
     </Filter>
@@ -81,24 +57,6 @@
     </Filter>
     <Filter Include="network\Source Files">
       <UniqueIdentifier>{9702eb68-42c9-405a-bc89-a1bd85a40ec7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ui\BaseClasses">
-      <UniqueIdentifier>{ad654e6b-96ee-4693-9789-dc4aa1c52e70}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ui\Layouts">
-      <UniqueIdentifier>{177a9a30-a4a6-41e6-93f0-4a4cbe9e4039}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ui\System">
-      <UniqueIdentifier>{c2ebbbc1-85b3-4d6f-a3c5-116eae2124e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ui\UIWidgets">
-      <UniqueIdentifier>{0d201449-ce7a-4f87-86ab-9c30e803c901}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ui\UIWidgets\ScrollWidget">
-      <UniqueIdentifier>{6ac0e3c8-d5b1-44d9-8c41-21662a767cc6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ui\UIWidgets\EditBox">
-      <UniqueIdentifier>{89eb6312-dc7f-4fda-b9b2-ab67c31ddd55}</UniqueIdentifier>
     </Filter>
     <Filter Include="audioengine">
       <UniqueIdentifier>{e916e2b4-0a6e-4d25-8b36-66fa03719f48}</UniqueIdentifier>
@@ -120,21 +78,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\physics\CCPhysicsBody.cpp">
-      <Filter>physics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\physics\CCPhysicsContact.cpp">
-      <Filter>physics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\physics\CCPhysicsJoint.cpp">
-      <Filter>physics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\physics\CCPhysicsShape.cpp">
-      <Filter>physics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\physics\CCPhysicsWorld.cpp">
-      <Filter>physics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\external\xxhash\xxhash.c">
       <Filter>external\xxhash</Filter>
     </ClCompile>
@@ -217,12 +160,6 @@
     <ClCompile Include="CCClippingRectangleNode.cpp">
       <Filter>2d</Filter>
     </ClCompile>
-    <ClCompile Include="CCComponent.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCComponentContainer.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
     <ClCompile Include="CCDrawingPrimitives.cpp">
       <Filter>2d</Filter>
     </ClCompile>
@@ -244,9 +181,6 @@
     <ClCompile Include="CCFontFreeType.cpp">
       <Filter>2d</Filter>
     </ClCompile>
-    <ClCompile Include="CCGLBufferedNode.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
     <ClCompile Include="CCGrabber.cpp">
       <Filter>2d</Filter>
     </ClCompile>
@@ -259,22 +193,10 @@
     <ClCompile Include="CCLabelAtlas.cpp">
       <Filter>2d</Filter>
     </ClCompile>
-    <ClCompile Include="CCLabelBMFont.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
     <ClCompile Include="CCLabelTextFormatter.cpp">
       <Filter>2d</Filter>
     </ClCompile>
-    <ClCompile Include="CCLabelTTF.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
     <ClCompile Include="CCLayer.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCMenu.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCMenuItem.cpp">
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="CCMotionStreak.cpp">
@@ -284,9 +206,6 @@
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="CCNodeGrid.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCParallaxNode.cpp">
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="CCParticleBatchNode.cpp">
@@ -323,21 +242,6 @@
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="CCTextFieldTTF.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCTileMapAtlas.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCTMXLayer.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCTMXObjectGroup.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCTMXTiledMap.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCTMXXMLParser.cpp">
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="CCTransition.cpp">
@@ -391,9 +295,6 @@
     <ClCompile Include="..\base\CCEventDispatcher.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="..\base\CCEventFocus.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="..\base\CCEventKeyboard.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -404,9 +305,6 @@
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="..\base\CCEventListenerCustom.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="..\base\CCEventListenerFocus.cpp">
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="..\base\CCEventListenerKeyboard.cpp">
@@ -583,23 +481,11 @@
     <ClCompile Include="..\base\CCIMEDispatcher.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="..\base\ObjectFactory.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="CCFastTMXLayer.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCFastTMXTiledMap.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
     <ClCompile Include="..\storage\local-storage\LocalStorage.cpp">
       <Filter>storage</Filter>
     </ClCompile>
     <ClCompile Include="..\platform\CCGLView.cpp">
       <Filter>platform</Filter>
-    </ClCompile>
-    <ClCompile Include="CCProtectedNode.cpp">
-      <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="..\renderer\CCPrimitive.cpp">
       <Filter>renderer</Filter>
@@ -616,113 +502,11 @@
     <ClCompile Include="..\base\ccRandom.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\extensions\assets-manager\AssetsManager.cpp">
-      <Filter>extension\AssetsManager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\extensions\physics-nodes\CCPhysicsDebugNode.cpp">
-      <Filter>extension\physics_nodes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\extensions\physics-nodes\CCPhysicsSprite.cpp">
-      <Filter>extension\physics_nodes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\audio\win32\MciPlayer.cpp">
-      <Filter>cocosdenshion\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\audio\win32\SimpleAudioEngine.cpp">
-      <Filter>cocosdenshion\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\network\HttpClient.cpp">
-      <Filter>network\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\network\SocketIO.cpp">
       <Filter>network\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\network\WebSocket.cpp">
       <Filter>network\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIScale9Sprite.cpp">
-      <Filter>ui\BaseClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIWidget.cpp">
-      <Filter>ui\BaseClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIHBox.cpp">
-      <Filter>ui\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UILayout.cpp">
-      <Filter>ui\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UILayoutManager.cpp">
-      <Filter>ui\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UILayoutParameter.cpp">
-      <Filter>ui\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIRelativeBox.cpp">
-      <Filter>ui\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIVBox.cpp">
-      <Filter>ui\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\CocosGUI.cpp">
-      <Filter>ui\System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIDeprecated.cpp">
-      <Filter>ui\System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIHelper.cpp">
-      <Filter>ui\System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIButton.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIAbstractCheckButton.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UICheckBox.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIRadioButton.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIImageView.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UILoadingBar.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIRichText.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UISlider.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIText.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UITextAtlas.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UITextBMFont.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UITextField.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIListView.cpp">
-      <Filter>ui\UIWidgets\ScrollWidget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIPageView.cpp">
-      <Filter>ui\UIWidgets\ScrollWidget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIScrollView.cpp">
-      <Filter>ui\UIWidgets\ScrollWidget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIScrollViewBar.cpp">
-      <Filter>ui\UIWidgets\ScrollWidget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIEditBox\UIEditBox.cpp">
-      <Filter>ui\UIWidgets\EditBox</Filter>
     </ClCompile>
     <ClCompile Include="..\platform\win32\CCApplication-win32.cpp">
       <Filter>platform\win32</Filter>
@@ -742,24 +526,6 @@
     <ClCompile Include="..\platform\desktop\CCGLViewImpl-desktop.cpp">
       <Filter>platform\desktop</Filter>
     </ClCompile>
-    <ClCompile Include="..\ui\UIEditBox\UIEditBoxImpl-win32.cpp">
-      <Filter>ui\UIWidgets\EditBox</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\extensions\assets-manager\AssetsManagerEx.cpp">
-      <Filter>extension\AssetsManager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\extensions\assets-manager\CCEventAssetsManagerEx.cpp">
-      <Filter>extension\AssetsManager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\extensions\assets-manager\CCEventListenerAssetsManagerEx.cpp">
-      <Filter>extension\AssetsManager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\extensions\assets-manager\Manifest.cpp">
-      <Filter>extension\AssetsManager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ui\UIWebView.cpp">
-      <Filter>ui\UIWidgets</Filter>
-    </ClCompile>
     <ClCompile Include="..\audio\AudioEngine.cpp">
       <Filter>audioengine</Filter>
     </ClCompile>
@@ -772,13 +538,7 @@
     <ClCompile Include="..\audio\win32\AudioPlayer.cpp">
       <Filter>audioengine</Filter>
     </ClCompile>
-    <ClCompile Include="..\ui\UILayoutComponent.cpp">
-      <Filter>ui\Layouts</Filter>
-    </ClCompile>
     <ClCompile Include="CCCamera.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="CCLight.cpp">
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="..\base\CCAsyncTaskPool.cpp">
@@ -811,9 +571,6 @@
     <ClCompile Include="..\renderer\CCRenderState.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="..\base\CCProperties.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="..\base\CCNinePatchImageParser.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -827,35 +584,14 @@
     <ClCompile Include="..\..\external\clipper\clipper.cpp">
       <Filter>external\clipper</Filter>
     </ClCompile>
-    <ClCompile Include="..\network\CCDownloader.cpp">
-      <Filter>network\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CCCameraBackgroundBrush.cpp">
+    <ClCompile Include="CCPolygonInfo.cpp">
       <Filter>2d</Filter>
     </ClCompile>
-    <ClCompile Include="..\renderer\CCTextureCube.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\network\CCDownloader-curl.cpp">
-      <Filter>network</Filter>
+    <ClCompile Include="..\base\CCStencilStateManager.cpp">
+      <Filter>base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\physics\CCPhysicsBody.h">
-      <Filter>physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\physics\CCPhysicsContact.h">
-      <Filter>physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\physics\CCPhysicsJoint.h">
-      <Filter>physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\physics\CCPhysicsShape.h">
-      <Filter>physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\physics\CCPhysicsWorld.h">
-      <Filter>physics</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\external\xxhash\xxhash.h">
       <Filter>external\xxhash</Filter>
     </ClInclude>
@@ -947,12 +683,6 @@
     <ClInclude Include="CCClippingRectangleNode.h">
       <Filter>2d</Filter>
     </ClInclude>
-    <ClInclude Include="CCComponent.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCComponentContainer.h">
-      <Filter>2d</Filter>
-    </ClInclude>
     <ClInclude Include="CCDrawingPrimitives.h">
       <Filter>2d</Filter>
     </ClInclude>
@@ -977,9 +707,6 @@
     <ClInclude Include="CCFontFreeType.h">
       <Filter>2d</Filter>
     </ClInclude>
-    <ClInclude Include="CCGLBufferedNode.h">
-      <Filter>2d</Filter>
-    </ClInclude>
     <ClInclude Include="CCGrabber.h">
       <Filter>2d</Filter>
     </ClInclude>
@@ -992,19 +719,7 @@
     <ClInclude Include="CCLabelAtlas.h">
       <Filter>2d</Filter>
     </ClInclude>
-    <ClInclude Include="CCLabelBMFont.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCLabelTTF.h">
-      <Filter>2d</Filter>
-    </ClInclude>
     <ClInclude Include="CCLayer.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCMenu.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCMenuItem.h">
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="CCMotionStreak.h">
@@ -1014,9 +729,6 @@
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="CCNodeGrid.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCParallaxNode.h">
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="CCParticleBatchNode.h">
@@ -1053,21 +765,6 @@
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="CCTextFieldTTF.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCTileMapAtlas.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCTMXLayer.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCTMXObjectGroup.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCTMXTiledMap.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCTMXXMLParser.h">
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="CCTransition.h">
@@ -1124,9 +821,6 @@
     <ClInclude Include="..\base\CCEventDispatcher.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="..\base\CCEventFocus.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="..\base\CCEventKeyboard.h">
       <Filter>base</Filter>
     </ClInclude>
@@ -1137,9 +831,6 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="..\base\CCEventListenerCustom.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\base\CCEventListenerFocus.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="..\base\CCEventListenerKeyboard.h">
@@ -1179,9 +870,6 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="..\base\CCRef.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\base\CCRefPtr.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="..\base\CCScheduler.h">
@@ -1367,23 +1055,11 @@
     <ClInclude Include="..\base\CCIMEDispatcher.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="..\base\ObjectFactory.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="CCFastTMXTiledMap.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCFastTMXLayer.h">
-      <Filter>2d</Filter>
-    </ClInclude>
     <ClInclude Include="..\storage\local-storage\LocalStorage.h">
       <Filter>storage</Filter>
     </ClInclude>
     <ClInclude Include="..\platform\CCGLView.h">
       <Filter>platform</Filter>
-    </ClInclude>
-    <ClInclude Include="CCProtectedNode.h">
-      <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="..\renderer\CCPrimitive.h">
       <Filter>renderer</Filter>
@@ -1400,33 +1076,6 @@
     <ClInclude Include="..\base\ccRandom.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\extensions\assets-manager\AssetsManager.h">
-      <Filter>extension\AssetsManager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\physics-nodes\CCPhysicsDebugNode.h">
-      <Filter>extension\physics_nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\physics-nodes\CCPhysicsSprite.h">
-      <Filter>extension\physics_nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\cocos-ext.h">
-      <Filter>extension</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\ExtensionExport.h">
-      <Filter>extension</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\ExtensionMacros.h">
-      <Filter>extension</Filter>
-    </ClInclude>
-    <ClInclude Include="..\audio\include\Export.h">
-      <Filter>cocosdenshion\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\audio\win32\MciPlayer.h">
-      <Filter>cocosdenshion\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\audio\include\SimpleAudioEngine.h">
-      <Filter>cocosdenshion\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\network\HttpClient.h">
       <Filter>network\Header Files</Filter>
     </ClInclude>
@@ -1436,92 +1085,8 @@
     <ClInclude Include="..\network\HttpResponse.h">
       <Filter>network\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\network\SocketIO.h">
-      <Filter>network\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\network\WebSocket.h">
       <Filter>network\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIScale9Sprite.h">
-      <Filter>ui\BaseClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIWidget.h">
-      <Filter>ui\BaseClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIHBox.h">
-      <Filter>ui\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UILayout.h">
-      <Filter>ui\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UILayoutManager.h">
-      <Filter>ui\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UILayoutParameter.h">
-      <Filter>ui\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIRelativeBox.h">
-      <Filter>ui\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIVBox.h">
-      <Filter>ui\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\CocosGUI.h">
-      <Filter>ui\System</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\GUIExport.h">
-      <Filter>ui\System</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIDeprecated.h">
-      <Filter>ui\System</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIHelper.h">
-      <Filter>ui\System</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIButton.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UICheckBox.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIImageView.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UILoadingBar.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIRichText.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UISlider.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIText.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UITextAtlas.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UITextBMFont.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UITextField.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIListView.h">
-      <Filter>ui\UIWidgets\ScrollWidget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIPageView.h">
-      <Filter>ui\UIWidgets\ScrollWidget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIScrollView.h">
-      <Filter>ui\UIWidgets\ScrollWidget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIEditBox\UIEditBox.h">
-      <Filter>ui\UIWidgets\EditBox</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIEditBox\UIEditBoxImpl.h">
-      <Filter>ui\UIWidgets\EditBox</Filter>
     </ClInclude>
     <ClInclude Include="..\platform\win32\CCApplication-win32.h">
       <Filter>platform\win32</Filter>
@@ -1541,27 +1106,6 @@
     <ClInclude Include="..\platform\desktop\CCGLViewImpl-desktop.h">
       <Filter>platform\desktop</Filter>
     </ClInclude>
-    <ClInclude Include="..\ui\UIEditBox\UIEditBoxImpl-win32.h">
-      <Filter>ui\UIWidgets\EditBox</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\assets-manager\AssetsManagerEx.h">
-      <Filter>extension\AssetsManager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\assets-manager\CCEventAssetsManagerEx.h">
-      <Filter>extension\AssetsManager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\assets-manager\CCEventListenerAssetsManagerEx.h">
-      <Filter>extension\AssetsManager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\extensions\assets-manager\Manifest.h">
-      <Filter>extension\AssetsManager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIWebView-inl.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ui\UIWebView.h">
-      <Filter>ui\UIWidgets</Filter>
-    </ClInclude>
     <ClInclude Include="..\audio\include\AudioEngine.h">
       <Filter>audioengine</Filter>
     </ClInclude>
@@ -1574,13 +1118,7 @@
     <ClInclude Include="..\audio\win32\AudioPlayer.h">
       <Filter>audioengine</Filter>
     </ClInclude>
-    <ClInclude Include="..\ui\UILayoutComponent.h">
-      <Filter>ui\Layouts</Filter>
-    </ClInclude>
     <ClInclude Include="CCCamera.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="CCLight.h">
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="..\base\CCAsyncTaskPool.h">
@@ -1613,9 +1151,6 @@
     <ClInclude Include="..\base\allocator\CCAllocatorStrategyPool.h">
       <Filter>base\allocator</Filter>
     </ClInclude>
-    <ClInclude Include="..\physics\CCPhysicsHelper.h">
-      <Filter>physics</Filter>
-    </ClInclude>
     <ClInclude Include="..\platform\CCPlatformConfig.h">
       <Filter>platform</Filter>
     </ClInclude>
@@ -1646,9 +1181,6 @@
     <ClInclude Include="..\renderer\CCRenderState.h">
       <Filter>renderer</Filter>
     </ClInclude>
-    <ClInclude Include="..\base\CCProperties.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="..\base\CCNinePatchImageParser.h">
       <Filter>base</Filter>
     </ClInclude>
@@ -1662,23 +1194,11 @@
     <ClInclude Include="..\..\external\clipper\clipper.hpp">
       <Filter>external\clipper</Filter>
     </ClInclude>
-    <ClInclude Include="..\network\CCDownloader.h">
-      <Filter>network\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\network\CCDownloaderImpl.h">
-      <Filter>network\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\network\CCIDownloaderImpl.h">
-      <Filter>network\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CCCameraBackgroundBrush.h">
+    <ClInclude Include="CCPolygonInfo.h">
       <Filter>2d</Filter>
     </ClInclude>
-    <ClInclude Include="..\renderer\CCTextureCube.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\network\CCDownloader-curl.h">
-      <Filter>network\Header Files</Filter>
+    <ClInclude Include="..\base\CCStencilStateManager.hpp">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
