@@ -5,8 +5,6 @@
 #include "ProjectConfig/SimulatorConfig.h"
 #include "AppDelegate.h"
 
-void createSimulator(const std::string& viewName, int width, int height, float frameZoomFactor = 1.0f);
-
 @interface AppController : NSObject <NSApplicationDelegate, NSWindowDelegate, NSFileManagerDelegate>
 {
     NSWindow *_window;

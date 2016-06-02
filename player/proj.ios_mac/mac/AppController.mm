@@ -16,10 +16,6 @@
 
 USING_NS_CC;
 
-void createSimulator(const std::string& viewName, int width, int height, float frameZoomFactor)
-{
-}
-
 @implementation AppController
 
 @synthesize menu;
