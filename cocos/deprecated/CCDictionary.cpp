@@ -25,8 +25,7 @@
 
 #include "deprecated/CCDictionary.h"
 #include <type_traits>
-#include "deprecated/CCString.h"
-#include "deprecated/CCInteger.h"
+#include "base/ccUTF8.h"
 #include "platform/CCFileUtils.h"
 #include "deprecated/CCString.h"
 #include "deprecated/CCBool.h"
