@@ -893,6 +893,8 @@
 		9F6A4C801C5230E600831F4A /* tolua_fix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A4B4B1C5230E600831F4A /* tolua_fix.cpp */; };
 		9F6A4C811C5230E600831F4A /* tolua_fix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F6A4B4C1C5230E600831F4A /* tolua_fix.h */; };
 		9F6A4C821C5230E600831F4A /* tolua_fix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F6A4B4C1C5230E600831F4A /* tolua_fix.h */; };
+		9F9CE7E11D12F34500631192 /* CCDevice-apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9CE7DF1D12F34500631192 /* CCDevice-apple.h */; };
+		9F9CE7E21D12F34500631192 /* CCDevice-apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CE7E01D12F34500631192 /* CCDevice-apple.mm */; };
 		9FE981381CAD98D90038012F /* CCStencilStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE981361CAD98D90038012F /* CCStencilStateManager.cpp */; };
 		9FE981391CAD98D90038012F /* CCStencilStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE981361CAD98D90038012F /* CCStencilStateManager.cpp */; };
 		9FE9813A1CAD98D90038012F /* CCStencilStateManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 9FE981371CAD98D90038012F /* CCStencilStateManager.hpp */; };
@@ -1637,6 +1639,8 @@
 		9F6A4B4A1C5230E600831F4A /* LuaSkeletonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaSkeletonAnimation.h; sourceTree = "<group>"; };
 		9F6A4B4B1C5230E600831F4A /* tolua_fix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tolua_fix.cpp; sourceTree = "<group>"; };
 		9F6A4B4C1C5230E600831F4A /* tolua_fix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tolua_fix.h; sourceTree = "<group>"; };
+		9F9CE7DF1D12F34500631192 /* CCDevice-apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCDevice-apple.h"; sourceTree = "<group>"; };
+		9F9CE7E01D12F34500631192 /* CCDevice-apple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CCDevice-apple.mm"; sourceTree = "<group>"; };
 		9FD5AFED1CBA81EA0030DF72 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../external/lua/luajit/prebuilt/ios/libluajit.a; sourceTree = "<group>"; };
 		9FE981361CAD98D90038012F /* CCStencilStateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCStencilStateManager.cpp; path = ../base/CCStencilStateManager.cpp; sourceTree = "<group>"; };
 		9FE981371CAD98D90038012F /* CCStencilStateManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CCStencilStateManager.hpp; path = ../base/CCStencilStateManager.hpp; sourceTree = "<group>"; };
@@ -2865,6 +2869,8 @@
 				50ABBF1D1926664700A911A9 /* CCLock-apple.cpp */,
 				50ABBF1E1926664700A911A9 /* CCLock-apple.h */,
 				50ABBF1F1926664700A911A9 /* CCThread-apple.mm */,
+				9F9CE7DF1D12F34500631192 /* CCDevice-apple.h */,
+				9F9CE7E01D12F34500631192 /* CCDevice-apple.mm */,
 			);
 			path = apple;
 			sourceTree = "<group>";
@@ -3370,6 +3376,7 @@
 				9FFEE6EE1CB0082E00B4DECF /* fpconv.h in Headers */,
 				9F6A4C4D1C5230E600831F4A /* LuaBasicConversions.h in Headers */,
 				15AE1BB419AADFEF00C27E9E /* HttpResponse.h in Headers */,
+				9F9CE7E11D12F34500631192 /* CCDevice-apple.h in Headers */,
 				50ABBE291925AB6F00A911A9 /* CCAutoreleasePool.h in Headers */,
 				299CF1FD19A434BC00C378C1 /* ccRandom.h in Headers */,
 				50ABBE471925AB6F00A911A9 /* CCEvent.h in Headers */,
@@ -3981,6 +3988,7 @@
 				B29A7E1B19EE1B7700872B35 /* SkeletonJson.c in Sources */,
 				50ABBE351925AB6F00A911A9 /* CCConsole.cpp in Sources */,
 				50693C5E1B6BF2AE005C5820 /* CCDownloader.cpp in Sources */,
+				9F9CE7E21D12F34500631192 /* CCDevice-apple.mm in Sources */,
 				50ABBEAF1925AB6F00A911A9 /* CCUserDefault.cpp in Sources */,
 				50ABBE791925AB6F00A911A9 /* CCEventMouse.cpp in Sources */,
 				A05DCF9D1B90584E00EE040B /* CCDownloader-curl.cpp in Sources */,
