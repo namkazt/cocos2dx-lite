@@ -895,6 +895,7 @@
 		9F6A4C821C5230E600831F4A /* tolua_fix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F6A4B4C1C5230E600831F4A /* tolua_fix.h */; };
 		9F9CE7E11D12F34500631192 /* CCDevice-apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9CE7DF1D12F34500631192 /* CCDevice-apple.h */; };
 		9F9CE7E21D12F34500631192 /* CCDevice-apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CE7E01D12F34500631192 /* CCDevice-apple.mm */; };
+		9F9CE7E71D12FAE500631192 /* CCDevice-apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CE7E01D12F34500631192 /* CCDevice-apple.mm */; };
 		9FE981381CAD98D90038012F /* CCStencilStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE981361CAD98D90038012F /* CCStencilStateManager.cpp */; };
 		9FE981391CAD98D90038012F /* CCStencilStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE981361CAD98D90038012F /* CCStencilStateManager.cpp */; };
 		9FE9813A1CAD98D90038012F /* CCStencilStateManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 9FE981371CAD98D90038012F /* CCStencilStateManager.hpp */; };
@@ -1641,6 +1642,7 @@
 		9F6A4B4C1C5230E600831F4A /* tolua_fix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tolua_fix.h; sourceTree = "<group>"; };
 		9F9CE7DF1D12F34500631192 /* CCDevice-apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCDevice-apple.h"; sourceTree = "<group>"; };
 		9F9CE7E01D12F34500631192 /* CCDevice-apple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CCDevice-apple.mm"; sourceTree = "<group>"; };
+		9F9CE7E31D12F99D00631192 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		9FD5AFED1CBA81EA0030DF72 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../external/lua/luajit/prebuilt/ios/libluajit.a; sourceTree = "<group>"; };
 		9FE981361CAD98D90038012F /* CCStencilStateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCStencilStateManager.cpp; path = ../base/CCStencilStateManager.cpp; sourceTree = "<group>"; };
 		9FE981371CAD98D90038012F /* CCStencilStateManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CCStencilStateManager.hpp; path = ../base/CCStencilStateManager.hpp; sourceTree = "<group>"; };
@@ -1849,6 +1851,7 @@
 		1551A341158F2AB200E66CFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F9CE7E31D12F99D00631192 /* CoreText.framework */,
 				9FD5AFED1CBA81EA0030DF72 /* libluajit.a */,
 				9FE9814E1CAED7EE0038012F /* libluajit.a */,
 				2905E9CC1ACD3D8C00092DD2 /* libz.a */,
@@ -4148,6 +4151,7 @@
 				B29A7DCA19EE1B7700872B35 /* SlotData.c in Sources */,
 				50ABBE6E1925AB6F00A911A9 /* CCEventListenerKeyboard.cpp in Sources */,
 				50CB247C19D9C5A100687767 /* AudioEngine-inl.mm in Sources */,
+				9F9CE7E71D12FAE500631192 /* CCDevice-apple.mm in Sources */,
 				9F6A4A6F1C4B7A1C00831F4A /* CCPolygonInfo.cpp in Sources */,
 				50ABBE461925AB6F00A911A9 /* CCEvent.cpp in Sources */,
 				15FB20881AE7C57D00C31518 /* shapes.cc in Sources */,
