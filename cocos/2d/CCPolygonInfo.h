@@ -52,16 +52,7 @@ public:
      * @memberof PolygonInfo
      * @return PolygonInfo object
      */
-    PolygonInfo():
-    rect(cocos2d::Rect::ZERO),
-    isVertsOwner(true),
-    filename("")
-    {
-        triangles.verts = nullptr;
-        triangles.indices = nullptr;
-        triangles.vertCount = 0;
-        triangles.indexCount = 0;
-    };
+    PolygonInfo();
 
     /**
      * Create an polygoninfo from the data of another Polygoninfo

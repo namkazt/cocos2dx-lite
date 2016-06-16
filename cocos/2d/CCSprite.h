@@ -575,7 +575,7 @@ CC_CONSTRUCTOR_ACCESS :
      *
      * @return a copy of PolygonInfo
      */
-    PolygonInfo& getPolygonInfo();
+    const PolygonInfo& getPolygonInfo();
     
     /**
      * set the sprite to use this new PolygonInfo

@@ -33,6 +33,17 @@ USING_NS_CC;
 
 static unsigned short quadIndices[]={0,1,2, 3,2,1};
 
+PolygonInfo::PolygonInfo()
+    : rect(cocos2d::Rect::ZERO)
+    , isVertsOwner(true)
+    , filename("")
+{
+    triangles.verts = nullptr;
+    triangles.indices = nullptr;
+    triangles.vertCount = 0;
+    triangles.indexCount = 0;
+}
+
 PolygonInfo::PolygonInfo(const PolygonInfo& other)
     : triangles()
     , isVertsOwner(true)
