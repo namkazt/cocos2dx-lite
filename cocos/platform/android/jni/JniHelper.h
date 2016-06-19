@@ -46,6 +46,7 @@ public:
     static void setJavaVM(JavaVM *javaVM);
     static JavaVM* getJavaVM();
     static JNIEnv* getEnv();
+    static jobject GetActivity();
 
     static bool setClassLoaderFrom(jobject activityInstance);
     static bool getStaticMethodInfo(JniMethodInfo &methodinfo,
@@ -63,8 +64,8 @@ public:
     static jobject classloader;
 
     template <typename... Ts>
-    static void callStaticVoidMethod(const std::string& className, 
-                                     const std::string& methodName, 
+    static void callStaticVoidMethod(const std::string& className,
+                                     const std::string& methodName,
                                      Ts... xs) {
         cocos2d::JniMethodInfo t;
         std::string signature = "(" + std::string(getJNISignature(xs...)) + ")V";
@@ -78,8 +79,8 @@ public:
     }
 
     template <typename... Ts>
-    static bool callStaticBooleanMethod(const std::string& className, 
-                                        const std::string& methodName, 
+    static bool callStaticBooleanMethod(const std::string& className,
+                                        const std::string& methodName,
                                         Ts... xs) {
         jboolean jret = JNI_FALSE;
         cocos2d::JniMethodInfo t;
@@ -95,8 +96,8 @@ public:
     }
 
     template <typename... Ts>
-    static int callStaticIntMethod(const std::string& className, 
-                                   const std::string& methodName, 
+    static int callStaticIntMethod(const std::string& className,
+                                   const std::string& methodName,
                                    Ts... xs) {
         jint ret = 0;
         cocos2d::JniMethodInfo t;
@@ -112,8 +113,8 @@ public:
     }
 
     template <typename... Ts>
-    static float callStaticFloatMethod(const std::string& className, 
-                                       const std::string& methodName, 
+    static float callStaticFloatMethod(const std::string& className,
+                                       const std::string& methodName,
                                        Ts... xs) {
         jfloat ret = 0.0;
         cocos2d::JniMethodInfo t;
@@ -129,8 +130,8 @@ public:
     }
 
     template <typename... Ts>
-    static double callStaticDoubleMethod(const std::string& className, 
-                                         const std::string& methodName, 
+    static double callStaticDoubleMethod(const std::string& className,
+                                         const std::string& methodName,
                                          Ts... xs) {
         jdouble ret = 0.0;
         cocos2d::JniMethodInfo t;
@@ -146,8 +147,8 @@ public:
     }
 
     template <typename... Ts>
-    static std::string callStaticStringMethod(const std::string& className, 
-                                              const std::string& methodName, 
+    static std::string callStaticStringMethod(const std::string& className,
+                                              const std::string& methodName,
                                               Ts... xs) {
         std::string ret;
 
@@ -174,6 +175,8 @@ private:
                                                  const char *paramCode);
 
     static JavaVM* _psJavaVM;
+
+    static jobject _activity;
 
     static jstring convert(cocos2d::JniMethodInfo& t, const char* x);
 
