@@ -526,6 +526,8 @@
         "cocos/platform/apple/CCLock-apple.cpp",
         "cocos/platform/apple/CCLock-apple.h",
         "cocos/platform/apple/CCThread-apple.mm",
+        "cocos/platform/apple/CCDevice-apple.mm",
+        "cocos/platform/apple/CCDevice-apple.h",
         "cocos/platform/CCApplication.h",
         "cocos/platform/CCApplicationProtocol.h",
         "cocos/platform/CCCommon.h",
