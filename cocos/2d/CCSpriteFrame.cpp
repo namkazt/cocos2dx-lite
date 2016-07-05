@@ -207,7 +207,8 @@ Texture2D* SpriteFrame::getTexture()
     }
 
     if( !_textureFilename.empty()) {
-        return Director::getInstance()->getTextureCache()->addImage(_textureFilename);
+        _texture = Director::getInstance()->getTextureCache()->addImage(_textureFilename);
+        return _texture;
     }
     // no texture or texture filename
     return nullptr;
