@@ -150,14 +150,18 @@ xcopy "$(ProjectDir)..\scripts" "$(OutDir)scripts" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\BunnyMarkScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\MainScene.cpp" />
     <ClCompile Include="..\Classes\ProjectConfig\ProjectConfig.cpp" />
     <ClCompile Include="..\Classes\ProjectConfig\SimulatorConfig.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\BunnyMarkScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\MainScene.h" />
     <ClInclude Include="..\Classes\ProjectConfig\ProjectConfig.h" />
     <ClInclude Include="..\Classes\ProjectConfig\SimulatorConfig.h" />
     <ClInclude Include="main.h" />

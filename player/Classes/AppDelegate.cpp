@@ -1,9 +1,11 @@
-#include "AppDelegate.h"
-#include "CCLuaEngine.h"
+﻿#include "AppDelegate.h"
+#include "scripting/lua-bindings/manual/CCLuaEngine.h"
 // #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
  #include "lua_module_register.h"
 #include "ProjectConfig/SimulatorConfig.h"
+
+#include "MainScene.h"
 
 // using namespace CocosDenshion;
 
@@ -39,6 +41,30 @@ static int register_all_packages()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
+    // initialize director
+    auto director = Director::getInstance();
+    auto glview = director->getOpenGLView();
+    if(!glview) {
+		auto title = StringUtils::format("quick-cocos2d-x (%s)", cocos2dVersion());
+        glview = GLViewImpl::createWithRect(title, Rect(0, 0, 640, 960));
+        director->setOpenGLView(glview);
+    }
+
+    director->getOpenGLView()->setDesignResolutionSize(640, 960, ResolutionPolicy::FIXED_WIDTH);
+
+    // turn on display FPS
+    director->setDisplayStats(false);
+
+    // set FPS. the default value is 1.0/60 if you don't call this
+    director->setAnimationInterval(1.0 / 60);
+
+    FileUtils::getInstance()->addSearchPath("res");
+
+    // run
+    director->runWithScene(MainScene::create());
+    
+    return true;
+
     // set default FPS
     Director::getInstance()->setAnimationInterval(1.0 / 60.0f);
 
@@ -46,7 +72,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     lua_State* L = engine->getLuaStack()->getLuaState();
-     lua_module_register(L);
+    lua_module_register(L);
 
     register_all_packages();
 

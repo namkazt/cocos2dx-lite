@@ -27,6 +27,7 @@ THE SOFTWARE.
 
 #include <vector>
 #include <string>
+#include <sstream>
 #include "2d/CCNode.h"
 #include "base/ccMacros.h"
 
@@ -141,6 +142,21 @@ namespace utils
      * @return Returns found node or nullptr
      */
    CC_DLL Node*  findChild(Node* levelRoot, int tag);
+
+    /**
+     * Convert to string
+     
+     * @return Returns string
+     */
+
+
+    template <typename T>
+    std::string toString(T value)
+    {
+        std::ostringstream os;
+        os << value;
+        return os.str();
+    }
 
     /**
      * Find a child by name recursively
